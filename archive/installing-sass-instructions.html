@@ -1,0 +1,67 @@
+<html>
+    <header>
+        <title>Instructions to install Sass</title>
+    </header>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                   <a href="https://www.youtube.com/watch?v=iJKCj8uAHz8">Learn Bootstrap and Sass by Building a Portfolio Website</a> 
+                   <h1>-Install Node with NPM</h1>
+                   command line:  <code>npm install -g npm</code> 
+                   <h3>Or download it <a href="https://nodejs.org/en/download/">here: </a> ( https://nodejs.org/en/download/ ) </h3> Click on package downloaded and it will install authomatically 
+                   <h2>Check NPM version</h2>
+                   <code>npm -v</code>
+                   <h2>Check Node version</h2>
+                   <code>node -v</code>
+                </div>
+            </div>
+            <div class="row">
+                 <div class="col">
+                    <h1>-Install package.json on your Project</h1>
+                    <p>On your terminal change direcory, and add command: </p> <code>npm init, enter</code> <p> Follow prompts on terminal. It will install package.json in your project folder</p>
+                </div>
+            </div>
+
+            <div class="row ">
+                <div class="col-md-12">
+                     <h1>Install packages</h1>
+                <p>Go  <a href="https://npmjs.com">here</a>  https://npmjs.com to search for packages to install</p>
+                <ul>
+                    <li>Dart-sass
+                        <p>search: dart-sass. From menu choose: dart-sass a pure javascript implemention of sass, click on it. On page showed loof for install and copy command: <code>npm i dart-sass --save-dev sass</code> terminal will show: "npm install --save-dev sass" click enter.  </p><p> This will create a new folder in your project called: node_modules where all the packages will be installed</p>
+                    </li>
+                    <li>Bootstrap
+                         <p> scroll down to INSTALLATION and copy the command line code <code>npm install bootstrap --save</code></p> <p>
+                             On command line paste the above code and add "--save", since --save does not appear on the bootstrap page 
+                         </p> 
+                    </li>
+                    <li>fontawesome
+                        <p>go to https://fontawesome.com</p>
+                        <p>Click start for free</p>
+                        <p>Scroll down and click on NPM look for the code and copy to install <code>npm install --save @fontawesome/fontawesome-free </code>press enter</p>
+                    </li>
+                    <li>autoprefixer
+                        <p> Go https://npmjs.com search for autoprefixer clidk on the first result </p> <p>Search term "install" and copy <code>npm install postcss-cli autoprefixer --save</code>flag it with "--save " </p>
+                    </li>
+                  
+                </ul>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                      <h1>Edit package.jason</h1>  
+                      <p>Open the package.jason file and scroll down to <code>"scripts":{
+                          }</code> in the parenthesis add the following: <code>"compile:sass": "sass --watch scss:assets/css"</code> which is: the name of the package: "sass", space, (a comand --watch (so sass keeps compiling css)space scss,and the source of your sass files in your project directory exemple: assets/css"</p><p>Inside your project folder create a new folder named: "scss", inside your scss folder create a new file custom.scss (example) </p>
+                          <h2>On Terminal</h2>
+                          <p> type: <code>npm run compile:sass </code>(or however you called your script in the jason package) the command typed will create a new folder "assets" and a subfolder named: css (assets/css) also will create a custom.scss.map file</p> 
+                        <p>The command will also generate a new compiled focus-style.css style sheet from your focus-style.scss</p>  
+                    </div>
+                </div>
+               
+            </div>
+               
+            
+        </div>
+    </body>
+</html>

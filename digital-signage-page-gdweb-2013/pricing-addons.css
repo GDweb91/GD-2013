@@ -1,0 +1,35 @@
+/* ── Pricing Add-ons bar (digital signage page) ── */
+.ds-addons-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: .85rem 1.25rem;
+}
+.ds-addons-label {
+  font-family: var(--font-head);
+  font-size: .75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--primary);
+  margin-right: .25rem;
+  white-space: nowrap;
+}
+.ds-addon-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  color: var(--text-dark);
+  font-size: .8rem;
+  font-weight: 500;
+  padding: .3rem .75rem;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+.ds-addon-chip i { color: var(--accent-dark); font-size: .72rem; }

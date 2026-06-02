@@ -1,0 +1,25 @@
+{
+  "name": "gd-2013",
+  "version": "1.0.0",
+  "description": "installing package.json into GD-2013 html website",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass --watch scss:assets/css"
+  },
+  "keywords": [
+    "install",
+    "jason",
+    "pacjage",
+    "gd-2013",
+    "website"
+  ],
+  "author": "JA Armira",
+  "license": "ISC",
+  "devDependencies": {
+    "dart-sass": "^1.25.0",
+    "sass": "^1.43.4"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4"
+  }
+}

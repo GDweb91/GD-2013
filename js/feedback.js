@@ -1,0 +1,84 @@
+// JavaScript Document
+
+GSFN = {
+  feedback: function(url, tab_options) {
+    this.empty_url = "/feedback/transparent.gif";
+    this.feedback_url = url;
+    this.tab_options = tab_options ? tab_options : {};
+    this.tab_options.placement = this.tab_options.placement ? this.tab_options.placement : 'left';
+    this.tab_options.color = this.tab_options.color ? this.tab_options.color : '#222';
+    
+    
+    this.tab_html = '<a href="/contact-gd-website-design-estimates.html" id="fdbk_tab" class="fdbk_tab_'+this.tab_options.placement+'" style="background-color:'+this.tab_options.color+'" 	>Quick Quote</a>';
+    this.overlay_html = '<div id="fdbk_overlay" style="display:none">' +
+                          
+                        '</div>';
+                        
+    if(this.tab_options.container) {
+      var container_el = this.gId(this.tab_options.container);
+      container_el.innerHTML = this.tab_html + this.overlay_html;
+    } else {
+      document.write(this.tab_html);
+      document.write(this.overlay_html);      
+    }                   
+
+    this.gId('fdbk_tab').onclick = function() { GSFN.show(); return false; }
+    this.gId('fdbk_iframe').setAttribute("src", this.empty_url);
+  },
+  set_position: function() {
+    this.scroll_top = document.documentElement.scrollTop || document.body.scrollTop;
+    this.scroll_height = document.documentElement.scrollHeight;
+    this.client_height = window.innerHeight || document.documentElement.clientHeight;
+    this.gId('fdbk_screen').style.height = this.scroll_height+"px";
+    this.gId('fdbk_container').style.top = this.scroll_top+(this.client_height*0.1)+"px";
+  },
+  show: function() {
+    if(this.gId('fdbk_iframe').getAttribute("src") == this.empty_url) {
+      this.gId('fdbk_iframe').setAttribute("src", this.feedback_url);
+      if (this.gId('fdbk_iframe').addEventListener) {
+        this.gId('fdbk_iframe').addEventListener("load", GSFN.loaded, false);
+      } else if (this.gId('fdbk_iframe').attachEvent) {
+        this.gId('fdbk_iframe').detachEvent("onload", GSFN.loaded);
+        this.gId('fdbk_iframe').attachEvent("onload", GSFN.loaded);
+      }
+    }
+    this.set_position();
+    
+    GSFN.addClassName(document.getElementsByTagName('html')[0], 'feedback_tab_on');
+    this.gId('fdbk_overlay').style.display = "block";
+  },
+  hide: function() {
+    this.gId('fdbk_overlay').style.display = "none";
+    GSFN.removeClassName(document.getElementsByTagName('html')[0], 'feedback_tab_on');
+  },
+  loaded: function() {
+    GSFN.gId('fdbk_iframe').className = "loaded";
+  },
+  
+  gId: function(id) {
+    return document.getElementById(id);
+  },
+  
+  hasClassName: function(element, className) {
+    var elementClassName = element.className;
+    
+    return (elementClassName.length > 0 && (elementClassName == className ||
+      new RegExp("(^|\\s)" + className + "(\\s|$)").test(elementClassName)));
+  },
+  
+  addClassName: function(element, className) {
+    if (!GSFN.hasClassName(element, className))
+      element.className += (element.className ? ' ' : '') + className;
+    return element;
+  },
+
+  removeClassName: function(element, className) {
+    var newClass = GSFN.strip(element.className.replace(new RegExp("(^|\\s+)" + className + "(\\s+|$)"), ' '));
+    element.className = newClass;
+    return element;
+  },
+  
+  strip: function(string) {
+    return string.replace(/^\s+/, '').replace(/\s+$/, '');
+  }
+}

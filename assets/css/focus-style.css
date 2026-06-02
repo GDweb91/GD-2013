@@ -1,0 +1,140 @@
+/* CSS Document */
+/*original value: 179px*/
+@keyframes mask-move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(830px);
+  }
+}
+@keyframes mask-inner-move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-830px);
+  }
+}
+.focus-bg {
+  background-color: #074a4a;
+}
+
+.focus {
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #acacac;
+  letter-spacing: 0.2rem;
+  line-height: 1;
+  position: relative;
+  width: 880px;
+}
+.focus:before {
+  content: "Check Out Our New Website";
+  filter: blur(3px);
+}
+.focus:after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: calc(100% + 8px);
+  top: -4px;
+  left: 0;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  animation: mask-move 1s linear infinite alternate;
+}
+.focus--mask {
+  overflow: hidden;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #074a4a;
+  animation: mask-move 1s linear infinite alternate;
+}
+.focus--mask-inner {
+  animation: mask-inner-move 1s linear infinite alternate;
+}
+
+/*Overide style.css */
+body {
+  border-top: 0px !important;
+}
+
+#header {
+  height: auto !important;
+  padding-bottom: 7px;
+}
+#header a{
+  color:#074a4a !important;
+}
+
+#logo {
+  float: none !important;
+}
+
+ a, a > * {
+  color: #f5c772 !important; /*6c6a6a */
+}
+a:hover, a > *:hover {
+  color: #F0CB5A !important;
+}
+
+#main {
+  float: none !important;
+  margin: 0 40px 0 0;
+  width: 100% !important;
+}
+
+#main-nav {
+  /* float: none !important; */
+}
+
+#main-nav ul ul a:hover, #main-nav ul ul .hover > a, #main-nav ul ul .current > a, #main-nav ul ul .current > a:hover {
+  background: #F0CB5A;
+  color: #fff !important;
+}
+
+.container {
+  /* padding-top: 20px; */
+}
+
+#creative .fa, .fas {
+  color: #D5E4E8 !important; 
+}
+
+.color {
+  color: #2E788C !important;  /*35c5c5*/
+}
+
+.img-responsive {
+  width: 100%;
+  height: auto;
+}
+
+#entry.entry-body {
+  float: left !important;
+}
+
+.credits {
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 200;
+  letter-spacing: 0.05rem;
+  font-style: italic;
+  text-align: center;
+}
+.credits a {
+  color: white;
+  text-decoration: none;
+  font-weight: normal;
+}
+.credits a:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=focus-style.css.map */

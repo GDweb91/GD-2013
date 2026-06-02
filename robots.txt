@@ -1,0 +1,16 @@
+User-agent: *
+Disallow: 
+Disallow: /cgi-bin/
+Disallow: /restricted/
+Disallow: /code/
+Disallow: /Scripts/
+Disallow: /auth/
+Disallow: /web-video/
+Disallow: /_private/
+Disallow: /Library/
+Disallow: /gigi/
+Disallow: */?ref=tomba.io$
+Disallow: */?ref=tomba.io
+#sitemap.xml allow
+Allow: 
+sitemap: https://gdprowebdesigns.com/sitemap.xml

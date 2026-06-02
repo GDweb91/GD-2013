@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" />	
+</head>
+<body>
+<a id="IntroVideo" data-fancybox data-src="https://www.awwwards.com/" href="javascript:;">
+	Webpage
+</a>	
+<script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+
+	
+	<!--Disable Fancybox on Mobile devices -->
+<script>
+	$('#IntroVideo').on('click', function(e){
+if (window.innerWidth < 500 && window.innerHeight < 500) {
+        e.stopPropagation();
+        e.preventDefault();
+}	
+});
+	</script>	
+	
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+## EXPIRES CACHING ##
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access 1 year"
+ExpiresByType image/jpeg "access 1 year"
+ExpiresByType image/gif "access 1 year"
+ExpiresByType image/png "access 1 year"
+ExpiresByType text/css "access 1 month" 
+ExpiresByType text/html "access 1 month"
+ExpiresByType application/pdf "access 1 month"
+ExpiresByType text/x-javascript "access 1 month"
+ExpiresByType application/x-shockwave-flash "access 1 month"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresDefault "access 1 month"
+</IfModule>
+## EXPIRES CACHING ##
+
+RewriteEngine On
+# Redirect index.html to the root domain
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+RewriteRule ^index\.html$ https://gdprowebdesigns.com/ [R=301,L]
+
+# Use PHP5.3 Single php.ini as default
+
+RewriteEngine On 
+RewriteCond %{HTTPS} off 
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301] 
+#RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTPS/ 
+#RewriteRule ^index\.html$ https://gdprowebdesigns.com/ [R=301,L] 
+
+## Redirect from http://gdprowebdesigns.com to https://gdprowebdesigns.com ##
+
+RewriteEngine On
+
+RewriteCond %{SERVER_PORT} ^80$
+RewriteCond %{HTTPS_HOST} ^gdprowebdesigns.com$
+RewriteRule ^(/)?(.*) https://gdprowebdesigns.com/$2 [R=301,L]
+
+##404 error pages##
+ErrorDocument 404 /404.html
+##Server returns 404 for a web page, but page is showing fine in browser: 
+##https://stackoverflow.com/questions/44293044/##server-returns-404-for-a-web-page-but-page-is-showing-fine-in-browser-why 
+
+#RewriteCond $1 !^(branch\/|css|js|html|images) [NC]
+
+# Block Russian Referrer Spam
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} ^http://.*ilovevitaly\.com/ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http://.*ilovevitaly.\.ru/ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http://.*ilovevitaly\.org/ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http://.*ilovevitaly\.info/ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http://.*iloveitaly\.ru/ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http://.*econom\.co/ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http://.*savetubevideo\.com/ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http://.*kambasoft\.com/ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http://.*buttons\-for\-website\.com/ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http://.*semalt\.com/ [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http://.*darodar\.com/ [NC]
+RewriteRule ^(.*)$ – [F,L]
+RewriteCond %{HTTP_HOST} ^gdprowebdesigns\.com$
+RewriteRule ^web\-design\-Boston\-MA\.html$ "https\:\/\/www\.gdprowebdesigns\.com\/web\-design\-company\-boston\-ma\.html" [R=301,L]
+
+# BEGIN WordPress
+# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+<IfModule mod_expires.c>
+	ExpiresActive On
+	ExpiresByType image/jpg "access plus 24 hours"
+	ExpiresByType image/jpeg "access plus 24 hours"
+	ExpiresByType image/gif "access plus 24 hours"
+	ExpiresByType image/png "access plus 24 hours"
+	ExpiresByType text/css "access plus 24 hours"
+	ExpiresByType application/pdf "access plus 1 week"
+	ExpiresByType text/javascript "access plus 24 hours"
+	ExpiresByType text/html "access plus 2 hours"
+	ExpiresByType image/x-icon "access plus 1 year"
+	ExpiresDefault "access plus 24 hours"
+</IfModule>
+Options -Indexes
+<IfModule mod_headers.c>
+	Header set X-Endurance-Cache-Level "2"
+	Header set X-nginx-cache "WordPress"
+</IfModule>
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+
+# ================================================================
+# 301 REDIRECTS
+# ================================================================
+
+# --- Boston web design consolidation → web-design-company-boston-ma.html ---
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^web-design-Boston-MA\.html$ https://gdprowebdesigns.com/web-design-company-boston-ma.html [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^boston-web-design-development-company\.html$ https://gdprowebdesigns.com/web-design-company-boston-ma.html [R=301,L]
+
+# FIX: meta-refresh was pointing here; now a proper 301 direct to canonical
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^boston-web-design-development-company-freelance\.html$ https://gdprowebdesigns.com/web-design-company-boston-ma.html [R=301,L]
+
+# Responsive web design (archived — both spaced and hyphenated variants)
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^responsive[-\ ]web-design-development-boston-ma\.html$ https://gdprowebdesigns.com/web-design-company-boston-ma.html [R=301,L]
+
+# --- WordPress developer pages ---
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^web-designer-developer-for-small-business-boston-ma\.html$ https://gdprowebdesigns.com/gd-blog/web-developer-ma/ [R=301,L]
+
+# FIX: typo in original filename (dsigner)
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^web-dsigner-developer-for-small-business-boston-ma\.html$ https://gdprowebdesigns.com/gd-blog/web-developer-ma/ [R=301,L]
+
+# --- SEO pages — canonical is organic-SEO-everett-ma.html ---
+# FIX: was previously redirecting organic-SEO-everett-ma.html → seo-services-everett-ma.html (wrong direction)
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^seo-services-everett-ma\.html$ https://gdprowebdesigns.com/organic-SEO-everett-ma.html [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^everett-ma-local-seo-services\.html$ https://gdprowebdesigns.com/organic-SEO-everett-ma.html [R=301,L]
+
+# --- Local marketing — FIX: was missing domain in redirect target ---
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^local-marketing-boston-everett-malden-medford-revere-saugus-ma\.html$ https://gdprowebdesigns.com/local-marketing-company-everett-malden-medford-revere-saugus-ma.html [R=301,L]
+
+# --- About page (old URLs) ---
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^about-gd-freelance-web-developers-boston(-off)?\.html$ https://gdprowebdesigns.com/about-gd-freelance-web-designer-boston.html [R=301,L]
+
+# --- Dedham — FIX: meta-refresh converted to proper 301 ---
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^Dedham-MA-freelance-wordpress-developer\.html$ https://gdprowebdesigns.com/Dedham-ma-freelance-web-developer.html [R=301,L]
+
+# --- Newton service area ---
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^gd-blog/service-area/newton/$ https://gdprowebdesigns.com/newton-ma-web-designer-web-developer.html [R=301,L]
+
+# --- Archived Spanish pages ---
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^disenador-paginas-web-freelancer-boston-off\.html$ https://gdprowebdesigns.com/disenador-paginas-web-freelancer-boston.html [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^chelsea-ma-disenador-web-wordpress-NO-USE\.html$ https://gdprowebdesigns.com/chelsea-ma-disenador-web-wordpress.html [R=301,L]
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php80” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php80___lsphp .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

@@ -1,0 +1,136 @@
+/* CSS Document */
+$componentSize: 880px; /*original value: 179px*/
+$maskSize: 50px;
+$speed: 1s;
+$borderOffset: 8px;
+
+$backgroundColor: #074a4a;
+$animationProps: $speed linear infinite alternate;
+
+@keyframes mask-move {
+  0%   { 
+    transform: translateX(0);
+  }
+  100% { 
+    transform: translateX($componentSize - $maskSize);
+  }
+}
+
+@keyframes mask-inner-move {
+  0%   { 
+    transform: translateX(0);
+  }
+  100% { 
+    transform: translateX(-($componentSize - $maskSize));
+  }
+}
+
+.focus-bg{
+    background-color: $backgroundColor;
+}
+
+.focus {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: rgb(172, 172, 172);
+    letter-spacing: .2rem;
+    line-height: 1;
+    position: relative;
+    width: $componentSize;
+    &:before {
+        content: 'Check Out Our New Website';
+        filter: blur(3px);
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      width: $maskSize;
+      height: calc(100% + #{$borderOffset});
+      top: -($borderOffset / 2);
+      left: 0;
+      border-top: 2px solid;
+      border-bottom: 2px solid;
+      animation: mask-move $animationProps;
+    }
+    &--mask {
+      overflow: hidden;
+      position: absolute;
+    //   width: $maskSize;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: $backgroundColor;
+      animation: mask-move $animationProps;
+      &-inner {
+        animation: mask-inner-move $animationProps;
+      }
+    }
+  }
+  /*Overide style.css */
+  body {
+    border-top: 0px!important;
+}
+  #header{
+      height: auto!important;
+      padding-bottom: 7px;
+  }
+  #logo{
+      float: none!important;
+  }
+  a, a > * {
+    color: #bebaba!important;
+    &:hover{
+        color: #F0CB5A!important;
+      }
+}
+
+#main {
+   float: none!important; 
+    margin: 0 40px 0 0;
+    width: 100%!important;
+}
+#main-nav {
+    float: none!important;
+}
+#main-nav ul ul a:hover, #main-nav ul ul .hover > a, #main-nav ul ul .current > a, #main-nav ul ul .current > a:hover {
+  background: #F0CB5A;
+  color: #fff!important;
+}
+.container {
+    padding-top: 20px;
+}
+#creative .fa, .fas {
+    color: #35c5c5!important;
+}
+.color{
+  color:#35c5c5 !important;
+}
+.img-responsive {
+  width: 100%;
+  height: auto;
+}
+#entry.entry-body {
+  float: left!important;
+}
+
+  .credits {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 200;
+    letter-spacing: 0.05rem;
+    font-style: italic;
+    text-align: center;
+    a {
+      color: white;
+      text-decoration: none;
+      font-weight: normal;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+ 
+ 

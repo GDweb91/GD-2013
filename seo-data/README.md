@@ -1,0 +1,46 @@
+# seo-data/ — drop your GSC & GA4 exports here
+
+This folder holds the CSV reports you export from Google Search Console and
+Google Analytics 4. The `/seo-analyze` skill reads everything in here, cross-
+references it against the real HTML pages in this repo, and gives you a
+prioritized list of ranking improvements.
+
+> 🔒 **Privacy:** every `*.csv` / `*.xlsx` / `*.json` in this folder is
+> gitignored — it will **never** be committed or pushed. Nothing here leaves
+> your machine except what you ask Claude to analyze.
+
+---
+
+## What to export (and the exact filename to save it as)
+
+### From Google Search Console  → https://search.google.com/search-console
+Open **Performance → Search results**, set the date range to **Last 3 months**,
+make sure **all four metrics** (Clicks, Impressions, CTR, Position) are toggled
+on, then use the **Export** button (top right) → **Download CSV** for each tab:
+
+| GSC tab    | Save the file as            |
+|------------|-----------------------------|
+| Queries    | `gsc-queries.csv`           |
+| Pages      | `gsc-pages.csv`             |
+| Countries  | `gsc-countries.csv`         |
+| Devices    | `gsc-devices.csv`           |
+
+(Queries and Pages are the two that matter most — the others are optional.)
+
+### From Google Analytics 4  → https://analytics.google.com
+- **Reports → Engagement → Landing page** → share/export → CSV →
+  save as `ga4-landing-pages.csv`
+- **Reports → Acquisition → Traffic acquisition** → export CSV →
+  save as `ga4-acquisition.csv`
+
+Pick the **same date range** (last 3 months) in GA4 so the two sources line up.
+
+---
+
+## Then just run:
+
+```
+/seo-analyze
+```
+
+Re-export and re-run whenever you want fresh numbers (about 5 minutes of clicks).

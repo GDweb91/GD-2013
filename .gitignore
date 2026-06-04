@@ -1,0 +1,18 @@
+# --- SEO data exports (private analytics data — never commit) ---
+seo-data/*.csv
+seo-data/*.xlsx
+seo-data/*.json
+seo-data/exports/
+
+# --- Credentials & secrets (defense-in-depth; keep keys OUTSIDE the repo too) ---
+*-key.json
+*credentials*.json
+*service-account*.json
+.env
+.env.*
+recaptcha-keys/
+
+# --- OS / editor cruft ---
+.DS_Store
+Thumbs.db
+*.swp

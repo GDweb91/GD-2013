@@ -145,6 +145,10 @@ RewriteRule ^Dedham-MA-freelance-wordpress-developer\.html$ https://gdprowebdesi
 RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
 RewriteRule ^gd-blog/service-area/newton/$ https://gdprowebdesigns.com/newton-ma-web-designer-web-developer.html [R=301,L]
 
+# --- Shopify page moved into /shopify/ subfolder (old root path 404'd) ---
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^shopify-developer-boston-ma-ecommerce\.html$ https://gdprowebdesigns.com/shopify/shopify-developer-boston-ma-ecommerce.html [R=301,L]
+
 # --- Archived Spanish pages ---
 RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
 RewriteRule ^disenador-paginas-web-freelancer-boston-off\.html$ https://gdprowebdesigns.com/disenador-paginas-web-freelancer-boston.html [R=301,L]

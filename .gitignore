@@ -26,3 +26,7 @@ node_modules/
 *.PSD
 *.ai
 *-Recovered*
+
+# --- Personal reference docs (local only — never commit) ---
+*.pdf
+git-guide-to-create-repo-on-terminal.txt

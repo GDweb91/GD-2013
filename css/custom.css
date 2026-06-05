@@ -1224,11 +1224,26 @@ section { scroll-margin-top: 76px; }
 }
 .pill-teal:hover { background: rgba(4,65,67,.13); color: var(--primary); text-decoration: none; }
 
+/* Pill-style inline badge — gold variant (e.g. EN & ES bilingual badge) */
+.pill-teal--gold,
+.pill-teal--gold:hover {
+  background: rgba(255,186,0,.08);
+  border-color: rgba(255,186,0,.22);
+  color: var(--accent-dark);
+}
+
 /* Dark teal section background (#024a4d) */
 .bg-dark-teal { background-color: #024a4d !important; }
 
 /* Utility list style */
 .list-circle { list-style: circle !important; }
+
+/* Underlined inline content links */
+.txt-link       { text-decoration: underline; color: var(--primary); }
+.txt-link-muted { text-decoration: underline; color: inherit; }
+
+/* Teal-tinted card surface (e.g. "Why choose us" boxes) */
+.card-teal-tint { background: rgba(9,69,70,.08); border: 1px solid rgba(7,69,72,.22); }
 
 /* ============================================================
    CLIENTS

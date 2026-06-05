@@ -16,3 +16,13 @@ recaptcha-keys/
 .DS_Store
 Thumbs.db
 *.swp
+*~
+
+# --- Dependencies (reinstall with npm install) ---
+node_modules/
+
+# --- Design source files (keep originals outside the repo) ---
+*.psd
+*.PSD
+*.ai
+*-Recovered*

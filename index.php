@@ -22,8 +22,6 @@ require_once('./gd-blog/wp-blog-header.php');
     <meta name="geo.placename" content="Everett" />
     <meta name="geo.position" content="42.40862; -71.05260" />
     <meta name="ICBM" content="42.40862; -71.05260" />
-	 <meta name="robots" content="noodp">
-     <meta name="robots" content="noydir">
 	 <meta name="robots" content="index, follow">
 
 	 <!-- Google Tag Manager -->
@@ -44,7 +42,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
     
   <meta name="revisit-after" content="1 days" />
-   	<meta name="robots" content="index, follow, noydir" />
    	<meta name="author" content="GDWebPros, Freelance Website Design Boston"/> 			
 	<meta name="copyright" content="GDWebPros, Boston Web Designer"/>  	 	
 	<meta name="distribution" content="global" />

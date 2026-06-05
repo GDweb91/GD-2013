@@ -21,8 +21,6 @@
     <meta name="geo.placename" content="Everett" />
     <meta name="geo.position" content="42.40843;-71.053662" />
     <meta name="ICBM" content="42.40843, -71.053662" />
-	 <meta name="robots" content="noodp">
-     <meta name="robots" content="noydir">
      
 	<title>Boston Web Design Company | Wordpress Designer + Developer | SEO + Marketing Services MA</title>
 	
@@ -34,7 +32,7 @@
     
     
   <meta name="revisit-after" content="1 days" />
-   	<meta name="robots" content="index, follow, noydir" />
+   	<meta name="robots" content="index, follow" />
    	<meta name="author" content="GD Pro, Web Design Boston"/> 			
 	<meta name="copyright" content="GD Pro, Boston Web Designer"/>  	 	
 	<meta name="distribution" content="global" />

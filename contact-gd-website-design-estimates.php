@@ -22,8 +22,6 @@ require_once('./gd-blog/wp-blog-header.php');
     <meta name="geo.placename" content="Everett" />
     <meta name="geo.position" content="42.40843;-71.053662" />
     <meta name="ICBM" content="42.40843, -71.053662" />
-	 <meta name="robots" content="noodp">
-     <meta name="robots" content="noydir">
 
 	 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -41,7 +39,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<meta name="keywords" content="Boston Web Design Company, Wordpress Developer, SEO services MA, Digital Marketing Company Boston, best graphic designer, Boston freelance web designer, Massachusetts. Android, IOS Apps. ">
 	 
   <meta name="revisit-after" content="1 days" />
-   	<meta name="robots" content="noindex, nofollow, noydir" />
+   	<meta name="robots" content="noindex, nofollow" />
    	<meta name="author" content="GD Pro, Web Design Boston"/> 			
 	<meta name="copyright" content="GD Pro, Boston Web Designer"/>  	 	
 	<meta name="distribution" content="global" />

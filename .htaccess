@@ -5,7 +5,7 @@ ExpiresByType image/jpg "access 1 year"
 ExpiresByType image/jpeg "access 1 year"
 ExpiresByType image/gif "access 1 year"
 ExpiresByType image/png "access 1 year"
-ExpiresByType text/css "access 1 month" 
+ExpiresByType text/css "access 1 month"
 ExpiresByType text/html "access 1 month"
 ExpiresByType application/pdf "access 1 month"
 ExpiresByType text/x-javascript "access 1 month"
@@ -22,11 +22,11 @@ RewriteRule ^index\.html$ https://gdprowebdesigns.com/ [R=301,L]
 
 # Use PHP5.3 Single php.ini as default
 
-RewriteEngine On 
-RewriteCond %{HTTPS} off 
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301] 
-#RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTPS/ 
-#RewriteRule ^index\.html$ https://gdprowebdesigns.com/ [R=301,L] 
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTPS/
+#RewriteRule ^index\.html$ https://gdprowebdesigns.com/ [R=301,L]
 
 ## Redirect from http://gdprowebdesigns.com to https://gdprowebdesigns.com ##
 
@@ -38,8 +38,8 @@ RewriteRule ^(/)?(.*) https://gdprowebdesigns.com/$2 [R=301,L]
 
 ##404 error pages##
 ErrorDocument 404 /404.html
-##Server returns 404 for a web page, but page is showing fine in browser: 
-##https://stackoverflow.com/questions/44293044/##server-returns-404-for-a-web-page-but-page-is-showing-fine-in-browser-why 
+##Server returns 404 for a web page, but page is showing fine in browser:
+##https://stackoverflow.com/questions/44293044/##server-returns-404-for-a-web-page-but-page-is-showing-fine-in-browser-why
 
 #RewriteCond $1 !^(branch\/|css|js|html|images) [NC]
 
@@ -57,45 +57,13 @@ RewriteCond %{HTTP_REFERER} ^http://.*buttons\-for\-website\.com/ [NC,OR]
 RewriteCond %{HTTP_REFERER} ^http://.*semalt\.com/ [NC,OR]
 RewriteCond %{HTTP_REFERER} ^http://.*darodar\.com/ [NC]
 RewriteRule ^(.*)$ – [F,L]
-RewriteCond %{HTTP_HOST} ^gdprowebdesigns\.com$
-RewriteRule ^web\-design\-Boston\-MA\.html$ "https\:\/\/www\.gdprowebdesigns\.com\/web\-design\-company\-boston\-ma\.html" [R=301,L]
-
-# BEGIN WordPress
-# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
-# dynamically generated, and should only be modified via WordPress filters.
-# Any changes to the directives between these markers will be overwritten.
-<IfModule mod_expires.c>
-	ExpiresActive On
-	ExpiresByType image/jpg "access plus 24 hours"
-	ExpiresByType image/jpeg "access plus 24 hours"
-	ExpiresByType image/gif "access plus 24 hours"
-	ExpiresByType image/png "access plus 24 hours"
-	ExpiresByType text/css "access plus 24 hours"
-	ExpiresByType application/pdf "access plus 1 week"
-	ExpiresByType text/javascript "access plus 24 hours"
-	ExpiresByType text/html "access plus 2 hours"
-	ExpiresByType image/x-icon "access plus 1 year"
-	ExpiresDefault "access plus 24 hours"
-</IfModule>
-Options -Indexes
-<IfModule mod_headers.c>
-	Header set X-Endurance-Cache-Level "2"
-	Header set X-nginx-cache "WordPress"
-</IfModule>
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
-</IfModule>
-
-# END WordPress
 
 # ================================================================
 # 301 REDIRECTS
+# IMPORTANT: These MUST stay ABOVE the "# BEGIN WordPress" block.
+# WordPress ends with `RewriteRule . /index.php [L]`, which catches any
+# non-existent URL and stops rewrite processing — so redirects placed
+# after it never run for pages that don't exist as files.
 # ================================================================
 
 # --- Boston web design consolidation → web-design-company-boston-ma.html ---
@@ -163,6 +131,40 @@ RewriteRule ^disenador-paginas-web-freelancer-boston-off\.html$ https://gdproweb
 
 RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
 RewriteRule ^chelsea-ma-disenador-web-wordpress-NO-USE\.html$ https://gdprowebdesigns.com/chelsea-ma-disenador-web-wordpress.html [R=301,L]
+
+# BEGIN WordPress
+# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+<IfModule mod_expires.c>
+	ExpiresActive On
+	ExpiresByType image/jpg "access plus 24 hours"
+	ExpiresByType image/jpeg "access plus 24 hours"
+	ExpiresByType image/gif "access plus 24 hours"
+	ExpiresByType image/png "access plus 24 hours"
+	ExpiresByType text/css "access plus 24 hours"
+	ExpiresByType application/pdf "access plus 1 week"
+	ExpiresByType text/javascript "access plus 24 hours"
+	ExpiresByType text/html "access plus 2 hours"
+	ExpiresByType image/x-icon "access plus 1 year"
+	ExpiresDefault "access plus 24 hours"
+</IfModule>
+Options -Indexes
+<IfModule mod_headers.c>
+	Header set X-Endurance-Cache-Level "2"
+	Header set X-nginx-cache "WordPress"
+</IfModule>
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
 
 # php -- BEGIN cPanel-generated handler, do not edit
 # Set the “ea-php80” package as the default “PHP” programming language.

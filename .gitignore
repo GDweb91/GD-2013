@@ -30,3 +30,6 @@ node_modules/
 # --- Personal reference docs (local only — never commit) ---
 *.pdf
 git-guide-to-create-repo-on-terminal.txt
+
+# --- gd-blog mu-plugin staging (deploys to gd-blog WP install on server, not tracked here) ---
+gd-blog-mu-plugins/

@@ -89,13 +89,13 @@ RewriteRule ^web-designer-developer-for-small-business-boston-ma\.html$ https://
 RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
 RewriteRule ^web-dsigner-developer-for-small-business-boston-ma\.html$ https://gdprowebdesigns.com/gd-blog/web-developer-ma/ [R=301,L]
 
-# --- SEO pages — canonical is organic-SEO-everett-ma.html ---
+# --- SEO pages — canonical is seo-services-everett-ma.html ---
 # FIX: was previously redirecting organic-SEO-everett-ma.html → seo-services-everett-ma.html (wrong direction)
 RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
-RewriteRule ^seo-services-everett-ma\.html$ https://gdprowebdesigns.com/organic-SEO-everett-ma.html [R=301,L]
+RewriteRule ^organic-SEO-everett-ma\.html$ https://gdprowebdesigns.com/seo-services-everett-ma.html [R=301,L]
 
 RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
-RewriteRule ^everett-ma-local-seo-services\.html$ https://gdprowebdesigns.com/organic-SEO-everett-ma.html [R=301,L]
+RewriteRule ^everett-ma-local-seo-services\.html$ https://gdprowebdesigns.com/seo-services-everett-ma.html [R=301,L]
 
 # --- Local marketing — FIX: was missing domain in redirect target ---
 RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$

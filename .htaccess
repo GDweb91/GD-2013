@@ -149,6 +149,14 @@ RewriteRule ^gd-blog/service-area/newton/$ https://gdprowebdesigns.com/newton-ma
 RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
 RewriteRule ^shopify-developer-boston-ma-ecommerce\.html$ https://gdprowebdesigns.com/shopify/shopify-developer-boston-ma-ecommerce.html [R=301,L]
 
+# --- Consolidate duplicate "near me" pages into one canonical page ---
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^website-designer-near-me\.html$ https://gdprowebdesigns.com/local-website-developer-near-me.html [R=301,L]
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^website-developer-near-me\.html$ https://gdprowebdesigns.com/local-website-developer-near-me.html [R=301,L]
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^wordpress-developer-near-me\.html$ https://gdprowebdesigns.com/local-website-developer-near-me.html [R=301,L]
+
 # --- Archived Spanish pages ---
 RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
 RewriteRule ^disenador-paginas-web-freelancer-boston-off\.html$ https://gdprowebdesigns.com/disenador-paginas-web-freelancer-boston.html [R=301,L]

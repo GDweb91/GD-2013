@@ -16,7 +16,7 @@ SKIP = {
     'web-design-Boston-MA.html',
     'web-designer-developer-for-small-business-boston-ma.html',
     'web-dsigner-developer-for-small-business-boston-ma.html',
-    'seo-services-everett-ma.html',  # redirect stub
+    'seo-services-everett-ma.html',  # redirect stub → organic-SEO-everett-ma.html
 }
 
 # Which nav section gets active-page per page
@@ -128,7 +128,7 @@ def nav_en(section):
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle{m}" href="#" id="ddMarketing" role="button" data-bs-toggle="dropdown" aria-expanded="false">Marketing</a>
           <ul class="dropdown-menu" aria-labelledby="ddMarketing">
-            <li><a class="dropdown-item" href="seo-services-everett-ma.html">SEO Everett, MA</a></li>
+            <li><a class="dropdown-item" href="organic-SEO-everett-ma.html">SEO Everett, MA</a></li>
             <li><a class="dropdown-item" href="organic-search-engine-optimization-boston.html">Search Engine Optimization</a></li>
             <li><a class="dropdown-item" href="PPC-adwords-advertising-boston.html">Google Ads Management</a></li>
             <li><a class="dropdown-item" href="local-marketing-company-everett-malden-medford-revere-saugus-ma.html">Local Internet Marketing</a></li>
@@ -199,7 +199,7 @@ def nav_es():
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="ddMarketing" role="button" data-bs-toggle="dropdown" aria-expanded="false">Marketing</a>
           <ul class="dropdown-menu" aria-labelledby="ddMarketing">
-            <li><a class="dropdown-item" href="seo-services-everett-ma.html">SEO Everett, MA</a></li>
+            <li><a class="dropdown-item" href="organic-SEO-everett-ma.html">SEO Everett, MA</a></li>
             <li><a class="dropdown-item" href="organic-search-engine-optimization-boston.html">Optimización SEO</a></li>
             <li><a class="dropdown-item" href="PPC-adwords-advertising-boston.html">Google Ads</a></li>
             <li><a class="dropdown-item" href="local-marketing-company-everett-malden-medford-revere-saugus-ma.html">Marketing Local</a></li>

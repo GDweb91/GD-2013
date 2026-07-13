@@ -154,12 +154,14 @@ GD-2013/
 │   ├── style.css                 # Legacy full stylesheet
 │   ├── style.min.css             # Minified legacy styles
 │   ├── bootstrap.min.css         # Local Bootstrap copy (legacy)
-│   └── feedback.css              # Feedback tab widget styles
+│   ├── feedback.css              # Feedback tab widget styles
+│   └── phone-protect.css         # Sticky Call Now bar + phone-num placeholder styles (loaded on every page)
 │
 ├── js/
 │   ├── custom.js                 # Site-specific JavaScript
 │   ├── custom-OLD.js             # Archived old JS
 │   ├── feedback.js               # Feedback tab widget
+│   ├── phone-protect.js          # Decodes obfuscated tel: links + sticky call bar (vanilla JS, loaded on every page)
 │   ├── jquery-1.7.1.min.js       # jQuery
 │   ├── bootstrap.bundle.min.js
 │   ├── popper.js
@@ -212,7 +214,8 @@ GD-2013/
 │   └── index-styles.css          # Archive of the original index.html <style> block (moved to custom.css)
 ├── scripts/
 │   ├── fix_navs.py               # Standardizes #mainNav across all 55 pages — run after any nav change
-│   └── fix_inline_styles.py      # Replaces inline style="" attributes with CSS utility classes — run after any new inline style discovery
+│   ├── fix_inline_styles.py      # Replaces inline style="" attributes with CSS utility classes — run after any new inline style discovery
+│   └── fix_phone_protection.py   # Obfuscates tel: links + injects sticky Call Now bar — run after any new page or if a raw tel:6177710645 link reappears
 ├── node_modules/                 # npm packages (Font Awesome, etc.)
 │
 ├── .htaccess                     # Apache: redirects, caching, HTTPS, security
@@ -401,6 +404,34 @@ If you ever need to change a nav item (add a link, rename, reorder), **do not ed
 
 ---
 
+## Phone Number Protection & Sticky Call Bar
+
+The `tel:6177710645` link used to appear as raw, plain-text HTML on every page (hero section, footer "About" blurb, footer contact row). Because it's the exact same static string on ~70 public pages, it was trivial for phone-harvesting scrapers to crawl and add to robocall/spam-call lists — this is the #1 cause of the daily spam calls to (617) 771-0645.
+
+**How it's fixed:** every live page now loads `css/phone-protect.css` and `js/phone-protect.js` (vanilla JS, no jQuery dependency, so it works on both modern and legacy pages). Instead of a plain `<a href="tel:6177710645">(617) 771-0645</a>`, the HTML source contains:
+
+```html
+<a href="#" data-tel="5460177716" aria-label="Call GD Pro Web Designs">
+  <span class="phone-num"></span>
+</a>
+```
+
+`data-tel` holds the digits **reversed** (`5460177716`), and the visible `<span class="phone-num">` is empty in the source. On `DOMContentLoaded`, `phone-protect.js` reverses the digits back, sets the real `href="tel:6177710645"`, and fills in the formatted number — so real visitors on any JS-enabled browser see and can tap/click the number exactly as before, but the raw digits never appear anywhere in the page's static HTML source. This defeats the simple regex/HTML-scraping bots that harvest `tel:` links at scale (the common source of robocall lists) without needing a CAPTCHA or hiding the number from real users.
+
+Any label text in the same anchor (e.g. `Llámenos al `, `Tel: `) is preserved outside the `<span>` — only the digit run itself is replaced.
+
+**Left untouched on purpose:**
+- The `"telephone"` field in the homepage's `ProfessionalService` JSON-LD — required for Local SEO / Google Business Profile NAP matching.
+- Phone mentions inside `<meta name="description">` tags — these show up in the Google search snippet and are a legitimate, deliberate CTR driver, not a scraping vector at the same scale as a repeated visible `tel:` link.
+
+**Trade-off:** the number is invisible to non-JS clients (very rare in practice; the site already depends on JS for GTM, nav, Bootstrap, etc.). There is intentionally no `<noscript>` fallback, because a `<noscript>` block still contains the raw digits in the static HTML source and would defeat the whole point.
+
+**Sticky Call Bar:** a fixed-to-bottom bar (`#stickyCallBar`, gold `.sticky-call-btn` with a pulse animation) is injected before `</body>` on every page. It's hidden at the top of the page and fades in once the visitor scrolls down more than 400px (`phone-protect.js`), giving persistent access to a "Call Now" button — the nav bar itself has no phone number. It reuses the same `data-tel` obfuscation pattern.
+
+**Script:** `scripts/fix_phone_protection.py` — rewrites every `<a href="tel:6177710645">` anchor site-wide into the obfuscated pattern above, and injects the `phone-protect.css`/`.js` includes plus the sticky bar markup before `</head>`/`</body>`. It's idempotent (safe to re-run) and skips `archive/`, `node_modules/`, and the Google Search Console verification stub pages. Run `python3 scripts/fix_phone_protection.py` from the site root whenever a new page is added or a raw `tel:6177710645` link reappears (e.g. pasted in from an old template).
+
+---
+
 ## SEO Architecture
 
 ### Structured Data (JSON-LD) on Homepage
@@ -506,6 +537,7 @@ The static HTML `.htaccess` includes the WordPress mod_rewrite block so WP can f
 10. **Spanish pages**: `inicio.html` has its own fully Spanish nav (see Navigation Structure above). Other Spanish pages (disenador-*, chelsea-ma-disenador-*, etc.) use the standard English nav with the ES toggle.
 11. **No inline styles**: Use the utility classes in `css/custom.css` instead of `style=""` attributes. If a new repeated style pattern is needed, add it as a class to `custom.css` and run `scripts/fix_inline_styles.py` to apply it site-wide.
 12. **301 redirects**: Any URL change must be accompanied by a `.htaccess` 301 redirect entry from old slug to new slug.
+13. **Phone number**: Never write a raw `<a href="tel:6177710645">(617) 771-0645</a>`. Use the obfuscated pattern from the Phone Number Protection section above, or just run `scripts/fix_phone_protection.py` after pasting in a new page — it will fix any raw tel: links automatically.
 
 ---
 

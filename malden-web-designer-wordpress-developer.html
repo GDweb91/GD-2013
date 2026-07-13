@@ -31,6 +31,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/custom.css">
+<link rel="stylesheet" href="css/phone-protect.css">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -118,7 +119,7 @@
           <a href="/gd-blog/contact-us" class="btn-gold"><i class="fas fa-comments me-1"></i> Free Consultation</a>
           <a href="portfolio-website-design-development-boston-ma.html" class="btn-outline-gold">See Our Work</a>
         </div>
-        <p class="hero-phone"><i class="fas fa-phone-alt me-1"></i> Call or Text: <a href="tel:6177710645">(617) 771-0645</a></p>
+        <p class="hero-phone"><i class="fas fa-phone-alt me-1"></i> Call or Text: <a href="#" data-tel="5460177716" aria-label="Call GD Pro Web Designs"><span class="phone-num"></span></a></p>
         <div class="hero-tag-row">
           <span class="hero-tag"><i class="fas fa-check-circle"></i> Custom WordPress Sites</span>
           <span class="hero-tag"><i class="fas fa-check-circle"></i> Local SEO Services</span>
@@ -318,7 +319,7 @@
     <p class="section-sub on-dark mx-auto">Tell us about your business and we'll send a free quote. No pressure, no obligation — just straight answers about what your website needs.</p>
     <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
       <a href="/gd-blog/contact-us" class="btn-gold"><i class="fas fa-comments me-1"></i> Free Consultation</a>
-      <a href="tel:6177710645" class="btn-outline-gold"><i class="fas fa-phone me-1"></i> (617) 771-0645</a>
+      <a href="#" data-tel="5460177716" class="btn-outline-gold" aria-label="Call GD Pro Web Designs"><i class="fas fa-phone me-1"></i> <span class="phone-num"></span></a>
     </div>
   </div>
 </section>
@@ -367,7 +368,7 @@
       <div class="col-lg-4">
         <h6 class="f-heading">Contact</h6>
         <div class="f-contact-row"><i class="fas fa-map-marker-alt"></i><span>Everett, Massachusetts — Serving Greater Boston &amp; nationwide</span></div>
-        <div class="f-contact-row"><i class="fas fa-phone"></i><a href="tel:6177710645">(617) 771-0645</a></div>
+        <div class="f-contact-row"><i class="fas fa-phone"></i><a href="#" data-tel="5460177716" aria-label="Call GD Pro Web Designs"><span class="phone-num"></span></a></div>
         <div class="f-contact-row"><i class="fas fa-envelope"></i><a href="/gd-blog/contact-us">Free consultation request</a></div>
         <div class="f-contact-row"><i class="fas fa-comment-dots"></i><a href="inicio.html">Hablamos Español / Diseño Web</a></div>
         <div class="mt-3">
@@ -469,5 +470,11 @@
   ]
 }
 </script>
+<script src="js/phone-protect.js" defer></script>
+<div class="sticky-call-bar" id="stickyCallBar">
+  <a href="#" data-tel="5460177716" class="sticky-call-btn" aria-label="Call GD Pro Web Designs now">
+    <i class="fas fa-phone-alt"></i> Call Now
+  </a>
+</div>
 </body>
 </html>

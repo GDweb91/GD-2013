@@ -39,6 +39,7 @@
 
 	<!-- HTML5 video player -->
 	
+<link rel="stylesheet" href="../css/phone-protect.css">
 </head>
 <body>
 
@@ -58,7 +59,7 @@
 			<a href="../index.html" id="logo">
 			<img src="../img/tmp-imgs/newlogo-gray-yellow-shadow2020.svg" width="300" height="120" title="Freelance Wordpress Developer" alt="Boston Web Designer">
 		    </a>
-			<p><span class="infobox2"> Tel: <a href="tel:6177710645">617-771-0645</a> </span></p>
+			<p><span class="infobox2"> Tel: <a href="#" data-tel="5460177716" aria-label="Call GD Pro Web Designs"><span class="phone-num"></span></a> </span></p>
 		</div>
 		<div class="container align-center"> 
 			<nav id="main-nav">
@@ -373,5 +374,11 @@
 	<script src="../js/jquery.touchSwipe.min.js"></script>
 	<script src="../js/custom.js"></script>
 <!--<![endif]-->
+<script src="../js/phone-protect.js" defer></script>
+<div class="sticky-call-bar" id="stickyCallBar">
+  <a href="#" data-tel="5460177716" class="sticky-call-btn" aria-label="Call GD Pro Web Designs now">
+    <i class="fas fa-phone-alt"></i> Call Now
+  </a>
+</div>
 </body>
 </html>

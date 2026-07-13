@@ -1,7 +1,45 @@
 {
   "permissions": {
     "allow": [
-      "Bash(xargs -I{} basename {})"
+      "Bash(python3 -m json.tool)",
+      "Bash(npm search *)",
+      "Bash(npx --yes @modelcontextprotocol/server-google-search-console --help)",
+      "Bash(pip3 show *)",
+      "Bash(pip3 search *)",
+      "Bash(npm list *)",
+      "Bash(npx gsc-mcp *)",
+      "Bash(npx mcp-gsc *)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d.get\\('mcpServers',{}\\), indent=2\\)\\)\")",
+      "Bash(mkdir -p ~/gd-mcp-server)",
+      "Read(//Users/jaarmira/**)",
+      "Bash(npm install *)",
+      "Bash(node --input-type=module)",
+      "Bash(\"/Users/gdwebpros/Local Sites/gd-blog/app/public\")",
+      "Bash(wp option *)",
+      "WebFetch(domain:gd-blog.local)",
+      "Bash(curl *)",
+      "Bash(python3 -c ' *)",
+      "Bash(awk 'NR==FNR{next}' organic-SEO-everett-ma.html)",
+      "Bash(python3 scripts/fix_phone_protection.py)",
+      "Bash(npx --version)",
+      "Read(//Applications/**)",
+      "Bash(python3 -c \"import playwright\")",
+      "Bash(node -e ' *)",
+      "Read(//private/tmp/**)",
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --dump-dom --virtual-time-budget=3000 \"http://localhost:8934/index.html\")",
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --screenshot=/tmp/hero-top.png --window-size=430,900 --virtual-time-budget=3000 \"http://localhost:8934/index.html\")",
+      "Read(//tmp/**)",
+      "Bash(pkill -f \"http.server 8934\")",
+      "Bash(rm -f /tmp/hero-top.png)",
+      "Bash(awk '{print $1}')",
+      "Bash(awk -F'|' '{n=$2+0; if\\(n>10\\) print}')",
+      "Bash(git add *)",
+      "Bash(python3 /tmp/reconcile_phone_protection.py)",
+      "Bash(git commit -m ' *)",
+      "Bash(grep -rl \"contact-thanks\" --include=\"*.html\" --include=\"*.php\" .htaccess)",
+      "Bash(awk '{add=$1; del=$2; file=$3; ratio = \\(del>add && del>20\\) ? \"SUSPECT-REGRESSION\" : \"\"; print add, del, ratio, file}')",
+      "Bash(sort -k2 -rn)",
+      "Bash(git checkout *)"
     ]
   }
 }

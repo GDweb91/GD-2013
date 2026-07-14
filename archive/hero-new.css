@@ -1,0 +1,165 @@
+/* Custom Utility Root Variables */
+:root {
+  --primary-color: #0066CC;    /* Vibrant Call to Action Blue */
+  --dark-text: #1A1A1A;        /* Crisp Charcoal Typography */
+  --light-bg: #F9F9F9;         /* Clean background slate */
+  --white: #FFFFFF;
+  --border-radius: 8px;
+}
+
+.hero-section {
+  background-color: var(--white);
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Left Content Column */
+.hero-content {
+  flex: 1.2;
+}
+
+.hero-badge {
+  background-color: #E6F0FA;
+  color: var(--primary-color);
+  padding: 6px 12px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  border-radius: 20px;
+  letter-spacing: 1px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  color: var(--dark-text);
+  line-height: 1.15;
+  margin: 20px 0;
+  font-weight: 800;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: #555555;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 15px;
+}
+
+/* Forms Card Layout on the Right */
+.hero-form-wrapper {
+  flex: 0.8;
+}
+
+.hero-form-card {
+  background-color: var(--light-bg);
+  padding: 35px;
+  border-radius: var(--border-radius);
+  border: 1px solid #E0E0E0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.hero-form-card h3 {
+  font-size: 1.5rem;
+  color: var(--dark-text);
+  margin-bottom: 5px;
+}
+
+.hero-form-card p {
+  color: #666666;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--dark-text);
+}
+
+.form-group input {
+  padding: 12px;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Button UI Engine */
+.btn {
+  padding: 14px 28px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s ease-in-out;
+  text-align: center;
+}
+
+.btn-primary, .btn-submit {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+}
+
+.btn-primary:hover, .btn-submit:hover {
+  background-color: #004C99;
+}
+
+.btn-secondary {
+  border: 2px solid var(--dark-text);
+  color: var(--dark-text);
+}
+
+.btn-secondary:hover {
+  background-color: var(--dark-text);
+  color: var(--white);
+}
+
+.btn-submit {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.form-disclaimer {
+  display: block;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #888888;
+  margin-top: 15px;
+}
+
+/* Responsive Structural Breakdown */
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .hero-title {
+    font-size: 2.3rem;
+  }
+}

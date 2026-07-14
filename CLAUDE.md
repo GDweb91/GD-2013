@@ -120,6 +120,18 @@ Free stock sources: mixkit.co or pexels.com (search "boston", "web design", "dig
 1. **Modern** (`css/custom.css`): Used on redesigned pages (`index.html`, newer service/location pages). Bootstrap 5.3, Inter/Poppins, CSS custom properties, card components, `.btn-gold`, `.section-badge`, `.area-badge`.
 2. **Legacy** (`css/style.css` / `css/style.min.css`): Used on older pages. Bootstrap 4/5.0.1, Josefin Sans, custom-built grid, `.focus-bg` header style.
 
+### Global Link Color
+
+`css/custom.css` (near the top, ~line 38) sets:
+```css
+a {
+    color: var(--primary);
+}
+```
+This overrides Bootstrap's default blue/underlined link style — it works with **no `!important`** because `custom.css` loads after Bootstrap's CDN stylesheet in `<head>`, so it already wins on source order at equal specificity, while still correctly losing to any more-specific selector (`.nav-link`, `.dropdown-item`, `.area-pill.featured`, `.btn-gold`, `.arrow-link`, etc.).
+
+**Do not add `!important` to this rule.** Several nav/badge components (e.g. `#mainNav .dropdown-item`, `.area-pill.featured`) intentionally set white text with no `!important`, relying on normal specificity to win over the plain `a` rule. Adding `!important` here forces those back to dark teal text on a dark teal background — invisible.
+
 ### Utility Classes (Extracted Inline Styles)
 
 These classes live in the `/* EXTRACTED INLINE STYLES */` block near the bottom of `css/custom.css`. Use them instead of `style=""` attributes:

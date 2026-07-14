@@ -281,7 +281,6 @@ GD-2013/
 | `freelance-wordpress-website-designer-ma.html` | WordPress designer |
 | `small-business-web-developer-web-designer-boston-ma.html` | Small business |
 | `local-website-developer-near-me.html` | Near me targeting |
-| `boston-webdesign-for-non-profits.html` | Non-profit design |
 | `web-design-for-restaurants-boston-ma.html` | Restaurant design |
 | `portfolio-website-design-development-boston-ma.html` | Web portfolio |
 | `portfolio-graphics-design-boston-everett-ma.html` | Graphic design portfolio |
@@ -330,6 +329,9 @@ GD-2013/
 - `contact-gd-website-design-estimates.html` → contact page stub
 - `contacts.html` → contact page stub
 - `contact-thanks.html` → contact thank-you stub
+
+### Deactivated Pages (orphaned, no live links, kept as `-off.html`)
+- `boston-webdesign-for-non-profits-off.html` — formerly `boston-webdesign-for-non-profits.html` (Non-profit web design). The live filename was deleted with no `.htaccess` 301 added yet, so the old URL currently 404s instead of redirecting — add a redirect rule (matching the `disenador-paginas-web-freelancer-boston-off.html` pattern) if the old URL still has inbound links/backlinks.
 
 ---
 
@@ -409,6 +411,8 @@ If you ever need to change a nav item (add a link, rename, reorder), **do not ed
 2. Edit `nav_en()` / `nav_es()` functions and the `ACTIVE` mapping in `scripts/fix_navs.py`
 3. Run `python3 scripts/fix_navs.py` from the site root — it replaces the `<nav id="mainNav">` block on all 55 pages in one pass
 
+Both `fix_navs.py` and `fix_inline_styles.py` derive the site root from their own file location (`os.path.dirname(os.path.dirname(os.path.abspath(__file__)))`) rather than a hardcoded path, so they run correctly regardless of where the project folder lives on disk (e.g. after the iCloud Drive move).
+
 **Language toggle icon:** The ES/EN toggle renders its language icon via the `.nav-lang::before` CSS pseudo-element in `custom.css` (needed for WP nav menus where `<i>` tags can't be added). The HTML nav template uses plain text only — `ES` / `EN` — with no `<i>` tag. Adding an `<i class="fas fa-language">` tag alongside `.nav-lang` will cause the icon to appear twice.
 
 **Pages intentionally skipped by the script** (redirect stubs with no real content):
@@ -431,6 +435,8 @@ The `tel:6177710645` link used to appear as raw, plain-text HTML on every page (
 `data-tel` holds the digits **reversed** (`5460177716`), and the visible `<span class="phone-num">` is empty in the source. On `DOMContentLoaded`, `phone-protect.js` reverses the digits back, sets the real `href="tel:6177710645"`, and fills in the formatted number — so real visitors on any JS-enabled browser see and can tap/click the number exactly as before, but the raw digits never appear anywhere in the page's static HTML source. This defeats the simple regex/HTML-scraping bots that harvest `tel:` links at scale (the common source of robocall lists) without needing a CAPTCHA or hiding the number from real users.
 
 Any label text in the same anchor (e.g. `Llámenos al `, `Tel: `) is preserved outside the `<span>` — only the digit run itself is replaced.
+
+**GA4 click tracking:** `phone-protect.js` also attaches a `click` listener to every obfuscated phone anchor that pushes a `phone_click` event to `window.dataLayer` (`{ event: 'phone_click', phone_number, click_location: 'sticky_bar' | 'page_content', page_path }`). This feeds the `click_to_call` GA4 Key Event — see the GA4 event tracking status memory for current setup state.
 
 **Left untouched on purpose:**
 - The `"telephone"` field in the homepage's `ProfessionalService` JSON-LD — required for Local SEO / Google Business Profile NAP matching.

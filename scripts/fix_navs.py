@@ -1,6 +1,6 @@
 import os, re
 
-SITE = '/Users/gdwebpros/Sites/GD-2013'
+SITE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SKIP = {
     'index.html',  # canonical source — don't touch

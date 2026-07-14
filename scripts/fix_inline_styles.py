@@ -1,6 +1,6 @@
 import os, re
 
-SITE = '/Users/gdwebpros/Sites/GD-2013'
+SITE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP = {
     'boston-web-design-development-company.html', 'contact-gd-website-design-estimates.html',
     'contact-thanks.html', 'contacts.html', 'everett-ma-local-seo-services.html',

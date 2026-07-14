@@ -17,6 +17,16 @@
       } else if (!el.textContent.trim()) {
         el.textContent = formatted;
       }
+
+      el.addEventListener('click', function () {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'phone_click',
+          phone_number: digits,
+          click_location: el.closest('#stickyCallBar') ? 'sticky_bar' : 'page_content',
+          page_path: window.location.pathname
+        });
+      });
     });
   }
 

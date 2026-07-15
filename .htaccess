@@ -125,6 +125,15 @@ RewriteRule ^website-developer-near-me\.html$ https://gdprowebdesigns.com/local-
 RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
 RewriteRule ^wordpress-developer-near-me\.html$ https://gdprowebdesigns.com/local-website-developer-near-me.html [R=301,L]
 
+# --- WordPress/freelance developer consolidation → wordpress-developer-boston-ma.html ---
+# Both pages cannibalized the same "wordpress developer boston" keyword cluster with
+# a fraction of the impressions; content merged into the flagship page.
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^freelance-web-developer-boston-ma\.html$ https://gdprowebdesigns.com/wordpress-developer-boston-ma.html [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^freelance-wordpress-website-designer-ma\.html$ https://gdprowebdesigns.com/wordpress-developer-boston-ma.html [R=301,L]
+
 # --- Archived Spanish pages ---
 RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
 RewriteRule ^disenador-paginas-web-freelancer-boston-off\.html$ https://gdprowebdesigns.com/disenador-paginas-web-freelancer-boston.html [R=301,L]

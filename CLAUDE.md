@@ -277,8 +277,6 @@ GD-2013/
 | `wordpress-maintenance-boston-ma.html` | WordPress maintenance |
 | `fix-wordpress-issues-boston-ma.html` | WordPress troubleshooting |
 | `freelance-web-designer-developer-boston-ma.html` | Freelance designer |
-| `freelance-web-developer-boston-ma.html` | Freelance developer |
-| `freelance-wordpress-website-designer-ma.html` | WordPress designer |
 | `small-business-web-developer-web-designer-boston-ma.html` | Small business |
 | `local-website-developer-near-me.html` | Near me targeting |
 | `web-design-for-restaurants-boston-ma.html` | Restaurant design |
@@ -319,13 +317,15 @@ GD-2013/
 
 ### Redirect Stub Pages (301 targets in .htaccess, kept for legacy links)
 - `boston-web-design-development-company.html` → `web-design-company-boston-ma.html`
-- `seo-services-everett-ma.html` → `organic-SEO-everett-ma.html`
+- `seo-services-everett-ma.html` → `organic-SEO-everett-ma.html` (2026-07-15: confirmed correct direction — the live server had this backwards for an unknown period, redirecting `organic-SEO-everett-ma.html` → `seo-services-everett-ma.html` instead, silently killing the page's own search visibility. `organic-SEO-everett-ma.html` is the one every page's nav links to and the one GSC shows with real impressions (7,333 vs. 302 over trailing 12mo) — confirmed via a live `.htaccess` pulled from the server and diffed against this repo. Fixed by re-uploading this repo's `.htaccess`.)
 - `everett-ma-local-seo-services.html` → `organic-SEO-everett-ma.html`
 - `web-design-Boston-MA.html` → `web-design-company-boston-ma.html`
 - `responsive-web-design-development-boston-ma.html` → `web-design-company-boston-ma.html`
 - `local-marketing-boston-...ma.html` → `local-marketing-company-...ma.html`
 - `web-designer-developer-for-small-business-boston-ma.html` → `/gd-blog/web-developer-ma/`
 - `web-dsigner-developer-for-small-business-boston-ma.html` → `/gd-blog/web-developer-ma/` (typo URL)
+- `freelance-web-developer-boston-ma.html` → `wordpress-developer-boston-ma.html` (2026-07-15: consolidated — cannibalized the same "wordpress developer boston" query cluster with a fraction of the flagship page's impressions; canonical had already drifted to `/gd-blog/web-developer-ma/` before this fix)
+- `freelance-wordpress-website-designer-ma.html` → `wordpress-developer-boston-ma.html` (2026-07-15: consolidated — near-zero search visibility, legacy unredesigned template, fully overlapping WordPress design/dev/troubleshooting content)
 - `contact-gd-website-design-estimates.html` → contact page stub
 - `contacts.html` → contact page stub
 - `contact-thanks.html` → contact thank-you stub
@@ -349,7 +349,7 @@ Services ▾
   ├── Graphic Design          → graphics-designer-logos-boston.html
   └── Digital Signage         → /gd-blog/digital-signage-solutions/ (WP)
 Marketing ▾
-  ├── SEO Everett, MA         → seo-services-everett-ma.html
+  ├── SEO Everett, MA         → organic-SEO-everett-ma.html
   ├── Search Engine Optimization → organic-search-engine-optimization-boston.html
   ├── Google Ads Management   → PPC-adwords-advertising-boston.html
   ├── Local Internet Marketing → local-marketing-company-everett-malden-medford-revere-saugus-ma.html
@@ -375,7 +375,7 @@ Servicios ▾
   ├── Diseño Gráfico          → graphics-designer-logos-boston.html
   └── Señalización Digital    → /gd-blog/digital-signage-solutions/ (WP)
 Marketing ▾
-  ├── SEO Everett, MA         → seo-services-everett-ma.html
+  ├── SEO Everett, MA         → organic-SEO-everett-ma.html
   ├── Optimización SEO        → organic-search-engine-optimization-boston.html
   ├── Google Ads              → PPC-adwords-advertising-boston.html
   ├── Marketing Local         → local-marketing-company-everett-malden-medford-revere-saugus-ma.html
@@ -416,7 +416,7 @@ Both `fix_navs.py` and `fix_inline_styles.py` derive the site root from their ow
 **Language toggle icon:** The ES/EN toggle renders its language icon via the `.nav-lang::before` CSS pseudo-element in `custom.css` (needed for WP nav menus where `<i>` tags can't be added). The HTML nav template uses plain text only — `ES` / `EN` — with no `<i>` tag. Adding an `<i class="fas fa-language">` tag alongside `.nav-lang` will cause the icon to appear twice.
 
 **Pages intentionally skipped by the script** (redirect stubs with no real content):
-`boston-web-design-development-company.html`, `contact-*.html`, `contacts.html`, `everett-ma-local-seo-services.html`, `google*.html`, `local-marketing-boston-...html`, `responsive-web-design-*.html`, `web-design-Boston-MA.html`, `web-d*signer-developer-for-small-business-*.html`, `seo-services-everett-ma.html`
+`boston-web-design-development-company.html`, `contact-*.html`, `contacts.html`, `everett-ma-local-seo-services.html`, `google*.html`, `local-marketing-boston-...html`, `responsive-web-design-*.html`, `web-design-Boston-MA.html`, `web-d*signer-developer-for-small-business-*.html`, `seo-services-everett-ma.html`, `freelance-web-developer-boston-ma.html`, `freelance-wordpress-website-designer-ma.html`
 
 ---
 

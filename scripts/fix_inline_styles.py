@@ -9,6 +9,8 @@ SKIP = {
     'responsive-web-design-development-boston-ma.html', 'web-design-Boston-MA.html',
     'web-designer-developer-for-small-business-boston-ma.html',
     'web-dsigner-developer-for-small-business-boston-ma.html',
+    'freelance-web-developer-boston-ma.html',
+    'freelance-wordpress-website-designer-ma.html',
 }
 
 def add_class_to_tag(content, style_str, new_class):

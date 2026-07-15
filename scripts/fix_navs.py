@@ -17,6 +17,8 @@ SKIP = {
     'web-designer-developer-for-small-business-boston-ma.html',
     'web-dsigner-developer-for-small-business-boston-ma.html',
     'seo-services-everett-ma.html',  # redirect stub → organic-SEO-everett-ma.html
+    'freelance-web-developer-boston-ma.html',  # redirect stub → wordpress-developer-boston-ma.html
+    'freelance-wordpress-website-designer-ma.html',  # redirect stub → wordpress-developer-boston-ma.html
 }
 
 # Which nav section gets active-page per page
@@ -27,8 +29,6 @@ ACTIVE = {
     'web-design-company-boston-ma.html': 'services',
     'graphics-designer-logos-boston.html': 'services',
     'freelance-web-designer-developer-boston-ma.html': 'services',
-    'freelance-web-developer-boston-ma.html': 'services',
-    'freelance-wordpress-website-designer-ma.html': 'services',
     'web-design-for-restaurants-boston-ma.html': 'services',
     'boston-webdesign-for-non-profits.html': 'services',
     'fix-wordpress-issues-boston-ma.html': 'services',

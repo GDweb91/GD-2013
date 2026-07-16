@@ -115,7 +115,10 @@
       "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --screenshot=\"/private/tmp/claude-502/-Users-gdwebpros-Library-Mobile-Documents-com-apple-CloudDocs-Sites-GD-2013/9d74d875-8806-4c9e-871b-8f97b9b12473/scratchpad/wal-full2.png\" --window-size=1440,15000 --hide-scrollbars \"http://localhost:8126/Waltham-MA-freelance-web-designer.html\")",
       "Bash(pkill -f \"http.server 8126\")",
       "Bash(cp lynn-ma-disenador-sitios-web-wordpress.html /tmp/lynn_backup_check.html)",
-      "Bash(mv /tmp/lynn_full_new.html lynn-ma-disenador-sitios-web-wordpress.html)"
+      "Bash(mv /tmp/lynn_full_new.html lynn-ma-disenador-sitios-web-wordpress.html)",
+      "mcp__gsc-ga4__gsc_url_inspection",
+      "Bash(awk '{print $1, $2}')",
+      "Bash(sort -k2)"
     ]
   }
 }

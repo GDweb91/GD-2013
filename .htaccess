@@ -134,6 +134,16 @@ RewriteRule ^freelance-web-developer-boston-ma\.html$ https://gdprowebdesigns.co
 RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
 RewriteRule ^freelance-wordpress-website-designer-ma\.html$ https://gdprowebdesigns.com/wordpress-developer-boston-ma.html [R=301,L]
 
+# --- Small business web design consolidation → web-design-company-boston-ma.html ---
+# Cannibalized the same "web design + small business + Boston" keyword cluster as the
+# flagship page with 0 clicks / 294 impressions over 12 months; content merged in.
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^small-business-web-developer-web-designer-boston-ma\.html$ https://gdprowebdesigns.com/web-design-company-boston-ma.html [R=301,L]
+
+# --- Social media page retired, folded into local marketing ---
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^social-media-advertising\.html$ https://gdprowebdesigns.com/local-marketing-company-everett-malden-medford-revere-saugus-ma.html [R=301,L]
+
 # --- Archived Spanish pages ---
 RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
 RewriteRule ^disenador-paginas-web-freelancer-boston-off\.html$ https://gdprowebdesigns.com/disenador-paginas-web-freelancer-boston.html [R=301,L]

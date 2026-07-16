@@ -19,6 +19,7 @@ SKIP = {
     'seo-services-everett-ma.html',  # redirect stub → organic-SEO-everett-ma.html
     'freelance-web-developer-boston-ma.html',  # redirect stub → wordpress-developer-boston-ma.html
     'freelance-wordpress-website-designer-ma.html',  # redirect stub → wordpress-developer-boston-ma.html
+    'small-business-web-developer-web-designer-boston-ma.html',  # redirect stub → web-design-company-boston-ma.html
 }
 
 # Which nav section gets active-page per page
@@ -36,7 +37,6 @@ ACTIVE = {
     'wordpress-maintenance-boston-ma.html': 'services',
     'web-design-FAQ.html': 'services',
     'web-site-designs-Boston-MA.html': 'services',
-    'small-business-web-developer-web-designer-boston-ma.html': 'services',
     'local-website-developer-near-me.html': 'services',
     # location / service-area pages
     'somerville-ma-web-designer.html': 'services',
@@ -69,7 +69,6 @@ ACTIVE = {
     'SEO-company-chelsea-ma.html': 'marketing',
     'jamaica-plain-ma-local-seo-services.html': 'marketing',
     'PPC-adwords-advertising-boston.html': 'marketing',
-    'social-media-advertising.html': 'marketing',
     'local-marketing-company-everett-malden-medford-revere-saugus-ma.html': 'marketing',
     'digital-marketing-company-everett-malden-medford-revere-saugus-ma.html': 'marketing',
     'internet-marketing-services.html': 'marketing',
@@ -132,7 +131,7 @@ def nav_en(section):
             <li><a class="dropdown-item" href="organic-search-engine-optimization-boston.html">Search Engine Optimization</a></li>
             <li><a class="dropdown-item" href="PPC-adwords-advertising-boston.html">Google Ads Management</a></li>
             <li><a class="dropdown-item" href="local-marketing-company-everett-malden-medford-revere-saugus-ma.html">Local Internet Marketing</a></li>
-            <li><a class="dropdown-item" href="social-media-advertising.html">Social Media Integration</a></li>
+            <li><a class="dropdown-item" href="local-marketing-company-everett-malden-medford-revere-saugus-ma.html">Social Media Integration</a></li>
           </ul>
         </li>
 
@@ -203,7 +202,7 @@ def nav_es():
             <li><a class="dropdown-item" href="organic-search-engine-optimization-boston.html">Optimización SEO</a></li>
             <li><a class="dropdown-item" href="PPC-adwords-advertising-boston.html">Google Ads</a></li>
             <li><a class="dropdown-item" href="local-marketing-company-everett-malden-medford-revere-saugus-ma.html">Marketing Local</a></li>
-            <li><a class="dropdown-item" href="social-media-advertising.html">Redes Sociales</a></li>
+            <li><a class="dropdown-item" href="local-marketing-company-everett-malden-medford-revere-saugus-ma.html">Redes Sociales</a></li>
           </ul>
         </li>
 

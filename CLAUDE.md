@@ -271,13 +271,11 @@ GD-2013/
 | `digital-marketing-company-everett-malden-medford-revere-saugus-ma.html` | Digital marketing |
 | `internet-marketing-services.html` | Internet marketing |
 | `internet-marketing-local-marketing-everett-malden-medford-revere-saugus-ma.html` | Local marketing variant |
-| `social-media-advertising.html` | Social media |
 | `graphics-designer-logos-boston.html` | Graphic design & logos |
 | `wordpress-developer-boston-ma.html` | WordPress development |
 | `wordpress-maintenance-boston-ma.html` | WordPress maintenance |
 | `fix-wordpress-issues-boston-ma.html` | WordPress troubleshooting |
 | `freelance-web-designer-developer-boston-ma.html` | Freelance designer |
-| `small-business-web-developer-web-designer-boston-ma.html` | Small business |
 | `local-website-developer-near-me.html` | Near me targeting |
 | `web-design-for-restaurants-boston-ma.html` | Restaurant design |
 | `portfolio-website-design-development-boston-ma.html` | Web portfolio |
@@ -326,6 +324,8 @@ GD-2013/
 - `web-dsigner-developer-for-small-business-boston-ma.html` → `/gd-blog/web-developer-ma/` (typo URL)
 - `freelance-web-developer-boston-ma.html` → `wordpress-developer-boston-ma.html` (2026-07-15: consolidated — cannibalized the same "wordpress developer boston" query cluster with a fraction of the flagship page's impressions; canonical had already drifted to `/gd-blog/web-developer-ma/` before this fix)
 - `freelance-wordpress-website-designer-ma.html` → `wordpress-developer-boston-ma.html` (2026-07-15: consolidated — near-zero search visibility, legacy unredesigned template, fully overlapping WordPress design/dev/troubleshooting content)
+- `small-business-web-developer-web-designer-boston-ma.html` → `web-design-company-boston-ma.html` (2026-07-16: consolidated — 0 clicks / 294 impressions over trailing 12mo, near-identical title/H1 targeting to the flagship page ("web design + small business + Boston + WordPress"), and shared several cannibalized queries — e.g. "affordable web design boston" split across this page, the flagship, and `wordpress-developer-boston-ma.html`. Internal links from `web-design-company-boston-ma.html` and `web-site-designs-Boston-MA.html`, plus duplicate `sitemap.html`/`sitemap.xml` entries, repointed or removed)
+- `social-media-advertising.html` → `local-marketing-company-everett-malden-medford-revere-saugus-ma.html` (2026-07-16: page retired at the owner's request, moved to `archive/unsed-pages/`. The "Social Media Integration" / "Redes Sociales" nav item on all 55 pages now points at the local-marketing page instead of being removed, since social media promotion is already covered there. `scripts/fix_navs.py` updated and re-run to apply the new nav target site-wide; `sitemap.html`/`sitemap.xml` entries removed)
 - `contact-gd-website-design-estimates.html` → contact page stub
 - `contacts.html` → contact page stub
 - `contact-thanks.html` → contact thank-you stub
@@ -353,7 +353,7 @@ Marketing ▾
   ├── Search Engine Optimization → organic-search-engine-optimization-boston.html
   ├── Google Ads Management   → PPC-adwords-advertising-boston.html
   ├── Local Internet Marketing → local-marketing-company-everett-malden-medford-revere-saugus-ma.html
-  └── Social Media Integration → social-media-advertising.html
+  └── Social Media Integration → local-marketing-company-everett-malden-medford-revere-saugus-ma.html
 About ▾
   ├── About Us                → about-gd-freelance-web-designer-boston.html
   └── Service Area            → /gd-blog/service-area/ (WP)
@@ -379,7 +379,7 @@ Marketing ▾
   ├── Optimización SEO        → organic-search-engine-optimization-boston.html
   ├── Google Ads              → PPC-adwords-advertising-boston.html
   ├── Marketing Local         → local-marketing-company-everett-malden-medford-revere-saugus-ma.html
-  └── Redes Sociales          → social-media-advertising.html
+  └── Redes Sociales          → local-marketing-company-everett-malden-medford-revere-saugus-ma.html
 Nosotros ▾
   ├── Acerca de Nosotros      → acerca-de-gd-pro-web-designs-boston.html
   └── Área de Servicio        → /gd-blog/service-area/ (WP)
@@ -416,7 +416,7 @@ Both `fix_navs.py` and `fix_inline_styles.py` derive the site root from their ow
 **Language toggle icon:** The ES/EN toggle renders its language icon via the `.nav-lang::before` CSS pseudo-element in `custom.css` (needed for WP nav menus where `<i>` tags can't be added). The HTML nav template uses plain text only — `ES` / `EN` — with no `<i>` tag. Adding an `<i class="fas fa-language">` tag alongside `.nav-lang` will cause the icon to appear twice.
 
 **Pages intentionally skipped by the script** (redirect stubs with no real content):
-`boston-web-design-development-company.html`, `contact-*.html`, `contacts.html`, `everett-ma-local-seo-services.html`, `google*.html`, `local-marketing-boston-...html`, `responsive-web-design-*.html`, `web-design-Boston-MA.html`, `web-d*signer-developer-for-small-business-*.html`, `seo-services-everett-ma.html`, `freelance-web-developer-boston-ma.html`, `freelance-wordpress-website-designer-ma.html`
+`boston-web-design-development-company.html`, `contact-*.html`, `contacts.html`, `everett-ma-local-seo-services.html`, `google*.html`, `local-marketing-boston-...html`, `responsive-web-design-*.html`, `web-design-Boston-MA.html`, `web-d*signer-developer-for-small-business-*.html`, `seo-services-everett-ma.html`, `freelance-web-developer-boston-ma.html`, `freelance-wordpress-website-designer-ma.html`, `small-business-web-developer-web-designer-boston-ma.html`
 
 ---
 

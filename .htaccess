@@ -141,6 +141,10 @@ RewriteRule ^disenador-paginas-web-freelancer-boston-off\.html$ https://gdproweb
 RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
 RewriteRule ^chelsea-ma-disenador-web-wordpress-NO-USE\.html$ https://gdprowebdesigns.com/chelsea-ma-disenador-web-wordpress.html [R=301,L]
 
+# --- Local marketing — FIX: was missing domain in redirect target ---
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^internet-marketing-local-marketing-everett-malden-medford-revere-saugus-ma\.html$ https://gdprowebdesigns.com/local-marketing-company-everett-malden-medford-revere-saugus-ma.html [R=301,L]
+
 # BEGIN WordPress
 # The directives (lines) between "BEGIN WordPress" and "END WordPress" are
 # dynamically generated, and should only be modified via WordPress filters.

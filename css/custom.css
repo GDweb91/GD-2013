@@ -594,6 +594,20 @@ section { scroll-margin-top: 76px; }
   border: 3px solid rgba(255,186,0,.35);
 }
 .hero-img-card img { width: 100%; display: block; }
+.hero-quote-card {
+  background: rgba(255,255,255,.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+}
+.hero-quote-card h4 { font-family: var(--font-head); font-size: 1.15rem; color: var(--white); }
+.hero-quote-sub { color: rgba(255,255,255,.7); font-size: .9rem; }
+.hero-quote-card .btn-gold, .hero-quote-card .btn-outline-white { text-align: center; }
+.hero-quote-hr { border-color: rgba(255,255,255,.18); margin: 1.25rem 0; }
+.check-list.on-dark li { color: rgba(255,255,255,.75); }
+.check-list.on-dark li i { color: var(--accent); }
 
 /* ============================================================
    TRUST BAR

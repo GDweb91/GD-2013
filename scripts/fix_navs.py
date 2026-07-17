@@ -73,6 +73,7 @@ ACTIVE = {
     'digital-marketing-company-everett-malden-medford-revere-saugus-ma.html': 'marketing',
     'internet-marketing-services.html': 'marketing',
     'internet-marketing-local-marketing-everett-malden-medford-revere-saugus-ma.html': 'marketing',
+    'ai-search-visibility-audit-boston-ma.html': 'marketing',
     # about
     'about-gd-freelance-web-designer-boston.html': 'about',
     'acerca-de-gd-pro-web-designs-boston.html': 'about',
@@ -132,6 +133,7 @@ def nav_en(section):
             <li><a class="dropdown-item" href="PPC-adwords-advertising-boston.html">Google Ads Management</a></li>
             <li><a class="dropdown-item" href="local-marketing-company-everett-malden-medford-revere-saugus-ma.html">Local Internet Marketing</a></li>
             <li><a class="dropdown-item" href="local-marketing-company-everett-malden-medford-revere-saugus-ma.html">Social Media Integration</a></li>
+            <li><a class="dropdown-item" href="ai-search-visibility-audit-boston-ma.html">AI Search Visibility</a></li>
           </ul>
         </li>
 
@@ -203,6 +205,7 @@ def nav_es():
             <li><a class="dropdown-item" href="PPC-adwords-advertising-boston.html">Google Ads</a></li>
             <li><a class="dropdown-item" href="local-marketing-company-everett-malden-medford-revere-saugus-ma.html">Marketing Local</a></li>
             <li><a class="dropdown-item" href="local-marketing-company-everett-malden-medford-revere-saugus-ma.html">Redes Sociales</a></li>
+            <li><a class="dropdown-item" href="ai-search-visibility-audit-boston-ma.html">Visibilidad en IA</a></li>
           </ul>
         </li>
 

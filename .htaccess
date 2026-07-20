@@ -140,6 +140,14 @@ RewriteRule ^freelance-wordpress-website-designer-ma\.html$ https://gdprowebdesi
 RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
 RewriteRule ^small-business-web-developer-web-designer-boston-ma\.html$ https://gdprowebdesigns.com/web-design-company-boston-ma.html [R=301,L]
 
+# --- Orphan legacy page, untracked in repo, never had a redirect → freelance-web-designer-developer-boston-ma.html ---
+# 2026-07-20: found live on server with no git history at all (pre-dates this repo as source of truth).
+# Old MainNavbar template, nav still pointed at freelance-web-developer-boston-ma.html (itself since
+# consolidated 2026-07-15). "Near me" intent it may have targeted is already covered by the dedicated
+# local-website-developer-near-me.html page below.
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^website-developer-near-boston\.html$ https://gdprowebdesigns.com/freelance-web-designer-developer-boston-ma.html [R=301,L]
+
 # --- Social media page retired, folded into local marketing ---
 RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
 RewriteRule ^social-media-advertising\.html$ https://gdprowebdesigns.com/local-marketing-company-everett-malden-medford-revere-saugus-ma.html [R=301,L]

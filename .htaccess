@@ -148,6 +148,21 @@ RewriteRule ^small-business-web-developer-web-designer-boston-ma\.html$ https://
 RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
 RewriteRule ^website-developer-near-boston\.html$ https://gdprowebdesigns.com/freelance-web-designer-developer-boston-ma.html [R=301,L]
 
+# --- Legacy contact-form stubs, still live on server with no redirect → /gd-blog/contact-us/ ---
+# 2026-07-20: found via GSC page-list cross-reference against local files + existing .htaccess sources.
+# CLAUDE.md previously (incorrectly) documented these as already having .htaccess 301s — they didn't.
+# contact-gd-website-design-estimates.html was archived out of this repo on 2026-07-13 but the live
+# copy was never removed. contacts.html and contact-thanks.html have no local file at all. All three
+# already carry a canonical/noindex pointing at /gd-blog/contact-us/, but contact-thanks.html also
+# carries a conflicting "index, follow" robots meta further down the page, so a real 301 is needed
+# rather than relying on the page's own (contradictory) meta tags.
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^contact-gd-website-design-estimates\.html$ https://gdprowebdesigns.com/gd-blog/contact-us/ [R=301,L]
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^contacts\.html$ https://gdprowebdesigns.com/gd-blog/contact-us/ [R=301,L]
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^contact-thanks\.html$ https://gdprowebdesigns.com/gd-blog/contact-us/ [R=301,L]
+
 # --- Social media page retired, folded into local marketing ---
 RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
 RewriteRule ^social-media-advertising\.html$ https://gdprowebdesigns.com/local-marketing-company-everett-malden-medford-revere-saugus-ma.html [R=301,L]

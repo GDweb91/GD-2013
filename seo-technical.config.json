@@ -1,0 +1,9 @@
+{
+  "domain": "https://gdprowebdesigns.com",
+  "skip_suffixes": ["-off.html"],
+  "cms_prefixes": ["gd-blog"],
+  "strip_selectors": [
+    "<div\\s+class=[\"']sticky-call-bar[\"'][^>]*>.*?</div>",
+    "<div\\s+class=[\"']position-fixed[^\"']*[\"'][^>]*>.*?</div>"
+  ]
+}

@@ -1,0 +1,147 @@
+# Per-town facts for GD Pro Web Designs service-area pages
+# ---------------------------------------------------------
+# Purpose: raw material for creating / enriching the WordPress
+# /gd-blog/service-area/<slug>/ pages. Each record gives the town-specific
+# detail that keeps a templated page above the near-duplicate threshold:
+# real business districts, landmarks, industries, neighbouring towns, a real
+# client if one exists, and the exact search-modifier phrasings seen in GSC.
+#
+# Status of the WP town-page system (checked live 2026-08-29):
+#   * 40 /gd-blog/service-area/*/ pages already exist and are well differentiated.
+#   * BUG: some pages (e.g. somerville, rowley-ma) fall back to a broken AIOSEO
+#     title default — the literal string "Web Designer in %%post_title%%, MA |
+#     GD Pro Web Designs" is served as <title> and og:title. Pages where an
+#     AIOSEO title was set by hand (e.g. burlington-ma) are fine. Fix = correct
+#     the service-area post-type title template in AIOSEO, then spot-set titles.
+#   * GAP: no page for Cambridge, Quincy, Peabody, Beverly, Chelsea, Danvers
+#     (all 404) — all have GSC demand. Records for those are below.
+#   * WP pages carry their own Organization @id (…/gd-blog/#organization),
+#     separate from the static site's …/#organization — reconcile in AIOSEO.
+
+defaults:
+  region: MA
+  hq: Everett, MA
+  hq_distance_note: "GD Pro Web Designs is based in Everett, MA and works with clients here in person or remotely."
+  languages: [English, Spanish]
+  founded: 2005
+  price_notes:
+    web_design_from: 1800
+    wordpress_from: 2500
+    maintenance_from_month: 450
+    seo_from_month: 450
+
+towns:
+
+  - slug: cambridge-ma
+    town: Cambridge
+    county: Middlesex
+    priority: P1            # big city, real demand, no page yet
+    neighbor_towns: [Somerville, Boston, Watertown, Arlington, Belmont]
+    business_districts: [Harvard Square, Kendall Square, Central Square, Porter Square, Inman Square]
+    landmarks: [Harvard University, MIT, Cambridge Innovation Center, CambridgeSide]
+    primary_industries: [biotech and life sciences, software and startups, professional services, restaurants and cafes, retail and boutiques, nonprofits and academic-adjacent orgs]
+    gsc_modifiers:
+      - "cambridge wordpress agency"        # 7 impr @ 17.9
+      - "cambridge ma seo agency"
+      - "cambridge ma google ads management agency"
+      - "website designer near cambridge ma"  # static page exists: website-designer-near-cambridge-ma.html
+    cross_link_static: website-designer-near-cambridge-ma.html
+    real_project: null
+    intro_hook: "Cambridge runs on Kendall Square biotech, Harvard Square retail, and a dense layer of software startups — a market where a slow or generic website gets ignored fast."
+    context: "One of the most competitive and design-literate small-business markets in Massachusetts; buyers here expect a fast, modern, accessible site and notice when they don't get one."
+
+  - slug: quincy-ma
+    town: Quincy
+    county: Norfolk
+    priority: P1
+    neighbor_towns: [Braintree, Milton, Weymouth, Boston (Dorchester), Randolph]
+    business_districts: [Quincy Center, Wollaston, North Quincy, Quincy Point, Marina Bay]
+    landmarks: [Adams National Historical Park, Marina Bay, Quincy Center MBTA Red Line]
+    primary_industries: [restaurants (large Asian-American dining scene), health care and dental, contractors and trades, real estate, retail, personal services]
+    gsc_modifiers:
+      - "quincy ma web design and development"   # static page exists
+      - "digital marketing quincy ma"
+      - "contractor seo quincy"                  # 4 impr @ 21.8 — vertical signal
+      - "cannabis website development quincy ma" # 3 impr @ 41 — niche, monitor
+    cross_link_static: quincy-ma-web-design-and-development.html
+    real_project: null
+    intro_hook: "Quincy Center's redevelopment and the Red Line have pulled a wave of new restaurants, clinics, and service businesses into the city — most competing for the same local searches."
+    context: "Strong contractor / trades and restaurant verticals; 'contractor SEO Quincy' already shows impressions with no page targeting it."
+
+  - slug: peabody-ma
+    town: Peabody
+    county: Essex
+    priority: P1            # North Shore, existing client here
+    neighbor_towns: [Salem, Danvers, Lynnfield, Middleton, Lynn]
+    business_districts: [Downtown Peabody (Peabody Square), Route 1 corridor, Northshore Mall area]
+    landmarks: [Northshore Mall, Brooksby Farm, Peabody Institute Library]
+    primary_industries: [contractors and construction, recycling and demolition, retail (mall corridor), auto services, manufacturing and distribution, restaurants]
+    gsc_modifiers:
+      - "google ads agency peabody ma"
+      - "north shore web designer"
+      - "web designer peabody ma"
+    real_project:
+      name: Pinto Recycling
+      one_liner: "Recycling and demolition company in Peabody — an existing GD Pro Web Designs client."
+    intro_hook: "Peabody's Route 1 and Northshore Mall corridor is heavy on contractors, recycling and demolition outfits, auto services, and retail — businesses that live or die by local search and Google Maps."
+    context: "GD Pro Web Designs already works with Pinto Recycling in Peabody; contractor / demolition is a proven vertical for this shop across the North Shore."
+
+  - slug: beverly-ma
+    town: Beverly
+    county: Essex
+    priority: P2            # North Shore
+    neighbor_towns: [Salem, Danvers, Wenham, Manchester-by-the-Sea, Peabody]
+    business_districts: [Downtown Beverly (Cabot Street), Beverly Farms, Montserrat, Gloucester Crossing]
+    landmarks: [Endicott College, Montserrat College of Art, Beverly Depot, Lynch Park]
+    primary_industries: [restaurants and cafes, arts and creative services, health and wellness, marine and coastal services, professional services, retail]
+    gsc_modifiers:
+      - "google ads agency beverly ma"
+      - "north shore web designer"
+      - "beverly ma web design"
+    real_project: null
+    intro_hook: "Beverly's Cabot Street downtown and its two colleges give it a walkable, arts-leaning small-business scene — cafes, studios, wellness practices — where brand and mobile experience matter as much as ranking."
+    context: "Creative / hospitality-leaning North Shore market; pairs naturally with Salem and Danvers in one North Shore cluster."
+
+  - slug: chelsea-ma
+    town: Chelsea
+    county: Suffolk
+    priority: P1            # static SEO + web design pages exist; no WP service-area page
+    neighbor_towns: [Everett, Revere, East Boston, Boston, Winthrop]
+    business_districts: [Broadway / Chelsea Square, Bellingham Square, Everett Avenue commercial corridor]
+    landmarks: [Chelsea Market Basket, Mystic Mall, Chelsea Street Bridge, Silver Line Chelsea]
+    primary_industries: [restaurants (large Latino dining scene), auto body and auto services, contractors and construction, food distribution and wholesale, logistics, small retail]
+    gsc_modifiers:
+      - "contractor seo chelsea"        # ranks 2.1 on an incidental match — strong signal
+      - "chelsea ma digital marketing"  # 36 impr @ 13.7
+      - "chelsea ma digital ads agency" # 23 impr @ 9.0
+      - "wordpress website designer in chelsea"  # 52 impr @ 8.1
+      - "seo company chelsea"
+    cross_link_static: [SEO-company-chelsea-ma.html, chelsea-web-design-company-wordpress-developer.html, chelsea-ma-disenador-web-wordpress.html]
+    real_project:
+      name: Los Pinos Restaurant
+      one_liner: "Restaurant in Chelsea, MA — an existing GD Pro Web Designs client."
+    intro_hook: "Chelsea packs one of the densest, most competitive small-business markets in Greater Boston — Latino restaurants, auto body shops, contractors, and food wholesalers all fighting for the same local customers, one mile from our Everett office."
+    context: "Bilingual (Spanish) market on our doorstep. 'Contractor SEO Chelsea' already ranks #2 on a thin match — a real page should own it. Coordinate with the existing static Chelsea SEO / web-design / ES pages so the WP page doesn't cannibalise them (pick one canonical target per intent)."
+
+  - slug: danvers-ma
+    town: Danvers
+    county: Essex
+    priority: P2            # North Shore, completes the Peabody/Beverly/Salem cluster
+    neighbor_towns: [Peabody, Beverly, Middleton, Topsfield, Salem]
+    business_districts: [Danvers Square, Route 1 / Endicott Street retail corridor, Liberty Tree Mall area]
+    landmarks: [Liberty Tree Mall, Endicott Park, Rebecca Nurse Homestead]
+    primary_industries: [retail (Route 1 corridor), contractors and home services, auto dealers and services, health care, restaurants, distribution]
+    gsc_modifiers:
+      - "google ads agency danvers ma"
+      - "north shore web designer"
+      - "danvers ma web design"
+    real_project: null
+    intro_hook: "Danvers is a Route 1 retail and home-services hub — dealerships, contractors, and big-box-adjacent small businesses that need to show up for 'near me' searches across the North Shore."
+    context: "Rounds out the North Shore cluster with Peabody and Beverly; low competition on the town-name modifiers."
+
+# Towns with an existing WP page that likely needs the AIOSEO title fix
+# (verify each; set a hand-written AIOSEO title + meta description per page):
+title_fix_candidates:
+  - somerville     # confirmed broken: "Web Designer in %%post_title%%, MA | GD Pro Web Designs"
+  - rowley-ma      # confirmed broken; ranks pos ~7 — highest-value single fix
+  - "(audit the remaining 38 — burlington-ma is correct, use it as the pattern)"

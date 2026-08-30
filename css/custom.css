@@ -1262,6 +1262,38 @@ section { scroll-margin-top: 76px; }
 /* Teal-tinted card surface (e.g. "Why choose us" boxes) */
 .card-teal-tint { background: rgba(9,69,70,.08); border: 1px solid rgba(7,69,72,.22); }
 
+/* Answer-first lead paragraph — direct, extractable answer to the page's head query.
+   Used for SEO/GEO (AI search engines lift this verbatim). Phase 2 wraps it with a
+   SpeakableSpecification via the .quick-answer selector. */
+.quick-answer {
+  font-size: 1.08rem;
+  line-height: 1.65;
+  color: var(--text-dark);
+  background: var(--bg-light);
+  border-left: 4px solid var(--primary);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1.25rem 0 0;
+  max-width: 62ch;
+}
+.quick-answer strong { color: var(--primary); }
+
+/* Inside the dark hero, the light content-section styling above reads as an
+   out-of-place white box. Swap it for the frosted-glass surface used by
+   .hero-stat-card so it matches the rest of the hero. Higher specificity
+   (#hero .quick-answer) means this wins regardless of source order. */
+#hero .quick-answer {
+  color: rgba(255, 255, 255, .92);
+  background: rgba(255, 255, 255, .1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.75rem;
+}
+#hero .quick-answer strong { color: var(--white); }
+
 /* ============================================================
    CLIENTS
    ============================================================ */

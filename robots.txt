@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: 
 Disallow: /cgi-bin/
 Disallow: /restricted/
 Disallow: /code/
@@ -9,8 +8,43 @@ Disallow: /web-video/
 Disallow: /_private/
 Disallow: /Library/
 Disallow: /gigi/
-Disallow: */?ref=tomba.io$
-Disallow: */?ref=tomba.io
-#sitemap.xml allow
-Allow: 
-sitemap: https://gdprowebdesigns.com/sitemap.xml
+Disallow: /*?ref=tomba.io
+
+# --- AI / answer-engine crawlers: explicitly allowed (GEO) ---
+# We want ChatGPT, Perplexity, Google AI Overviews, Gemini, Claude, and
+# Copilot to read and cite this site. Listed explicitly so the intent is
+# unambiguous if a plugin or host default ever tries to block them.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://gdprowebdesigns.com/sitemap.xml

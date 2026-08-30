@@ -178,6 +178,23 @@ RewriteRule ^chelsea-ma-disenador-web-wordpress-NO-USE\.html$ https://gdprowebde
 RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
 RewriteRule ^internet-marketing-local-marketing-everett-malden-medford-revere-saugus-ma\.html$ https://gdprowebdesigns.com/local-marketing-company-everett-malden-medford-revere-saugus-ma.html [R=301,L]
 
+# --- 2026-08-29: retired thin/legacy pages (organic-lead-growth Phase 0) ---
+# blog.html: pre-WordPress static blog, 228 words, superseded by /gd-blog/. Footer "Blog"
+#   links on the ~5 pages that still used blog.html repointed to /gd-blog/.
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^blog\.html$ https://gdprowebdesigns.com/gd-blog/ [R=301,L]
+
+# web-design-FAQ.html: 237 words, zero inbound internal links (orphaned). FAQ content is
+#   already covered by the FAQ sections on the homepage and every service page.
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^web-design-FAQ\.html$ https://gdprowebdesigns.com/web-design-company-boston-ma.html [R=301,L]
+
+# local-seo-services-boston-ma.html: 1 impression in trailing 4mo, heavy overlap with
+#   organic-search-engine-optimization-boston.html. Unique Local-SEO content (GBP / NAP /
+#   citations / Maps / reviews) folded into that page in Phase 1.
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^local-seo-services-boston-ma\.html$ https://gdprowebdesigns.com/organic-search-engine-optimization-boston.html [R=301,L]
+
 # BEGIN WordPress
 # The directives (lines) between "BEGIN WordPress" and "END WordPress" are
 # dynamically generated, and should only be modified via WordPress filters.

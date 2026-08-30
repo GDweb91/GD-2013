@@ -58,7 +58,7 @@ This is NOT a WordPress theme — it is a standalone static HTML site. A separat
 | PHP          | PHP 8.0 (cPanel `ea-php80`), used for contact forms only |
 | Server       | Apache with mod_rewrite (cPanel hosted) |
 | SSL          | Forced HTTPS via `.htaccess` |
-| Analytics    | Google Tag Manager `GTM-N4P95M5` · Google Analytics 4 `G-DB973M2MJX` |
+| Analytics    | Google Tag Manager `GTM-N4P95M5` · Google Analytics 4 `G-5F0NL22GJ9` (corrected 2026-08-07 — see `ga4_measurement_id_mismatch` memory; the old `G-DB973M2MJX` ID in GTM/docs was wrong) |
 | Blog/CMS     | WordPress at `/gd-blog/` (separate WP install) |
 ---
 
@@ -500,7 +500,7 @@ disenador-paginas-web-freelancer-boston-off.html → disenador-paginas-web-freel
 | Platform | ID |
 |----------|----|
 | Google Tag Manager | GTM-N4P95M5 |
-| Google Analytics 4 | G-DB973M2MJX |
+| Google Analytics 4 | G-5F0NL22GJ9 (corrected 2026-08-07 — see `ga4_measurement_id_mismatch` memory) |
 | Bing Webmaster | `BingSiteAuth.xml` |
 | Google Search Console | `google07be07f249ecb0f1.html`, `googleae58b8e4a5c2267d.html` |
 | Additional verif. | `9656e5e29fbd4b538dd418416d901095.txt`, `ddddf5f0a8af401294cab79969cb0aaf.txt` |
@@ -569,7 +569,7 @@ To fully recreate this site:
 2. **SSL**: Enable Let's Encrypt or cPanel SSL; the `.htaccess` handles forced redirect.
 3. **Upload all files**: Copy the full directory. All assets are self-contained — no build step required for the static HTML pages.
 4. **WordPress**: Install WordPress at `/gd-blog/`. Restore the WP database. Re-create the contact page at slug `contact-us`, news at `gd-news/`, service area at `service-area/`.
-5. **Analytics**: Re-register GTM (`GTM-N4P95M5`) and GA4 (`G-DB973M2MJX`) — or create new accounts and update the IDs in every page `<head>`.
+5. **Analytics**: Re-register GTM (`GTM-N4P95M5`) and GA4 (`G-5F0NL22GJ9`) — or create new accounts and update the IDs in every page `<head>`.
 6. **Search Console**: Re-verify ownership using the verification HTML files already present in the repo.
 7. **Bing Webmaster**: Re-verify via `BingSiteAuth.xml`.
 8. **Contact form**: reCAPTCHA keys in `recaptcha-keys/` need to be registered for the new domain if domain changes.

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GD Pro Web Designs — Organic Lead Growth Session Log (2026-08-29)</title>
+<style>
+  :root{
+    --ink:#1a1a2e; --muted:#5b6472; --line:#e3e7ee; --bg:#ffffff; --soft:#f5f7fb;
+    --teal:#044143; --gold:#b9860b; --red:#b3261e; --green:#1a7f37; --code:#0b3d3f;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  .wrap{max-width:920px; margin:0 auto; padding:48px 24px 96px}
+  header.doc{border-bottom:3px solid var(--teal); padding-bottom:20px; margin-bottom:32px}
+  header.doc h1{font-size:1.8rem; margin:0 0 6px; color:var(--teal); line-height:1.25}
+  header.doc .meta{color:var(--muted); font-size:.92rem}
+  h2{font-size:1.32rem; color:var(--teal); margin:44px 0 12px; padding-top:8px; border-top:1px solid var(--line)}
+  h3{font-size:1.05rem; margin:26px 0 8px}
+  h4{font-size:.98rem; margin:18px 0 6px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em}
+  p{margin:10px 0}
+  ul,ol{margin:10px 0 10px 22px; padding:0}
+  li{margin:5px 0}
+  code{background:var(--soft); padding:1px 5px; border-radius:4px; font-size:.88em; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; color:var(--code)}
+  pre{background:#0d2b2c; color:#e8f0ef; padding:18px 20px; border-radius:8px; overflow-x:auto; font-size:.86rem; line-height:1.55; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  pre code{background:none; color:inherit; padding:0}
+  table{border-collapse:collapse; width:100%; margin:14px 0; font-size:.9rem}
+  th,td{border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top}
+  th{background:var(--soft); font-weight:600}
+  .toc{background:var(--soft); border:1px solid var(--line); border-radius:8px; padding:16px 22px; margin:24px 0}
+  .toc ol{margin:6px 0 0 18px}
+  .toc a{color:var(--teal); text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+  .tag{display:inline-block; font-size:.72rem; font-weight:700; padding:2px 8px; border-radius:20px; vertical-align:middle}
+  .t-done{background:#e4f4e8; color:var(--green)}
+  .t-pending{background:#fdeede; color:var(--gold)}
+  .t-blocked{background:#fbe6e4; color:var(--red)}
+  .callout{border-left:4px solid var(--gold); background:#fffaf0; padding:12px 16px; margin:16px 0; border-radius:0 6px 6px 0}
+  .callout.warn{border-color:var(--red); background:#fdf1f0}
+  .callout.ok{border-color:var(--green); background:#f0f8f2}
+  .fix{color:var(--red); font-weight:600}
+  hr{border:none; border-top:1px solid var(--line); margin:32px 0}
+  footer.doc{margin-top:56px; padding-top:20px; border-top:3px solid var(--teal); color:var(--muted); font-size:.86rem}
+  .resume{background:#0d2b2c; color:#e8f0ef; padding:24px; border-radius:10px; margin-top:14px}
+  .resume h2{color:#8fd3c4; border:none; margin-top:0}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="doc">
+  <h1>Organic Lead Growth Initiative — Session Log</h1>
+  <div class="meta">
+    Project: <strong>GD-2013</strong> (gdprowebdesigns.com static site + <code>/gd-blog/</code> WordPress)<br>
+    Session date: <strong>2026-08-29</strong> &nbsp;·&nbsp; Plan file: <code>~/.claude/plans/majestic-napping-whisper.md</code><br>
+    Goal: position the site as the premier local web design / WordPress / SEO partner for Greater Boston, the North Shore, and all of Massachusetts, and grow inbound organic leads.
+  </div>
+</header>
+
+<div class="toc">
+  <strong>Contents</strong>
+  <ol>
+    <li><a href="#summary">Executive summary &amp; current state</a></li>
+    <li><a href="#diagnosis">Diagnosis (from Google Search Console)</a></li>
+    <li><a href="#phase0">Phase 0 — Technical audit + keyword/intent map</a></li>
+    <li><a href="#phase1">Phase 1 — Eight quick-win pages</a></li>
+    <li><a href="#phase2">Phase 2 — Entity graph + GEO retrofit</a></li>
+    <li><a href="#phase3">Phase 3 — WordPress town pages</a></li>
+    <li><a href="#deploy">Deployment status</a></li>
+    <li><a href="#open">Open decisions &amp; deferred work</a></li>
+    <li><a href="#files">Files created / modified this session</a></li>
+    <li><a href="#creds">Access &amp; credentials notes</a></li>
+    <li><a href="#resume">Prompt to continue this work</a></li>
+  </ol>
+</div>
+
+<h2 id="summary">1. Executive summary &amp; current state</h2>
+<p>A multi-phase SEO + GEO (Generative Engine Optimization) initiative was planned and approved, then Phases 0–2 were fully executed on the static site and Phase 3 was started on the WordPress side.</p>
+<table>
+  <tr><th>Phase</th><th>Scope</th><th>Status</th></tr>
+  <tr><td>0 — Audit + keyword map</td><td>/seo-technical run; config; keyword-intent map; 3 thin pages retired</td><td><span class="tag t-done">DONE</span> — undeployed</td></tr>
+  <tr><td>1 — Quick wins</td><td>8 page-2 pages rewritten (title/meta/H1 + answer block + FAQ), many schema bugs fixed</td><td><span class="tag t-done">DONE</span> — undeployed</td></tr>
+  <tr><td>2 — Entity graph + GEO</td><td><code>fix_schema.py</code> unifies entity across 45 pages; robots.txt AI allowlist; llms.txt</td><td><span class="tag t-done">DONE</span> — undeployed</td></tr>
+  <tr><td>3 — WP town pages</td><td>title bug fix deployed; 6 gap-town drafts created via REST</td><td><span class="tag t-pending">IN PROGRESS</span></td></tr>
+</table>
+<div class="callout warn">
+  <strong>Nothing from Phases 0–2 is live yet.</strong> All static-site changes sit in the local repo awaiting a full site upload. On the WP side, two files were deployed and 6 town-page drafts were created on the live site (unpublished).
+</div>
+
+<h2 id="diagnosis">2. Diagnosis (from Google Search Console, May 1 – Aug 25 2026)</h2>
+<ul>
+  <li><strong>Everything ranks page 2–5.</strong> The homepage alone pulls <strong>24,052 impressions at avg position 43.7</strong> across hundreds of queries — ranking for everything, badly, instead of specific pages ranking for their terms well (cannibalization).</li>
+  <li><strong>High-impression pages stuck deep:</strong> <code>organic-search-engine-optimization-boston.html</code> 7,713 impr @ 51.6; <code>wordpress-developer-boston-ma.html</code> 7,241 @ 35.9; <code>SEO-company-chelsea-ma.html</code> 6,524 @ 34.7 — all near-zero clicks.</li>
+  <li><strong>WP <code>/gd-blog/service-area/*</code> pages outrank the hand-built static city pages</strong> (position 7–20 vs 35–45) — so new town coverage belongs in WordPress.</li>
+  <li><strong>Near-page-1 clusters</strong> (pos 10–22, hundreds of impressions, ~0 clicks): "affordable seo boston" 388 @ 14.6; "everett search engine optimization" 199 @ 19.9; "everett seo company" 191 @ 22.1; "ai search optimization massachusetts" 180 @ 16.6; "ai visibility boston" 49 @ 10.4; "affordable web design boston" 173 @ 20.2; "boston wordpress maintenance agency" 153 @ 12.4.</li>
+  <li><strong>Untapped matrices:</strong> "google ads agency [town] ma" across ~18 towns (all pos 30–96, no page targets them); explicit "north shore" adwords intent; "contractor seo chelsea" ranking #2 on an incidental match.</li>
+  <li><strong>Entity fragmentation:</strong> homepage had a strong <code>@graph</code>, but interior pages had standalone <code>LocalBusiness</code> blocks not linked to the org entity, no <code>Person</code>/author, and several faked per-town street addresses.</li>
+</ul>
+
+<h2 id="phase0">3. Phase 0 — Technical audit + keyword/intent map <span class="tag t-done">DONE</span></h2>
+<h4>Audit (/seo-technical, all 5 checks)</h4>
+<ul>
+  <li>Created <code>seo-technical.config.json</code> — declares <code>/gd-blog/</code> as an out-of-scope CMS subpath (killed 747 false-positive "broken link" criticals), skips <code>-off.html</code>, strips the sticky call bar from duplicate-content comparison.</li>
+  <li>Findings after config: <strong>0 critical / 0 warning</strong> on crawl + sitemap. 4 near-duplicate town-page pairs remain ≥75% (Saugus↔Cambridge, JP↔Saugus, JP↔Lynn, Dedham↔JP) — Phase 3 territory. 46 relative <code>href="gd-blog/…"</code> links (missing leading slash) fixed to <code>/gd-blog/…</code>. 5 stale <code>blog.html</code> footer links fixed.</li>
+  <li>Verified the Everett redirect stubs are live 301s (<code>seo-services-everett-ma.html</code> &amp; <code>everett-ma-local-seo-services.html</code> → <code>organic-SEO-everett-ma.html</code>).</li>
+</ul>
+<h4>Three thin / legacy pages retired (with 301s in .htaccess, files moved to <code>archive/unsed-pages/</code>)</h4>
+<table>
+  <tr><th>Retired page</th><th>301 target</th><th>Why</th></tr>
+  <tr><td><code>blog.html</code></td><td><code>/gd-blog/</code></td><td>Pre-WordPress static blog, 228 words, superseded</td></tr>
+  <tr><td><code>web-design-FAQ.html</code></td><td><code>web-design-company-boston-ma.html</code></td><td>237 words, zero inbound links (orphaned)</td></tr>
+  <tr><td><code>local-seo-services-boston-ma.html</code></td><td><code>organic-search-engine-optimization-boston.html</code></td><td>1 impression in 4 months, heavy overlap; its GBP/NAP/citations content already covered on the Boston SEO page</td></tr>
+</table>
+<p>Removed all 3 from <code>sitemap.xml</code> (54 → 51 URLs).</p>
+<h4>Deliverable: <code>seo/keyword-intent-map.md</code></h4>
+<p>The single source of truth for target-page assignment across Phases 1–3. Groups every GSC query into clusters, assigns exactly one target page per cluster (kills cannibalization), tags intent (transactional-local / commercial / informational), and prioritises (P1 quick-win / P2 matrix / P3 informational-GEO). Includes a cannibalization register.</p>
+
+<h2 id="phase1">4. Phase 1 — Eight quick-win pages <span class="tag t-done">DONE</span></h2>
+<p>Each page: title + meta + H1 aligned to its GSC cluster; an answer-first <code>.quick-answer</code> block added near the top (extractable by AI engines); FAQ added or expanded and synced to <code>FAQPage</code> JSON-LD. A new <code>.quick-answer</code> utility class was added to <code>css/custom.css</code>.</p>
+<table>
+  <tr><th>#</th><th>Page</th><th>Key changes</th></tr>
+  <tr>
+    <td>1</td><td><code>organic-SEO-everett-ma.html</code></td>
+    <td>Title → <em>Everett SEO Company | Local Search Engine Optimization, MA</em>. H1 → <em>Everett SEO Company &amp; Local Search Engine Optimization</em>. Answer block. FAQ 7 → 9 (added GBP + "freelance vs agency" Qs), JSON-LD synced 6 → 9.</td>
+  </tr>
+  <tr>
+    <td>2</td><td><code>organic-search-engine-optimization-boston.html</code></td>
+    <td>H1 → <em>Affordable SEO Services in Boston, MA…</em>. Answer block with concrete $450/mo. <span class="fix">Fixed a 3-way price contradiction</span> — page said $450/mo in hero + pricing table but "$500–$1,500/week" in FAQ #1 <em>and</em> in a "Typical SEO Investment" box; all normalised to $450–$750/month. FAQ 4 → 6. <span class="fix">Fixed broken LocalBusiness JSON-LD</span> — placeholder phone <code>+1-000-000-0000</code>, dead image path <code>/assets/img/logo.png</code>, <code>addressLocality: "Boston"</code> → real Everett NAP + geo + sameAs.</td>
+  </tr>
+  <tr>
+    <td>3</td><td><code>ai-search-visibility-audit-boston-ma.html</code></td>
+    <td>Reframed Boston-only → <strong>Massachusetts-wide</strong> ("ai search optimization massachusetts" is 3× the Boston volume). Title → <em>AI Search Optimization &amp; Visibility Audit — Massachusetts</em>. H1 keyword-bearing (was "Does AI Search Even Know You Exist?"). Answer block naming the 5 engines checked. Coverage section broadened (North Shore / MetroWest / South Shore / Central MA). FAQ 6 → 8. <code>areaServed</code> gained <code>State: Massachusetts</code>. Removed a stale "not yet linked from nav" comment.</td>
+  </tr>
+  <tr>
+    <td>4</td><td><code>web-design-company-boston-ma.html</code></td>
+    <td>Answer block with flat-rate pricing (custom from ~$1,800, WordPress/WooCommerce from ~$2,500). <span class="fix">Added a visible FAQ section (8 Qs)</span> — the page had <code>FAQPage</code> JSON-LD with <em>no visible FAQ</em> (a Google guideline violation). Bug fixes: hero bg image was a fragile absolute WP-theme path → local <code>img/</code>; footer "WordPress Dev" pointed to a typo redirect stub; breadcrumb "Services" step pointed to a redirect stub that loops back to this page; schema desc "Boston, MA, Boston" dup + "SEO agency" softened; "18 years" → "20"; "Portugues" → "Portuguese".</td>
+  </tr>
+  <tr>
+    <td>5</td><td><code>wordpress-developer-boston-ma.html</code></td>
+    <td>Title + "Affordable". Meta + "since 2005 / from $2,500". H1 cleaned (<code>&lt;B&gt;</code> tag). Rewrote a garbled copy-paste fragment in the hero sub. Answer block with pricing. FAQ 7 → 8 ("Are you an agency or a freelancer?"). <span class="fix">Fixed NAP-conflict schema</span> — fake Boston address (<code>02101</code>, Boston City Hall coords) + fabricated <code>sameAs</code> (<code>facebook.com/gdprowebdesigns</code> — wrong URL; <code>twitter.com/gdwebpros</code> — no such account) → real Everett NAP + real FB/LinkedIn/YouTube.</td>
+  </tr>
+  <tr>
+    <td>6</td><td><code>wordpress-maintenance-boston-ma.html</code></td>
+    <td>Answer block with $450/mo + what maintenance includes. <span class="fix">FAQ heading fix</span> — 7 question headers were <code>&lt;h2&gt;</code> inside an <code>&lt;h2&gt;</code>-led section (broken hierarchy) → <code>&lt;h3&gt;</code>. Same fake-Boston + fabricated-sameAs schema fix. Hero bg path fix. Title/H1 already matched the exact ranking query and were left.</td>
+  </tr>
+  <tr>
+    <td>7</td><td><code>SEO-company-chelsea-ma.html</code></td>
+    <td><span class="fix">Fixed broken hero sub</span> (unclosed quote, sentence never finished). H1 "SEO Services" → "SEO Company". Answer block leaning into the Chelsea vertical (restaurants / auto / contractors). <span class="fix">Added a FAQ section (6 Qs) + FAQPage JSON-LD</span> — the page had <em>zero FAQ</em> despite 6,524 impressions; one Q names real clients for the "contractor seo chelsea" signal. <span class="fix">Fixed mismatched schema</span> — <code>addressLocality: "Chelsea"</code> with Everett's zip and coords → honest Everett + <code>areaServed: Chelsea</code>.</td>
+  </tr>
+  <tr>
+    <td>8</td><td><code>PPC-adwords-advertising-boston.html</code></td>
+    <td>The weakest page (pos 57.8). Title → <em>Google Ads (PPC) Management Boston &amp; North Shore MA | AdWords Manager</em>. Meta rewritten. H1 de-run-on-ed. Answer block. <strong>New "Google Ads by Area" section</strong> — a North Shore paragraph + a 12-town Google Ads link matrix (feeds the untapped "google ads agency [town]" cluster). <strong>New FAQ (6 Qs) + JSON-LD.</strong> Fake-Boston + fabricated-sameAs schema fix. <code>&lt;section id=""&gt;</code> → <code>id="ppc-services"</code>.</td>
+  </tr>
+</table>
+<h4>Cross-site (internal-linking pass)</h4>
+<ul>
+  <li><strong>21 redirect-chain links fixed:</strong> every <code>href="web-dsigner-developer-for-small-business-boston-ma.html"</code> (a typo redirect stub that 301s to <code>/gd-blog/web-developer-ma/</code>) across 21 files → repointed directly to <code>wordpress-developer-boston-ma.html</code> (the Phase-1-optimised flagship; its contextual inbound count went 37 → 47).</li>
+  <li>Homepage title/H1/meta left as-is deliberately — already focused on "Web Designer &amp; WordPress Developer Boston MA"; the broad ranking is a domain-authority symptom, not worth a high-risk rewrite of the top page.</li>
+</ul>
+<h4>Recurring bug classes fixed across the set</h4>
+<ul>
+  <li>6 pages had fake per-city / Boston City Hall addresses in <code>LocalBusiness</code> schema + fabricated <code>sameAs</code> — all corrected to the real Everett NAP + real FB/LinkedIn/YouTube.</li>
+  <li>1 placeholder phone number in structured data.</li>
+  <li>2 pages had <code>FAQPage</code> JSON-LD with no visible FAQ — both now have real FAQ sections.</li>
+  <li>1 three-way price contradiction.</li>
+  <li>4 fragile absolute WP-theme image paths → local.</li>
+</ul>
+
+<h2 id="phase2">5. Phase 2 — Entity graph + GEO retrofit <span class="tag t-done">DONE</span></h2>
+<h4><code>scripts/fix_schema.py</code> (new — idempotent, additive-only, marker-guarded)</h4>
+<p>Ran across all 45 active interior pages. It never rewrites existing JSON-LD; it does two things:</p>
+<ol>
+  <li><strong>Injects a consistent entity <code>@graph</code></strong> before <code>&lt;/head&gt;</code> on every page:
+    <ul>
+      <li><code>Organization</code>/<code>ProfessionalService</code> — <code>@id: https://gdprowebdesigns.com/#organization</code> — the canonical business entity (real Everett NAP, geo, hours, <code>areaServed</code> = MA + 6 counties + 19 cities, <code>sameAs</code> FB/LinkedIn/YouTube, both Google certs, <code>founder → #person</code>).</li>
+      <li><code>Person</code> — <code>@id: …/#person</code> — <strong>JA Armira</strong>: <code>jobTitle</code>, <code>worksFor → #organization</code>, <code>hasCredential</code>, <code>sameAs</code>, and a <code>knowsAbout</code> list (web design, WordPress, WooCommerce, SEO, local SEO, Google Ads, GEO, …) — the E-E-A-T signal AI engines use for attribution.</li>
+      <li><code>WebPage</code> — <code>@id: &lt;url&gt;#webpage</code> — per-page URL + title, <code>isPartOf</code>/<code>about</code>/<code>publisher → #organization</code>, plus <code>speakable → .quick-answer</code> on pages that have an answer block.</li>
+    </ul>
+  </li>
+  <li><strong>Normalised 24 fake per-city <code>PostalAddress</code> blocks</strong> in existing schema — pages that claimed the business was located in Jamaica Plain / Winchester / Malden / Chelsea / Boston / etc. now all state the real Everett address. Every live page's NAP is now identical.</li>
+</ol>
+<p>Residual: ~24 pages still carry slightly-off <code>geo</code> coordinates in their old blocks — lower-risk than a wrong city name; flagged by the script for a later cleanup.</p>
+<h4>Crawler posture + <code>llms.txt</code></h4>
+<ul>
+  <li><code>robots.txt</code> rewritten with an explicit allowlist for <code>GPTBot</code>, <code>OAI-SearchBot</code>, <code>ChatGPT-User</code>, <code>PerplexityBot</code>, <code>Google-Extended</code>, <code>ClaudeBot</code>, <code>Applebot-Extended</code>, <code>CCBot</code>, etc. (they weren't blocked before; the intent is now unambiguous against any host/plugin default). Sitemap line preserved. <strong>Note: <code>llms.txt</code> uploads to the web root; <code>seo-technical.config.json</code> is local tooling only — do not upload.</strong></li>
+  <li><code>llms.txt</code> (new, root) — a structured business summary for AI crawlers: entity facts, services with starting prices, service area, curated key-page URLs with descriptions.</li>
+</ul>
+<h4>Consistency fixes</h4>
+<ul>
+  <li>Homepage <code>FAQPage</code> JSON-LD had stale pricing ($800 / $1,200 / $300per-mo) contradicting its own visible pricing table and every Phase-1 page → corrected to $1,800 / $2,500 / $450per-mo.</li>
+  <li>Added YouTube to the homepage <code>Organization</code> + <code>Person</code> <code>sameAs</code> arrays for full-site consistency.</li>
+</ul>
+<p>Validation: <code>schema_check</code> 0/0 across 49 pages; <code>crawl_check</code> 0/0; <code>fix_schema.py</code> idempotent (re-run = 0 changes).</p>
+
+<h2 id="phase3">6. Phase 3 — WordPress town pages <span class="tag t-pending">IN PROGRESS</span></h2>
+<h4>What was discovered</h4>
+<ul>
+  <li>Town pages are a custom post type: <strong><code>service_city</code></strong> (label "Cities"), <strong>41 published</strong>, URL pattern <code>/gd-blog/service-area/&lt;slug&gt;/</code>, taxonomy <code>service_state</code> (Massachusetts = term id 4). They are already well-differentiated.</li>
+  <li><strong>The <code>%%post_title%%</code> bug</strong> — page titles come from a custom mu-plugin, <code>wp-content/mu-plugins/gd-seo-core.php</code>, not AIOSEO settings. The <em>local</em> copy already had the correct code (<code>%s</code> + <code>sprintf</code>); the <em>live</em> copy was a stale version serving the literal string <code>Web Designer in %%post_title%%, MA</code>. Affected ~30+ pages including <code>rowley-ma</code> (ranks ~pos 7).</li>
+  <li><strong>Per-city intro text</strong> ("Davis Square, Union Square…") comes from a curated PHP array <code>gd_blog_city_intros()</code> in <code>functions.php</code>, with an optional per-post ACF field <code>city_intro</code> as an override. ACF fields were <em>not</em> exposed to REST.</li>
+  <li>The local WordPress install (<code>~/Local Sites/gd-blog/</code>) has a stack of undeployed local changes and has diverged from live in both directions with no deploy pipeline.</li>
+</ul>
+<h4>Deployed this session (user, via FileZilla) <span class="tag t-done">DONE</span></h4>
+<table>
+  <tr><th>File</th><th>Change</th></tr>
+  <tr><td><code>wp-content/mu-plugins/gd-seo-core.php</code></td><td>The already-committed <code>%s</code> title/description fix, finally pushed to live.</td></tr>
+  <tr><td><code>wp-content/themes/gd-blog/inc/acf-service-areas.php</code></td><td>Added <code>'show_in_rest' =&gt; true</code> to the <code>group_service_area_fields</code> field group (exposes <code>city_intro</code>, <code>city_title</code>, <code>city_subtitle</code>, CTA fields to the REST API). Also removed a pre-existing duplicate <code>location</code> / <code>show_in_rest</code> key.</td></tr>
+</table>
+<h4>Post-deploy verification</h4>
+<ul>
+  <li><span class="tag t-done">FIXED</span> <code>&lt;title&gt;</code> on town pages — <code>somerville</code> → <em>Web Designer in Somerville, MA | GD Pro Web Designs</em>, etc.</li>
+  <li><span class="tag t-done">WORKING</span> ACF fields now readable/writable at <code>wp-json/wp/v2/service_city/&lt;id&gt;</code> under an <code>acf</code> key.</li>
+  <li><span class="tag t-blocked">STILL BROKEN</span> <code>&lt;meta description&gt;</code> — still contains <code>%%post_title%%</code>. Cause: AIOSEO's "Cities" Meta Description template holds the literal string; <code>gd-seo-core.php</code> only fills the description when it's <em>empty</em>, so it defers. <strong>Fix: wp-admin → All in One SEO → Search Appearance → Content Types → Cities → clear the Meta Description field (leave blank) → Save.</strong></li>
+</ul>
+<h4>Six gap-town drafts created via REST <span class="tag t-pending">AWAITING REVIEW + PUBLISH</span></h4>
+<p>All <code>status: draft</code>, <code>service_state: [4]</code>, with a curated-style <code>city_intro</code> set via ACF. Data sourced from <code>seo/town-facts.yml</code>.</p>
+<table>
+  <tr><th>Town</th><th>Post ID</th><th>Slug</th><th>URL when published</th><th>Static-page conflict?</th></tr>
+  <tr><td>Peabody</td><td>267</td><td><code>peabody-ma</code></td><td><code>/gd-blog/service-area/peabody-ma/</code></td><td>None — publish freely</td></tr>
+  <tr><td>Beverly</td><td>271</td><td><code>beverly-ma</code></td><td><code>/gd-blog/service-area/beverly-ma/</code></td><td>None — publish freely</td></tr>
+  <tr><td>Danvers</td><td>272</td><td><code>danvers-ma</code></td><td><code>/gd-blog/service-area/danvers-ma/</code></td><td>None — publish freely</td></tr>
+  <tr><td>Cambridge</td><td>268</td><td><code>cambridge-ma</code></td><td><code>/gd-blog/service-area/cambridge-ma/</code></td><td><span class="fix">Yes</span> — <code>website-designer-near-cambridge-ma.html</code> (static, ~pos 38)</td></tr>
+  <tr><td>Quincy</td><td>269</td><td><code>quincy-ma</code></td><td><code>/gd-blog/service-area/quincy-ma/</code></td><td><span class="fix">Yes</span> — <code>quincy-ma-web-design-and-development.html</code> (static, ~pos 31, 834 impr)</td></tr>
+  <tr><td>Chelsea</td><td>270</td><td><code>chelsea-ma</code></td><td><code>/gd-blog/service-area/chelsea-ma/</code></td><td><span class="fix">Yes</span> — 3 static pages: <code>SEO-company-chelsea-ma.html</code>, <code>chelsea-web-design-company-wordpress-developer.html</code>, <code>chelsea-ma-disenador-web-wordpress.html</code></td></tr>
+</table>
+<div class="callout">
+  <strong>Cannibalization decision needed for Cambridge / Quincy / Chelsea.</strong> WP service-area pages consistently outrank the static city pages, so the likely move is a 301 from the static page → the new WP page for Cambridge and Quincy. Chelsea needs more thought (3 static pages, different intents: SEO / web design / Spanish). Peabody, Beverly, Danvers have no conflict.
+</div>
+<div class="callout ok">
+  <strong>Note for future API work:</strong> Bluehost's ModSecurity returns <code>406 Not Acceptable</code> on REST writes made with the default <code>Python-urllib</code> user-agent. Sending a normal browser <code>User-Agent</code> header clears it.
+</div>
+
+<h2 id="deploy">7. Deployment status</h2>
+<table>
+  <tr><th>Area</th><th>State</th><th>To deploy</th></tr>
+  <tr>
+    <td>Static site (Phases 0–2)</td>
+    <td><span class="tag t-pending">NOT DEPLOYED</span></td>
+    <td>Re-upload all modified <code>.html</code> + <code>.htaccess</code> + <code>sitemap.xml</code> + <code>sitemap.html</code> + <code>robots.txt</code> + <code>llms.txt</code> + <code>css/custom.css</code>. <strong>Delete</strong> from the server: <code>blog.html</code>, <code>web-design-FAQ.html</code>, <code>local-seo-services-boston-ma.html</code>. Do <strong>not</strong> upload <code>seo-technical.config.json</code>, <code>scripts/</code>, or <code>seo/</code>. Then verify with <code>curl -I</code> on the 3 retired URLs (expect 301) and view-source on 3–4 edited pages (per the documented FTP silent-fail + Bluehost edge-cache gotchas).</td>
+  </tr>
+  <tr>
+    <td>WordPress (Phase 3)</td>
+    <td><span class="tag t-done">PARTLY DEPLOYED</span></td>
+    <td><code>gd-seo-core.php</code> + <code>acf-service-areas.php</code> are live. 6 town drafts exist on the live site, unpublished. Remaining: clear the AIOSEO "Cities" meta-description template; review + publish the drafts; handle the Cambridge/Quincy/Chelsea cannibalization; optionally deploy <code>inc/cpt-service-cities.php</code> (bonus typo-slug redirects for <code>/service-areas/ranfolph/</code> &amp; <code>/wooburn/</code>).</td>
+  </tr>
+</table>
+
+<h2 id="open">8. Open decisions &amp; deferred work</h2>
+<h4>Immediate</h4>
+<ol>
+  <li><strong>Clear the AIOSEO "Cities" Meta Description template</strong> (wp-admin) — fixes <code>%%post_title%%</code> in meta descriptions on all ~40 town pages + the 6 new ones.</li>
+  <li><strong>Review + publish the 6 town drafts.</strong> Publish Peabody / Beverly / Danvers immediately. Decide Cambridge / Quincy / Chelsea vs their static counterparts (301 static → WP recommended for Cambridge &amp; Quincy).</li>
+  <li><strong>Deploy the static-site Phase 0–2 changes</strong> and measure — snapshot GSC (query + page) as the baseline, re-check at +14 and +28 days. Success = P1 clusters moving into pos 5–12 with first non-zero clicks; homepage impressions consolidating downward.</li>
+  <li>After the 6 pages publish: add internal links from the static PPC page's town matrix (currently points Cambridge/Quincy at the static pages — repoint once decided); confirm they appear in the WP sitemap and the <code>/gd-blog/service-area/</code> index.</li>
+</ol>
+<h4>Deferred (from the plan)</h4>
+<ul>
+  <li><strong>Phase 2b content:</strong> "key facts" bullet blocks near the top of service/town pages; a "does ChatGPT recommend your business?" link from every service-page body to the AI-visibility page.</li>
+  <li><strong><code>seo/gbp-checklist.md</code></strong> — the Google Business Profile / citations parallel track (categories, services list, NAP consistency, review cadence, directory citations, duplicate-listing audit). Large share of the "near me" opportunity depends on this.</li>
+  <li><strong>The 4 near-duplicate town-page pairs</strong> (Saugus↔Cambridge 79%, JP↔Saugus 77%, JP↔Lynn 77%, Dedham↔JP 75%) — still above the 70% critical threshold.</li>
+  <li><strong>Entity <code>@id</code> unification</strong> — the WP side emits <code>https://gdprowebdesigns.com/gd-blog/#organization</code>, separate from the static site's <code>https://gdprowebdesigns.com/#organization</code>. Reconcile in <code>gd-seo-core.php</code> config so the whole domain resolves to one business entity.</li>
+  <li><strong>Pricing drift</strong> — the WP town-page template says web design "start at $1,500"; the static site standardised to ~$1,800. That text is in ACF/template on the WP side.</li>
+  <li><strong>Residual geo coords</strong> — ~24 static pages still have slightly-off <code>geo</code> in their old <code>LocalBusiness</code> blocks (text address is now correct everywhere).</li>
+  <li><strong><code>blog.html</code> nav-dropdown links on redirect stubs</strong> (<code>seo-services-everett-ma.html</code>, its <code>-off</code> variant) left as-is — those pages 301 before anyone sees them.</li>
+</ul>
+
+<h2 id="files">9. Files created / modified this session</h2>
+<h4>Created</h4>
+<ul>
+  <li><code>seo-technical.config.json</code> — local audit tooling config (do not deploy)</li>
+  <li><code>seo/keyword-intent-map.md</code> — cluster → target-page map + cannibalization register</li>
+  <li><code>seo/town-facts.yml</code> — per-town facts for the 6 gap towns + title-fix candidate list</li>
+  <li><code>seo/session-log-2026-08-29.html</code> — this document</li>
+  <li><code>scripts/fix_schema.py</code> — entity-graph injector + address normaliser (idempotent)</li>
+  <li><code>llms.txt</code> — AI-crawler business summary (deploy to web root)</li>
+  <li><code>~/.claude/plans/majestic-napping-whisper.md</code> — the approved plan</li>
+  <li>Memory: <code>organic_lead_growth_plan.md</code>, <code>wp_rest_access_and_town_pages.md</code></li>
+</ul>
+<h4>Modified (static site — all undeployed)</h4>
+<ul>
+  <li>The 8 Phase-1 pages (listed in section 4)</li>
+  <li>All ~45 active interior pages — entity <code>@graph</code> injected by <code>fix_schema.py</code></li>
+  <li>~21 pages — redirect-chain link fix (<code>web-dsigner-…</code> stub)</li>
+  <li>~15 pages — relative <code>gd-blog/</code> link fix; 5 pages — <code>blog.html</code> footer-link fix</li>
+  <li><code>index.html</code> — FAQ schema pricing + <code>sameAs</code> YouTube</li>
+  <li><code>css/custom.css</code> — new <code>.quick-answer</code> class</li>
+  <li><code>.htaccess</code> — 3 new 301s</li>
+  <li><code>sitemap.xml</code> (54 → 51), <code>sitemap.html</code>, <code>robots.txt</code></li>
+</ul>
+<h4>Modified (WordPress)</h4>
+<ul>
+  <li><code>~/Local Sites/gd-blog/app/public/wp-content/mu-plugins/gd-seo-core.php</code> — deployed to live</li>
+  <li><code>~/Local Sites/gd-blog/app/public/wp-content/themes/gd-blog/inc/acf-service-areas.php</code> — deployed to live</li>
+  <li>Live site: 6 <code>service_city</code> draft posts (IDs 267–272)</li>
+</ul>
+
+<h2 id="creds">10. Access &amp; credentials notes</h2>
+<ul>
+  <li><strong>WP REST API:</strong> dedicated user <code>claude-seo</code> (role: Editor, user id 3). Application password stored at <code>~/.claude/gd-wp-cred</code> (format <code>claude-seo:&lt;pass&gt;</code>, chmod 600). Revoke via that user's Profile → Application Passwords when the work is finished.</li>
+  <li><strong>Wordfence:</strong> "Disable WordPress application passwords" was unchecked to allow this. Can be re-checked once the credential is revoked.</li>
+  <li><strong>Base URL:</strong> <code>https://gdprowebdesigns.com/gd-blog/wp-json/</code>. Namespaces: <code>wp/v2</code>, <code>aioseo/v1</code>, <code>redirection/v1</code>, <code>contact-form-7/v1</code>, etc.</li>
+  <li><strong>ModSecurity:</strong> send a browser <code>User-Agent</code> on REST writes (default <code>Python-urllib</code> → 406).</li>
+</ul>
+
+<hr>
+
+<div class="resume" id="resume">
+  <h2>11. Prompt to continue this work</h2>
+  <p style="color:#cfe3df">Paste the following into a new session (opened in the GD-2013 project directory) to resume:</p>
+  <pre><code>Resume the GD Pro Web Designs organic lead growth initiative.
+
+CONTEXT / READ FIRST
+- Plan: ~/.claude/plans/majestic-napping-whisper.md
+- Full session recap: seo/session-log-2026-08-29.html
+- Keyword/intent map: seo/keyword-intent-map.md
+- Town facts: seo/town-facts.yml
+- Memory files: organic_lead_growth_plan.md, wp_rest_access_and_town_pages.md
+- WP REST creds: ~/.claude/gd-wp-cred  (user claude-seo, Editor). Send a
+  browser User-Agent on writes or Bluehost ModSecurity returns 406.
+
+WHERE THINGS STAND
+- Phases 0-2 (static site): DONE but NOT DEPLOYED. ~50 HTML files changed
+  plus .htaccess, sitemap.xml/.html, robots.txt, llms.txt, css/custom.css.
+  3 pages retired with 301s (blog.html, web-design-FAQ.html,
+  local-seo-services-boston-ma.html) and must be DELETED from the server.
+  Do NOT upload seo-technical.config.json, scripts/, or seo/.
+- Phase 3 (WordPress): gd-seo-core.php + inc/acf-service-areas.php are
+  DEPLOYED. Page &lt;title&gt; is fixed; ACF is REST-writable. 6 gap-town
+  drafts exist on the live site, unpublished:
+  Peabody 267, Cambridge 268, Quincy 269, Chelsea 270, Beverly 271, Danvers 272.
+
+DO NEXT (in order)
+1. Ask me whether I have (a) deployed the static Phase 0-2 changes,
+   (b) cleared the AIOSEO "Cities" Meta Description template,
+   (c) reviewed/published any of the 6 town drafts,
+   (d) decided how to handle the Cambridge/Quincy/Chelsea static-page
+       cannibalization (301 static -> WP is the recommendation for
+       Cambridge and Quincy).
+2. Based on my answers:
+   - If static changes are deployed: run the /seo-technical drift check and
+     verify a few live pages with curl -I / view-source; snapshot GSC
+     (query + page) as the +0 baseline for measuring Phase 1.
+   - Verify the 6 town drafts render correctly (title, meta description,
+     intro paragraph, FAQ, schema); confirm they are in the WP sitemap and
+     the /gd-blog/service-area/ index once published.
+   - Apply the agreed 301s for Cambridge/Quincy (and Chelsea if decided) in
+     .htaccess, and repoint the static PPC page's town matrix links to the
+     new WP pages.
+3. Then pick up the deferred work from section 8 of the session log:
+   Phase 2b (key-facts blocks + "ask ChatGPT" links), seo/gbp-checklist.md,
+   the 4 near-duplicate town-page pairs, WP entity @id unification, and the
+   $1,500-vs-$1,800 pricing drift on the WP town template.
+
+Start by asking me the status questions in step 1.</code></pre>
+</div>
+
+<footer class="doc">
+  Generated 2026-08-29 · GD-2013 organic lead growth initiative · This file is a local working record; it is not part of the published site and should not be uploaded.
+</footer>
+
+</div>
+</body>
+</html>

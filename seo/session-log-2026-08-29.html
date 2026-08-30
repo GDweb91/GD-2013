@@ -56,7 +56,7 @@
   <h1>Organic Lead Growth Initiative — Session Log</h1>
   <div class="meta">
     Project: <strong>GD-2013</strong> (gdprowebdesigns.com static site + <code>/gd-blog/</code> WordPress)<br>
-    Session date: <strong>2026-08-29</strong> &nbsp;·&nbsp; Plan file: <code>~/.claude/plans/majestic-napping-whisper.md</code><br>
+    Session date: <strong>2026-08-29</strong> &nbsp;·&nbsp; Updated: <strong>2026-08-30</strong> (static site deployed &amp; verified live; GA4 ID cleanup) &nbsp;·&nbsp; Plan file: <code>~/.claude/plans/majestic-napping-whisper.md</code><br>
     Goal: position the site as the premier local web design / WordPress / SEO partner for Greater Boston, the North Shore, and all of Massachusetts, and grow inbound organic leads.
   </div>
 </header>
@@ -82,13 +82,27 @@
 <p>A multi-phase SEO + GEO (Generative Engine Optimization) initiative was planned and approved, then Phases 0–2 were fully executed on the static site and Phase 3 was started on the WordPress side.</p>
 <table>
   <tr><th>Phase</th><th>Scope</th><th>Status</th></tr>
-  <tr><td>0 — Audit + keyword map</td><td>/seo-technical run; config; keyword-intent map; 3 thin pages retired</td><td><span class="tag t-done">DONE</span> — undeployed</td></tr>
-  <tr><td>1 — Quick wins</td><td>8 page-2 pages rewritten (title/meta/H1 + answer block + FAQ), many schema bugs fixed</td><td><span class="tag t-done">DONE</span> — undeployed</td></tr>
-  <tr><td>2 — Entity graph + GEO</td><td><code>fix_schema.py</code> unifies entity across 45 pages; robots.txt AI allowlist; llms.txt</td><td><span class="tag t-done">DONE</span> — undeployed</td></tr>
+  <tr><td>0 — Audit + keyword map</td><td>/seo-technical run; config; keyword-intent map; 3 thin pages retired</td><td><span class="tag t-done">DONE</span> — deployed 08-30</td></tr>
+  <tr><td>1 — Quick wins</td><td>8 page-2 pages rewritten (title/meta/H1 + answer block + FAQ), many schema bugs fixed</td><td><span class="tag t-done">DONE</span> — deployed 08-30</td></tr>
+  <tr><td>2 — Entity graph + GEO</td><td><code>fix_schema.py</code> unifies entity across 45 pages; robots.txt AI allowlist; llms.txt</td><td><span class="tag t-done">DONE</span> — deployed 08-30</td></tr>
   <tr><td>3 — WP town pages</td><td>title bug fix deployed; 6 gap-town drafts created via REST</td><td><span class="tag t-pending">IN PROGRESS</span></td></tr>
 </table>
-<div class="callout warn">
-  <strong>Nothing from Phases 0–2 is live yet.</strong> All static-site changes sit in the local repo awaiting a full site upload. On the WP side, two files were deployed and 6 town-page drafts were created on the live site (unpublished).
+<div class="callout ok">
+  <strong>Phases 0–2 are live and verified (2026-08-30).</strong> All ~50 modified static pages plus <code>.htaccess</code>, <code>sitemap.xml</code>/<code>.html</code>, <code>robots.txt</code>, <code>llms.txt</code> and <code>css/custom.css</code> were uploaded and confirmed byte-identical live; the 3 retired URLs return single-hop 301s and their files were deleted from the server. Committed as <code>1b2a49f</code> and pushed to <code>origin/master</code>. See the <a href="#update0830">2026-08-30 deployment update</a> below. On the WP side, two files are deployed and 6 town-page drafts sit on the live site (unpublished).
+</div>
+
+<h3 id="update0830">Update — 2026-08-30 deployment session</h3>
+<table>
+  <tr><th>Item</th><th>Result</th></tr>
+  <tr><td>Static Phases 0–2 upload (~50 HTML + <code>sitemap.xml</code>/<code>.html</code>, <code>robots.txt</code>, <code>llms.txt</code>, <code>css/custom.css</code>)</td><td><span class="tag t-done">LIVE</span> — 48 content pages md5-identical local↔live; <code>robots.txt</code>, <code>sitemap.xml</code>, <code>llms.txt</code> identical.</td></tr>
+  <tr><td>3 retirement 301s (<code>blog.html</code>, <code>web-design-FAQ.html</code>, <code>local-seo-services-boston-ma.html</code>)</td><td><span class="tag t-done">LIVE</span> — single-hop 301 → target → 200, <code>server: Apache</code>. Old files then deleted from the server.</td></tr>
+  <tr><td><code>.htaccess</code> deploy</td><td><span class="fix">FTP silently failed twice</span> (the documented Bluehost hidden-dotfile issue) — fixed by pasting the file contents into cPanel → File Manager → Edit, exactly as the prior <code>.htaccess</code> incident in <code>CLAUDE.md</code>. Verified with <code>curl -I</code> afterwards.</td></tr>
+  <tr><td>Old GA4 ID cleanup</td><td><span class="tag t-done">LIVE</span> — the redundant hardcoded <code>gtag</code> snippet carrying the wrong id <code>G-DB973M2MJX</code> was removed from 9 pages (<code>index.html</code>, <code>404.html</code>, <code>freelance-web-designer-developer-boston-ma</code>, <code>malden-web-designer-wordpress-developer</code>, <code>web-designer-winchester-ma</code>, <code>web-site-designs-Boston-MA</code>, <code>seo-services-everett-ma</code> + <code>-off</code>, <code>boston-webdesign-for-non-profits-off</code>). GA4 now fires only via GTM <code>GTM-N4P95M5</code> (correct id <code>G-5F0NL22GJ9</code>), matching every other page. <code>CLAUDE.md</code> analytics tables corrected. <code>grep G-DB973M2MJX *.html</code> → none, live-verified.</td></tr>
+  <tr><td>Hero answer-block styling</td><td><span class="tag t-done">LIVE</span> — <code>#hero .quick-answer</code> in <code>css/custom.css</code> now uses the frosted-glass <code>.hero-stat-card</code> surface (translucent, blur, white text) + <code>margin-bottom</code>, instead of an out-of-place white box. Applies to all 6 hero pages that carry the block.</td></tr>
+  <tr><td>Git</td><td>Commit <code>1b2a49f</code> "Organic lead growth: quick-win pages, entity graph, GEO, GA4 cleanup" — 68 files — pushed to <code>origin/master</code> (<code>a663dda..1b2a49f</code>). Unrelated stray files (<code>archive/*.docx</code>, <code>img/ja-armira copy.jpg</code>) intentionally left unstaged.</td></tr>
+</table>
+<div class="callout">
+  <strong>Still open after 08-30:</strong> clear the AIOSEO "Cities" Meta Description template (wp-admin); review + publish the 6 town drafts; decide Cambridge / Quincy / Chelsea static-page cannibalization; snapshot GSC as the Phase-1 measurement baseline; then the deferred work in section 8.
 </div>
 
 <h2 id="diagnosis">2. Diagnosis (from Google Search Console, May 1 – Aug 25 2026)</h2>
@@ -238,9 +252,9 @@
 <table>
   <tr><th>Area</th><th>State</th><th>To deploy</th></tr>
   <tr>
-    <td>Static site (Phases 0–2)</td>
-    <td><span class="tag t-pending">NOT DEPLOYED</span></td>
-    <td>Re-upload all modified <code>.html</code> + <code>.htaccess</code> + <code>sitemap.xml</code> + <code>sitemap.html</code> + <code>robots.txt</code> + <code>llms.txt</code> + <code>css/custom.css</code>. <strong>Delete</strong> from the server: <code>blog.html</code>, <code>web-design-FAQ.html</code>, <code>local-seo-services-boston-ma.html</code>. Do <strong>not</strong> upload <code>seo-technical.config.json</code>, <code>scripts/</code>, or <code>seo/</code>. Then verify with <code>curl -I</code> on the 3 retired URLs (expect 301) and view-source on 3–4 edited pages (per the documented FTP silent-fail + Bluehost edge-cache gotchas).</td>
+    <td>Static site (Phases 0–2 + GA4 cleanup)</td>
+    <td><span class="tag t-done">DEPLOYED &amp; VERIFIED</span> 2026-08-30</td>
+    <td>All modified <code>.html</code>, <code>.htaccess</code>, <code>sitemap.xml</code>/<code>.html</code>, <code>robots.txt</code>, <code>llms.txt</code>, <code>css/custom.css</code> uploaded; live confirmed md5-identical. 3 retired URLs return single-hop 301s and their server files were deleted. 9-page GA4-ID cleanup live. <code>.htaccess</code> needed the cPanel File Manager paste (FTP silently failed). <code>seo-technical.config.json</code>, <code>scripts/</code>, <code>seo/</code> correctly NOT uploaded. Nothing left to deploy here. Next: snapshot GSC (query + page) as the Phase-1 baseline; re-check at +14 / +28 days.</td>
   </tr>
   <tr>
     <td>WordPress (Phase 3)</td>
@@ -254,7 +268,7 @@
 <ol>
   <li><strong>Clear the AIOSEO "Cities" Meta Description template</strong> (wp-admin) — fixes <code>%%post_title%%</code> in meta descriptions on all ~40 town pages + the 6 new ones.</li>
   <li><strong>Review + publish the 6 town drafts.</strong> Publish Peabody / Beverly / Danvers immediately. Decide Cambridge / Quincy / Chelsea vs their static counterparts (301 static → WP recommended for Cambridge &amp; Quincy).</li>
-  <li><strong>Deploy the static-site Phase 0–2 changes</strong> and measure — snapshot GSC (query + page) as the baseline, re-check at +14 and +28 days. Success = P1 clusters moving into pos 5–12 with first non-zero clicks; homepage impressions consolidating downward.</li>
+  <li><span class="tag t-done">DONE 08-30</span> <s>Deploy the static-site Phase 0–2 changes.</s> <strong>Now: snapshot GSC (query + page) as the baseline</strong> and re-check at +14 and +28 days. Success = P1 clusters moving into pos 5–12 with first non-zero clicks; homepage impressions consolidating downward.</li>
   <li>After the 6 pages publish: add internal links from the static PPC page's town matrix (currently points Cambridge/Quincy at the static pages — repoint once decided); confirm they appear in the WP sitemap and the <code>/gd-blog/service-area/</code> index.</li>
 </ol>
 <h4>Deferred (from the plan)</h4>
@@ -280,16 +294,18 @@
   <li><code>~/.claude/plans/majestic-napping-whisper.md</code> — the approved plan</li>
   <li>Memory: <code>organic_lead_growth_plan.md</code>, <code>wp_rest_access_and_town_pages.md</code></li>
 </ul>
-<h4>Modified (static site — all undeployed)</h4>
+<h4>Modified (static site — all deployed &amp; verified live 2026-08-30, committed <code>1b2a49f</code>)</h4>
 <ul>
   <li>The 8 Phase-1 pages (listed in section 4)</li>
   <li>All ~45 active interior pages — entity <code>@graph</code> injected by <code>fix_schema.py</code></li>
   <li>~21 pages — redirect-chain link fix (<code>web-dsigner-…</code> stub)</li>
   <li>~15 pages — relative <code>gd-blog/</code> link fix; 5 pages — <code>blog.html</code> footer-link fix</li>
+  <li>9 pages — removed the redundant hardcoded <code>gtag</code> block with the wrong GA4 id <code>G-DB973M2MJX</code> (<code>index.html</code>, <code>404.html</code>, <code>freelance-web-designer-developer-boston-ma</code>, <code>malden-web-designer-wordpress-developer</code>, <code>web-designer-winchester-ma</code>, <code>web-site-designs-Boston-MA</code>, <code>seo-services-everett-ma</code> + <code>-off</code>, <code>boston-webdesign-for-non-profits-off</code>)</li>
   <li><code>index.html</code> — FAQ schema pricing + <code>sameAs</code> YouTube</li>
-  <li><code>css/custom.css</code> — new <code>.quick-answer</code> class</li>
-  <li><code>.htaccess</code> — 3 new 301s</li>
+  <li><code>css/custom.css</code> — new <code>.quick-answer</code> class; <code>#hero .quick-answer</code> frosted-glass override + bottom margin</li>
+  <li><code>.htaccess</code> — 3 new 301s (deployed via cPanel File Manager; FTP silently failed)</li>
   <li><code>sitemap.xml</code> (54 → 51), <code>sitemap.html</code>, <code>robots.txt</code></li>
+  <li><code>CLAUDE.md</code> — analytics tables corrected to GA4 id <code>G-5F0NL22GJ9</code></li>
 </ul>
 <h4>Modified (WordPress)</h4>
 <ul>
@@ -323,27 +339,31 @@ CONTEXT / READ FIRST
   browser User-Agent on writes or Bluehost ModSecurity returns 406.
 
 WHERE THINGS STAND
-- Phases 0-2 (static site): DONE but NOT DEPLOYED. ~50 HTML files changed
-  plus .htaccess, sitemap.xml/.html, robots.txt, llms.txt, css/custom.css.
-  3 pages retired with 301s (blog.html, web-design-FAQ.html,
-  local-seo-services-boston-ma.html) and must be DELETED from the server.
+- Phases 0-2 (static site): DONE and DEPLOYED &amp; VERIFIED LIVE 2026-08-30.
+  ~50 HTML files + .htaccess, sitemap.xml/.html, robots.txt, llms.txt,
+  css/custom.css all live and md5-identical. 3 retired pages 301 (blog.html,
+  web-design-FAQ.html, local-seo-services-boston-ma.html) and their files
+  were deleted from the server. 9-page GA4-ID cleanup (removed hardcoded
+  G-DB973M2MJX; GA4 now via GTM only) is live. Committed 1b2a49f, pushed.
   Do NOT upload seo-technical.config.json, scripts/, or seo/.
+  NOT YET DONE: snapshot GSC (query + page) as the Phase-1 +0 baseline.
 - Phase 3 (WordPress): gd-seo-core.php + inc/acf-service-areas.php are
   DEPLOYED. Page &lt;title&gt; is fixed; ACF is REST-writable. 6 gap-town
   drafts exist on the live site, unpublished:
   Peabody 267, Cambridge 268, Quincy 269, Chelsea 270, Beverly 271, Danvers 272.
 
 DO NEXT (in order)
-1. Ask me whether I have (a) deployed the static Phase 0-2 changes,
+1. Ask me whether I have (a) snapshotted GSC as the Phase-1 baseline,
    (b) cleared the AIOSEO "Cities" Meta Description template,
    (c) reviewed/published any of the 6 town drafts,
    (d) decided how to handle the Cambridge/Quincy/Chelsea static-page
        cannibalization (301 static -> WP is the recommendation for
        Cambridge and Quincy).
 2. Based on my answers:
-   - If static changes are deployed: run the /seo-technical drift check and
-     verify a few live pages with curl -I / view-source; snapshot GSC
-     (query + page) as the +0 baseline for measuring Phase 1.
+   - Static Phase 0-2 is already live; if the GSC baseline isn't captured
+     yet, pull it now (query + page, trailing dates) and save it as the +0
+     reference for measuring Phase 1. Optionally run the /seo-technical
+     drift check against live.
    - Verify the 6 town drafts render correctly (title, meta description,
      intro paragraph, FAQ, schema); confirm they are in the WP sitemap and
      the /gd-blog/service-area/ index once published.
@@ -359,7 +379,7 @@ Start by asking me the status questions in step 1.</code></pre>
 </div>
 
 <footer class="doc">
-  Generated 2026-08-29 · GD-2013 organic lead growth initiative · This file is a local working record; it is not part of the published site and should not be uploaded.
+  Generated 2026-08-29 · Updated 2026-08-30 (static site deployed &amp; verified; GA4 ID cleanup; commit 1b2a49f) · GD-2013 organic lead growth initiative · This file is a local working record; it is not part of the published site and should not be uploaded.
 </footer>
 
 </div>

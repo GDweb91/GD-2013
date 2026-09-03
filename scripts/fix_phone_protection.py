@@ -26,7 +26,7 @@ import re
 DIGITS = '6177710645'
 ENCODED = DIGITS[::-1]
 
-SKIP_DIRS = ('node_modules', 'archive')
+SKIP_DIRS = ('node_modules', 'archive', 'seo', 'index-css')
 SKIP_FILES = {
     'google07be07f249ecb0f1.html',
     'googleae58b8e4a5c2267d.html',

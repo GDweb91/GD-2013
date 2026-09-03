@@ -67,6 +67,7 @@ ACTIVE = {
     'local-seo-services-boston-ma.html': 'marketing',
     'affordable-seo-services-malden-ma.html': 'marketing',
     'SEO-company-chelsea-ma.html': 'marketing',
+    'contractor-seo-services-boston-ma.html': 'marketing',
     'jamaica-plain-ma-local-seo-services.html': 'marketing',
     'PPC-adwords-advertising-boston.html': 'marketing',
     'local-marketing-company-everett-malden-medford-revere-saugus-ma.html': 'marketing',

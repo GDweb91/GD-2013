@@ -195,6 +195,20 @@ RewriteRule ^web-design-FAQ\.html$ https://gdprowebdesigns.com/web-design-compan
 RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
 RewriteRule ^local-seo-services-boston-ma\.html$ https://gdprowebdesigns.com/organic-search-engine-optimization-boston.html [R=301,L]
 
+# --- 2026-09-03: static town pages superseded by WP service_city pages (Phase 3) ---
+# The WP /gd-blog/service-area/* pages consistently outrank the hand-built static town
+# pages (Cambridge static pos ~38 vs WP town pages pos 7-20). Cambridge and Quincy now
+# have dedicated, richer WP pages (cambridge-ma / quincy-ma, published 2026-09-03), so
+# the thin static versions are retired to consolidate signals. Internal links repointed;
+# sitemap.xml/.html entries updated. Chelsea deliberately NOT redirected — the static
+# SEO-company-chelsea-ma.html targets a distinct "seo company chelsea" cluster and was
+# rebuilt in Phase 1.
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^website-designer-near-cambridge-ma\.html$ https://gdprowebdesigns.com/gd-blog/service-area/cambridge-ma/ [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^quincy-ma-web-design-and-development\.html$ https://gdprowebdesigns.com/gd-blog/service-area/quincy-ma/ [R=301,L]
+
 # BEGIN WordPress
 # The directives (lines) between "BEGIN WordPress" and "END WordPress" are
 # dynamically generated, and should only be modified via WordPress filters.

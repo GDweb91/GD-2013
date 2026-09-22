@@ -36,13 +36,32 @@ before assuming this is still open.
 - [ ] Add a one-line description to each service (GBP allows this) — reuse the site's
       own service-page copy rather than writing new claims
 
-## 3. NAP consistency (byte-identical everywhere)
-- [ ] Business name: **GD Pro Web Designs**
+## 3. NAP consistency (byte-identical everywhere) — ⚠️ KNOWN MISMATCH, confirmed 2026-09-22
+- [ ] **Business name mismatch, not yet resolved:** the live GBP listing currently shows
+      as **"JA Armira (freelance web designer)"**, not "GD Pro Web Designs" — Google
+      required proof of business registration in Everett, MA, and since "GD Pro Web
+      Designs" was never filed as a legal/DBA name, the listing had to be renamed to the
+      user's personal name to stay verified. Every other branded instance of the business
+      (website `<title>`s, footer, JSON-LD `ProfessionalService`/`Organization` name,
+      citations below) still says "GD Pro Web Designs." This is a real, current NAP
+      inconsistency, not a hypothetical one — and a plausible contributing factor to the
+      `google_ai_mode_business_mixup` memory (Google occasionally attaches Budō Creative's
+      listing to GD Pro Web Designs mentions; a GBP name that doesn't match its own
+      website is a weaker entity signal, more prone to being resolved to the wrong place).
+- [ ] **Real fix — a business/legal decision, not a code change:** file a DBA ("doing
+      business as") / business certificate for "GD Pro Web Designs" with the City of
+      Everett, then resubmit that as proof to Google to rename the listing back. Flag this
+      to the user as a recommendation; don't assume they want to pursue it without asking
+      — there may be reasons (cost, preference to operate under their own name) not to.
+- [ ] Until/unless that happens, decide deliberately whether to (a) keep pushing "GD Pro
+      Web Designs" as the brand everywhere else and treat GBP as the one exception, or
+      (b) start reflecting "JA Armira, freelance web designer" more consistently to match
+      the now-legal name. Don't silently let this drift — it should be a conscious choice.
 - [ ] Address: **Lawrence St., Everett, MA 02149**
 - [ ] Phone: **(617) 771-0645**
-- [ ] Cross-check against the homepage `ProfessionalService` JSON-LD and footer string —
-      these are the canonical source (CLAUDE.md Business Info table). Any mismatch
-      (abbreviation, suite number, formatting) is a NAP-consistency ranking risk.
+- [ ] Cross-check address/phone against the homepage `ProfessionalService` JSON-LD and
+      footer string — these are the canonical source (CLAUDE.md Business Info table). Any
+      mismatch (abbreviation, suite number, formatting) is a NAP-consistency ranking risk.
 
 ## 4. Service area
 - [ ] Set GBP's service-area list to match the current published WP town-page list —
@@ -88,13 +107,17 @@ before assuming this is still open.
       name variant (e.g. "GDWebPros" vs "GD Pro Web Designs" — pick one and standardize,
       note both forms appear in CLAUDE.md's Business Info table)
 
-## 8. Ownership / access
-- [ ] Confirm the profile is verified and owned by an account the user actually
-      controls day-to-day — given the tangled Google identity across `ja@gdprowebdesigns.com`
-      / `jorgelemus080@gmail.com` / `gddomain.77@gmail.com` (see
-      `google_account_identity_history` memory), check which account currently owns/manages
-      the GBP listing before assuming access is fine. Don't assume an unfamiliar owner
-      email is a compromise — it's likely the user's own tangled identity, but verify.
+## 8. Ownership / access — confirmed 2026-09-22
+- [x] Confirmed: GBP **Primary Owner is `jorgelemus080@gmail.com`** — same account as
+      Search Console. `ja@gdprowebdesigns.com` also has manager-level access. See
+      `google_account_identity_history` memory for the full chain.
+- [ ] `gddomain.77@gmail.com` (the account used day-to-day) is NOT yet confirmed as an
+      Owner on the GBP listing — recommended: from `jorgelemus080@gmail.com`, add
+      `gddomain.77@gmail.com` as an Owner (not just Manager) so future work doesn't require
+      logging into the older account each time.
+- [ ] This ownership chain is also the blocker for any Business Profile API automation —
+      whoever does the one-time OAuth authorization has to be logged into the Primary
+      Owner account (or an Owner-level account it delegates to).
 
 ## 9. Quarterly audit
 - [ ] Search the business name + "Everett MA" / "web design" periodically and check for

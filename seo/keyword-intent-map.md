@@ -88,6 +88,28 @@ Intent key: **TL** = transactional-local · **C** = commercial-investigation · 
 
 ---
 
+## P4 — National / remote clients (no GSC signal yet — new vertical) — WordPress (gd-blog)
+
+Source: `long-tail-keywords-for-web-design-dev.pdf` keyword research (not GSC-derived, since this is net-new content with no existing impressions). Full plan: `seo/national-remote-clients-plan.md`. These target **national/remote** buyers by platform + urgency intent, not geography — kept as a separate cluster set so they never compete with the local P1–P3 clusters above for the same query.
+
+| # | Cluster | Keywords | Intent | Target (ONE) | Wave |
+|---|---------|----------|--------|---------------|------|
+| 1 | Remote WordPress dev (flagship) | revamp/rebuild wordpress website, custom wordpress development services, freelance wordpress developer remote, wordpress speed optimization services | C | WP Page: "Freelance WordPress Developer — Remote, Nationwide" | 1 |
+| 2 | Wix → WordPress migration | wix to wordpress migration service | C | WP Page: "Wix to WordPress Migration Service" | 1 |
+| 3 | WordPress → Shopify | wordpress to shopify developer | C | WP Page: "WordPress to Shopify Developer" | 2 |
+| 4 | Shopify setup (national) | shopify design and setup expert | C | WP Page: "Shopify Design & Setup Expert (Remote)" | 2 |
+| 5 | Wix Studio | hire freelance wix studio designer | C | WP Page: "Hire a Freelance Wix Studio Designer" | 2 |
+| 6 | SEO-friendly design bundle | seo friendly web design services, wordpress seo expert consultant | C | WP Page: "SEO-Friendly WordPress Web Design" | 3 |
+| 7 | CRO bundle | conversion rate optimization cro services | C | WP Page: "Conversion Rate Optimization (CRO) Services" | 3 |
+| 8 | Shopify marketing bundle | shopify store marketing strategy | C | WP Page: "Shopify Store Marketing Strategy" | 3 |
+| 9 | Comparison | wordpress vs shopify for small business e-commerce | I | WP Post: comparison article | 4 |
+| 10 | Fixer/urgent | hire freelancer to fix hacked wordpress site | TL-adjacent (urgency, not geography) | WP Post: "Fix a Hacked WordPress Site" | 4 |
+| 11 | Fixer/urgent | fix shopify checkout speed | TL-adjacent | WP Post: "Fix Shopify Checkout Speed" | 4 |
+
+**Cannibalization guard:** cluster #1 (national) vs. `wordpress-developer-boston-ma.html` (local, static) both touch "wordpress developer" — kept apart by the local page's Boston/MA-specific title+content vs. the national page's "remote/nationwide" framing and `Service`/`areaServed:"United States"` schema (not `LocalBusiness`). Cluster #4 vs. the static `shopify/shopify-developer-boston-ma-ecommerce.html` — same split, national page must not target "boston" anywhere in title/meta/H1.
+
+---
+
 ## Measurement baseline (snapshot before Phase 1 edits)
 
 - Homepage: 24,052 impr · 40 clicks · CTR 0.17% · pos 43.7

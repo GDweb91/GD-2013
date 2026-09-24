@@ -84,6 +84,7 @@
     <li><a href="#creds">Access &amp; credentials notes</a></li>
     <li><a href="#national">National/Remote Clients Initiative + CRO Methodology (separate initiative, 09-11)</a></li>
     <li><a href="#gtm-fix">GA4/GTM Tracking Regression, Fix &amp; New WP Bug (09-22)</a></li>
+    <li><a href="#gbp">Google Business Profile Checklist (separate initiative, 09-24) <span class="sid" style="font-size:.75em;">GD-GBP-2026-09-24</span></a></li>
     <li><a href="#resume">Prompt to continue this work</a></li>
   </ol>
 </div>
@@ -560,17 +561,41 @@
 
 <hr>
 
+<h2 id="gbp">14. Google Business Profile Checklist <span class="tag t-done">IN PROGRESS, 09-24</span> <span style="font-weight:400;font-size:.85rem;color:var(--muted)">— separate initiative from the rest of this doc; sub-identifier <span class="sid">GD-GBP-2026-09-24</span>; full detail in <code>seo/gbp-checklist.md</code> and the <code>gbp_checklist_progress</code> memory</span></h2>
+
+<p>The listing is <strong>J.A. Armira (Freelance Web Designer)</strong>, 57 Lawrence St., Everett, MA 02149, inside a 33-business Google Business Profile Manager account under <code>jorgelemus080@gmail.com</code> (confirmed GBP Primary Owner, same account as Search Console). Progress on the 9-section checklist:</p>
+
+<ul>
+  <li><span class="tag t-done">DONE</span> <strong>§1 Categories</strong> — added secondaries Marketing agency, Internet marketing service, Software company (primary "Website designer" already set). Pending Google review.</li>
+  <li><span class="tag t-done">DONE</span> <strong>§2 Services</strong> — found the live list already extensive (SEO, PPC, niche contractor/vertical services) from undocumented prior work; added the 2 real gaps: Shopify development, Social media marketing.</li>
+  <li><span class="tag t-pending">PARTIAL</span> <strong>§3 NAP</strong> — live listing name is "JA Armira (freelance web designer)," not "GD Pro Web Designs" (Google required business-registration proof). User decided to file a Business Certificate (DBA) with the City of Everett — full process researched from the actual city PDF (in-person only, City Hall 484 Broadway, fee discrepancy $95 vs $60 in the city's own paperwork — confirm by phone 617-394-2225, bring photo ID + SSN/EIN). <strong>Not yet filed — next action is the user's.</strong></li>
+  <li><span class="tag t-pending">PARTIAL</span> <strong>§4 Service area</strong> — already set at state level (Massachusetts, Rhode Island — RI confirmed intentional by the user, a real target market). Layering individual high-value towns on top deferred to a future session (GBP caps service areas ~20 entries; 41 real WP town pages exist per <code>/gd-blog/service-area/</code>, supersedes the stale 47-town figure in <code>seo/town-facts.yml</code>).</li>
+  <li><span class="tag t-done">DONE</span> <strong>§6 Reviews</strong> — found only 1 review total (5.0★, 2016, never replied to despite 21+ years in business); posted a reply via Business Profile Manager; got the real review short-link (<code>https://g.page/r/CY2l1DPJt5fMEAI/review</code>); added a <code>gdprowebdesigns.com/review</code> redirect to <code>.htaccess</code> — hit the same FTP-silent-fail gotcha as past <code>.htaccess</code> edits, fixed by pasting directly into cPanel File Manager, verified live via <code>curl -I</code> (clean 301). Drafted and user-approved a post-project review-ask email template (not wired into a send process, just a copy-paste template).</li>
+  <li><span class="tag t-done">DONE</span> <strong>§8 Ownership</strong> — Primary Owner confirmed as <code>jorgelemus080@gmail.com</code>. Still open: add <code>gddomain.77@gmail.com</code> as an Owner (not just Manager).</li>
+  <li><span class="tag t-pending">NOT STARTED</span> <strong>§5 Posts</strong> (weekly cadence), <strong>§7 Citations</strong> (Yelp, BBB, Clutch, Bing Places, Apple Business Connect), <strong>§9 Quarterly audit</strong>.</li>
+</ul>
+
+<p><strong>Found in passing, not yet acted on:</strong> live GBP hours don't match CLAUDE.md's documented "Mon–Fri 9:00–18:00" — actual hours show Saturday 9am–1pm (not documented at all) and Wednesday closing at 5pm vs 6pm other weekdays. Worth reconciling under §9 or updating CLAUDE.md.</p>
+
+<p><strong>Working notes for whoever resumes this thread:</strong> the "See your profile" / pencil-icon buttons in Business Profile Manager's list view are flaky — clicking via a stale element reference often does nothing; take a fresh screenshot and click by visual coordinates, or re-run the element lookup immediately before clicking. Reading a copied link from the OS clipboard via <code>navigator.clipboard.readText()</code> can hang/timeout — read the value directly from the visible input element's text instead.</p>
+
+<hr>
+
 <div class="resume" id="resume">
   <h2>11. Prompt to continue this work</h2>
-  <p style="color:#cfe3df">This document's identifier is <span class="sid">SESSION-ID: GD-OLG-2026-08-29</span> — mention it in a new session, or paste the whole block below, to resume with full context even if this exact chat can't be found by <code>/resume</code>. Two copies of this file exist and should be kept in sync: this canonical one at <code>seo/session-log-2026-08-29.html</code> inside the GD-2013 project, and a duplicate at <code>~/Desktop/tasks-claude-per-topic/GD-organic-lead-growth-session-2026-08-29.html</code>.</p>
+  <p style="color:#cfe3df">This document's identifier is <span class="sid">SESSION-ID: GD-OLG-2026-08-29</span> (the GBP thread's own sub-identifier is <span class="sid">GD-GBP-2026-09-24</span>) — mention either in a new session, or paste the whole block below, to resume with full context even if this exact chat can't be found by <code>/resume</code>. Two copies of this file exist and should be kept in sync: this canonical one at <code>seo/session-log-2026-08-29.html</code> inside the GD-2013 project, and a duplicate at <code>~/Desktop/tasks-claude-per-topic/GD-organic-lead-growth-session-2026-08-29.html</code>.</p>
   <pre><code>Resume the GD Pro Web Designs organic lead growth initiative.
-SESSION-ID: GD-OLG-2026-08-29
+SESSION-ID: GD-OLG-2026-08-29 (GBP thread sub-ID: GD-GBP-2026-09-24)
 
 CONTEXT / READ FIRST
 - This file (either copy) has the full recap through end-of-day 2026-09-24,
-  covering THREE threads (local/Everett-MA in sections 1-11, national/
+  covering FOUR threads (local/Everett-MA in sections 1-11, national/
   remote clients in section 12, GA4/GTM tracking regression -- now fully
-  resolved -- in section 13).
+  resolved -- in section 13, Google Business Profile checklist -- in
+  progress -- in section 14).
+- GBP checklist -- full detail: seo/gbp-checklist.md and the
+  gbp_checklist_progress memory. Paused mid-thread 2026-09-24 -- see
+  "GBP CHECKLIST" block below for exactly where to pick back up.
 - Local initiative -- Plan: ~/.claude/plans/majestic-napping-whisper.md
 - Local initiative -- Keyword/intent map: seo/keyword-intent-map.md (also
   has the P4 section for the national-clients keyword clusters)
@@ -662,13 +687,35 @@ audit above, then diagnosed and partly fixed live in GTM):
   tracking (click_to_call, Fill_out_email_form) should now be fully
   working end-to-end. Not yet confirmed with real multi-day traffic data.
 
+GBP CHECKLIST (section 14 of this doc -- separate initiative, sub-ID
+GD-GBP-2026-09-24, full detail in seo/gbp-checklist.md and the
+gbp_checklist_progress memory. PAUSED HERE 2026-09-24, mid-thread):
+- DONE: Sec 1 Categories, Sec 2 Services, Sec 6 Reviews (reply posted,
+  review link grabbed, /review redirect live, email template drafted),
+  Sec 8 Ownership.
+- PARTIAL/DEFERRED: Sec 3 NAP/DBA (user decided to file, process
+  researched, NOT YET FILED -- next action is the user's, in person at
+  Everett City Hall); Sec 4 Service area (state-level MA+RI already set
+  and correct, individual-town layering deferred to a future session).
+- NOT STARTED: Sec 5 Posts (weekly cadence), Sec 7 Citations (Yelp, BBB,
+  Clutch, Bing Places, Apple Business Connect), Sec 9 Quarterly audit.
+- Also flagged, not yet acted on: live GBP hours don't match CLAUDE.md's
+  documented "Mon-Fri 9:00-18:00" (real hours have a Saturday slot and a
+  shorter Wednesday) -- reconcile under Sec 9 or fix CLAUDE.md.
+- Working notes: the profile-list "See your profile"/pencil-icon buttons
+  in Business Profile Manager are flaky with stale element refs --
+  re-screenshot and click by coordinates, or re-run the element lookup
+  immediately before clicking. navigator.clipboard.readText() can hang --
+  read link values directly from the visible input element's text.
+
 DO NEXT (in order)
-1. Ask me: (a) has real GA4 traffic confirmed click_to_call/
-   Fill_out_email_form events flowing correctly post-fix (check a few
-   days out), (b) is it on/after ~Sep 27 for the GSC +28d local-SEO
-   comparison, (c) requested GSC indexing yet for
-   contractor-seo-services-boston-ma.html, (d) any preference on which
-   deferred item (any of the three threads) to start.
+1. Ask me which thread to resume: (a) GA4 -- has real traffic confirmed
+   click_to_call/Fill_out_email_form flowing post-fix; (b) GSC +28d local
+   -SEO comparison, due ~Sep 27; (c) GSC indexing requested yet for
+   contractor-seo-services-boston-ma.html; (d) GBP checklist -- pick up
+   Sec 5 Posts, Sec 7 Citations, or Sec 9 Quarterly audit next (Sec 3
+   NAP and Sec 4 Service-area town-layering are deliberately deferred,
+   don't restart them unprompted); (e) any other preference.
 2. If GA4 hasn't been re-checked yet: pull Realtime/Events for
    click_to_call and Fill_out_email_form to confirm the full fix chain
    (Version 28 + the functions.php fix) is working end-to-end.
@@ -683,7 +730,7 @@ Start by asking me the status questions in step 1.</code></pre>
 </div>
 
 <footer class="doc">
-  Generated 2026-08-29 · Updated 2026-08-30 (static deployed; GA4 cleanup; <code>1b2a49f</code>) · Updated 2026-09-03 (town pages published + AIOSEO templates fixed; Cambridge/Quincy 301s; GSC +0 baseline; contractor-SEO pillar live; <code>d51558d</code>, <code>c0c53de</code>) · Updated 2026-09-11 (GSC +12d check-in; residual geo-coordinate schema fix, <code>75b5477</code>; WP entity @id unification; National/Remote Clients initiative built end-to-end, 11 pages/posts; CRO audit methodology) · Updated 2026-09-22 (CRO self-audit run; GA4/GTM tracking regression found &amp; fixed in GTM Version 28; new bug found where GTM fails to load on WordPress pages) · Updated 2026-09-24 (WordPress GTM-load bug root-caused &amp; fixed — corrupted <code>insertBefore</code> line wrap in theme <code>functions.php</code>; verified live; <code>4dbf4d6</code> in the gd-blog repo) · SESSION-ID: GD-OLG-2026-08-29 · GD-2013 organic lead growth + national/remote clients initiatives · This file is a local working record; it is not part of the published site and should not be uploaded.
+  Generated 2026-08-29 · Updated 2026-08-30 (static deployed; GA4 cleanup; <code>1b2a49f</code>) · Updated 2026-09-03 (town pages published + AIOSEO templates fixed; Cambridge/Quincy 301s; GSC +0 baseline; contractor-SEO pillar live; <code>d51558d</code>, <code>c0c53de</code>) · Updated 2026-09-11 (GSC +12d check-in; residual geo-coordinate schema fix, <code>75b5477</code>; WP entity @id unification; National/Remote Clients initiative built end-to-end, 11 pages/posts; CRO audit methodology) · Updated 2026-09-22 (CRO self-audit run; GA4/GTM tracking regression found &amp; fixed in GTM Version 28; new bug found where GTM fails to load on WordPress pages) · Updated 2026-09-24 (WordPress GTM-load bug root-caused &amp; fixed — corrupted <code>insertBefore</code> line wrap in theme <code>functions.php</code>; verified live; <code>4dbf4d6</code> in the gd-blog repo) · Updated 2026-09-24 (GBP checklist thread started and paused mid-progress — categories, services, reviews, ownership done; NAP/DBA and service-area town-layering deferred; sub-ID <code>GD-GBP-2026-09-24</code>) · SESSION-ID: GD-OLG-2026-08-29 · GD-2013 organic lead growth + national/remote clients + GBP checklist initiatives · This file is a local working record; it is not part of the published site and should not be uploaded.
 </footer>
 
 </div>

@@ -3,12 +3,13 @@
 **Status (2026-09-24):** §1 Categories and §2 Services both done (both pending Google
 review). §8 Ownership confirmed. §3 NAP mismatch confirmed and the user decided to file a
 DBA — exact City of Everett process/fee/requirements researched and documented below,
-ready to act on. §4–7, 9 not yet started. **Correction:** the "not yet started" status
-this file originally carried for §2 was wrong — the live listing already had an
-extensive, well-built services list (SEO, PPC, niche contractor/vertical services
-matching the contractor-SEO pillar work) from prior, undocumented work on this account.
-Always check the live listing before assuming a checklist item is untouched. This is the
-parallel, user-run track from the Organic Lead Growth Plan
+ready to act on. §4 Service area checked (state-level MA + RI already set, RI confirmed
+intentional — layering in individual towns deferred to a future session). §5–7, 9 not yet
+started. **Correction:** the "not yet started" status this file originally carried for §2
+(and assumed for §4) was wrong — the live listing already had substantial prior,
+undocumented work (extensive services list, state-level service area). Always check the
+live listing before assuming a checklist item is untouched. This is the parallel,
+user-run track from the Organic Lead Growth Plan
 (`~/.claude/plans/majestic-napping-whisper.md`) — it gates the "near me" query layer
 (e.g. "freelance website designer near me" 306 impr @ pos 50.5) that the site alone can't
 fully win. Nothing here touches the codebase; it's all done inside the Google Business
@@ -90,17 +91,36 @@ before assuming this is still open.
       footer string — these are the canonical source (CLAUDE.md Business Info table). Any
       mismatch (abbreviation, suite number, formatting) is a NAP-consistency ranking risk.
 
-## 4. Service area
-- [ ] Set GBP's service-area list to match the current published WP town-page list —
-      pull the live list from `/gd-blog/service-area/` rather than a static snapshot,
-      since it's grown since `seo/town-facts.yml` was last touched (47 towns as of
-      2026-09-11, plus whatever's been added since). Include Everett itself plus the
-      North Shore tier (Peabody, Salem, Beverly, Marblehead, Swampscott, Danvers) if
-      not already present.
-- [ ] Do **not** set a fake/duplicate physical location per town — GBP service-area
-      businesses declare one real address + a service-area list, same NAP-safety
-      principle already applied to the WP town pages' schema (see the entity
+## 4. Service area — checked 2026-09-24, mostly deferred
+- [x] **Checked the live listing first** (correcting the original assumption this was
+      empty): Service area is already set at the **state level** — `Massachusetts, USA`
+      and `Rhode Island, USA`. Not a town-by-town list.
+- [x] **Rhode Island confirmed intentional** by the user 2026-09-24 — a real target
+      market, not an accident. Do not remove it in a future pass without asking again.
+- [ ] **Deferred, not done:** layering in individual high-value towns on top of the state
+      -level entries (GBP allows both broad + specific areas together, not
+      mutually exclusive). Google generally caps service areas around 20 entries per
+      listing, so "match all 41 real WP town pages" (the original plan below) isn't
+      literally achievable — would need a prioritized subset instead, e.g. by GSC search
+      demand: Everett, Chelsea, Somerville, Malden, Medford, Revere, Cambridge, Newton,
+      Quincy, Lynn, Saugus, Waltham, plus the North Shore tier (Peabody, Salem, Beverly,
+      Marblehead, Swampscott, Danvers) — per `organic_lead_growth_plan` memory town
+      priority list. Picked up again whenever the user wants to continue.
+- [ ] Live WP town-page count confirmed 2026-09-24 via `/gd-blog/service-area/`: **41
+      actual town pages** (plus a separate `we-serve-the-entire-usa` nationwide page,
+      not a town — exclude from any GBP town list). This supersedes the stale "47 towns
+      as of 2026-09-11" figure from `seo/town-facts.yml` — always pull the live list, not
+      the static snapshot.
+- [x] No fake/duplicate physical location was set — confirmed the listing correctly uses
+      the one real address (57 Lawrence St., Everett) + a service-area list, same
+      NAP-safety principle already applied to the WP town pages' schema (see the entity
       fragmentation fix in `wp_rest_access_and_town_pages` memory).
+
+**Also noticed while checking (§9-adjacent, not part of §4):** the live GBP hours don't
+match CLAUDE.md's documented "Mon–Fri 9:00–18:00" — actual live hours show Saturday
+9:00 AM–1:00 PM (not in CLAUDE.md at all) and Wednesday ending at 5:00 PM instead of 6:00
+PM like the other weekdays. Worth reconciling in §9 (or updating CLAUDE.md) — not
+touched yet, flagging so it's not lost.
 
 ## 5. Posts (weekly cadence)
 - [ ] Set a recurring reminder/process to post weekly — repurpose:

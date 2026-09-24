@@ -1,10 +1,13 @@
 # Google Business Profile Checklist — GD Pro Web Designs
 
-**Status:** Not yet started. This is the parallel, user-run track from the Organic Lead
-Growth Plan (`~/.claude/plans/majestic-napping-whisper.md`) — it gates the "near me"
-query layer (e.g. "freelance website designer near me" 306 impr @ pos 50.5) that the
-site alone can't fully win. Nothing here touches the codebase; it's all done inside the
-Google Business Profile dashboard (business.google.com).
+**Status (2026-09-24):** §8 Ownership confirmed. §3 NAP mismatch confirmed and the user
+decided to file a DBA — exact City of Everett process/fee/requirements researched and
+documented below, ready to act on. Everything else (§1, 2, 4–7, 9) not yet started. This
+is the parallel, user-run track from the Organic Lead Growth Plan
+(`~/.claude/plans/majestic-napping-whisper.md`) — it gates the "near me" query layer
+(e.g. "freelance website designer near me" 306 impr @ pos 50.5) that the site alone can't
+fully win. Nothing here touches the codebase; it's all done inside the Google Business
+Profile dashboard (business.google.com) or, for §3, in person at Everett City Hall.
 
 **Why now:** also the recommended fix path for the intermittent AI Mode mixup where
 Google attaches Budō Creative's (Malden, MA) listing to GD Pro Web Designs mentions —
@@ -48,11 +51,30 @@ before assuming this is still open.
       `google_ai_mode_business_mixup` memory (Google occasionally attaches Budō Creative's
       listing to GD Pro Web Designs mentions; a GBP name that doesn't match its own
       website is a weaker entity signal, more prone to being resolved to the wrong place).
-- [ ] **Real fix — a business/legal decision, not a code change:** file a DBA ("doing
-      business as") / business certificate for "GD Pro Web Designs" with the City of
-      Everett, then resubmit that as proof to Google to rename the listing back. Flag this
-      to the user as a recommendation; don't assume they want to pursue it without asking
-      — there may be reasons (cost, preference to operate under their own name) not to.
+- [ ] **Real fix — user decided 2026-09-24 to proceed with filing.** Confirmed with the
+      actual City of Everett Business Certificate (DBA) application PDF
+      (`cityofeverett.com/wp-content/uploads/2026/07/Application-Business-Certificate-DBA-002-1.pdf`,
+      MGL Ch. 110 §5):
+      - **In person only** — Everett's own instructions require in-person filing (state
+        law technically allows mail in some towns, but Everett's sheet doesn't offer it).
+      - **Where:** City Clerk's Office, Everett City Hall, 484 Broadway, Everett, MA 02149.
+        Phone 617-394-2225. Hours: Mon &amp; Thu 8am&ndash;7:30pm, Tue&ndash;Wed 8am&ndash;5pm
+        (closed Fri&ndash;Sun).
+      - **Fee — discrepancy in the city's own paperwork, confirm by phone before going:**
+        the info sheet says $95.00 (not incl. notarization); the certificate form itself
+        prints $60.00 in its official-use box.
+      - **Bring:** business name ("GD Pro Web Designs"), physical business address (no PO
+        box &mdash; presumably the Lawrence St. address), owner's full name/home
+        address/phone, a photo ID, and **SSN or Federal EIN** (mandatory on the bundled
+        state REAP tax-compliance attestation &mdash; the certificate won't be issued
+        without it).
+      - **Signed under oath in front of the clerk** (they act as notary on the spot, no
+        separate notary trip needed), along with the REAP attestation and a Workers' Comp
+        Insurance Affidavit &mdash; as a sole proprietor with no employees, check box #2
+        ("no workers' comp insurance required") on that form.
+      - **Valid 4 years** from filing date, then needs renewal.
+      - **Once filed:** submit the certificate as proof to Google to get the GBP listing
+        renamed from "JA Armira (freelance web designer)" back to "GD Pro Web Designs."
 - [ ] Until/unless that happens, decide deliberately whether to (a) keep pushing "GD Pro
       Web Designs" as the brand everywhere else and treat GBP as the one exception, or
       (b) start reflecting "JA Armira, freelance web designer" more consistently to match

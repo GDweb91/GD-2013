@@ -1,9 +1,14 @@
 # Google Business Profile Checklist — GD Pro Web Designs
 
-**Status (2026-09-24):** §8 Ownership confirmed. §3 NAP mismatch confirmed and the user
-decided to file a DBA — exact City of Everett process/fee/requirements researched and
-documented below, ready to act on. Everything else (§1, 2, 4–7, 9) not yet started. This
-is the parallel, user-run track from the Organic Lead Growth Plan
+**Status (2026-09-24):** §1 Categories and §2 Services both done (both pending Google
+review). §8 Ownership confirmed. §3 NAP mismatch confirmed and the user decided to file a
+DBA — exact City of Everett process/fee/requirements researched and documented below,
+ready to act on. §4–7, 9 not yet started. **Correction:** the "not yet started" status
+this file originally carried for §2 was wrong — the live listing already had an
+extensive, well-built services list (SEO, PPC, niche contractor/vertical services
+matching the contractor-SEO pillar work) from prior, undocumented work on this account.
+Always check the live listing before assuming a checklist item is untouched. This is the
+parallel, user-run track from the Organic Lead Growth Plan
 (`~/.claude/plans/majestic-napping-whisper.md`) — it gates the "near me" query layer
 (e.g. "freelance website designer near me" 306 impr @ pos 50.5) that the site alone can't
 fully win. Nothing here touches the codebase; it's all done inside the Google Business
@@ -18,26 +23,26 @@ before assuming this is still open.
 
 ---
 
-## 1. Categories
-- [ ] Primary category: **Website Designer**
-- [ ] Secondary categories: **Marketing Agency**, **Internet Marketing Service**,
-      **Software Company**
-- [ ] Confirm no stale/incorrect category is still set (check current profile first)
+## 1. Categories — ✅ DONE 2026-09-24 (pending Google review, ~10 min)
+- [x] Primary category: **Website designer** (already set)
+- [x] Secondary categories added: **Marketing agency**, **Internet marketing service**,
+      **Software company**
+- [x] Confirmed via live listing — no stale/incorrect category was set
 
-## 2. Services
-- [ ] Populate the Services list to mirror the site's actual offerings — don't invent
-      new service names, reuse the site's own wording:
-      - Custom Web Design (from ~$1,800)
-      - WordPress Development / WooCommerce (from ~$2,500)
-      - Search Engine Optimization — local & national (from ~$450/mo)
-      - Google Ads / PPC Management
-      - Local Internet Marketing / Digital Marketing
-      - Social Media Integration
-      - Graphic Design & Branding
-      - WordPress Maintenance & Troubleshooting
-      - Shopify Development (new, per the national/remote-clients vertical)
-- [ ] Add a one-line description to each service (GBP allows this) — reuse the site's
-      own service-page copy rather than writing new claims
+## 2. Services — ✅ DONE 2026-09-24 (2 gaps filled, pending Google review, up to 1 day)
+- [x] **Existing list was already extensive**, not empty as originally assumed — includes
+      SEO Services, PPC management service, Digital marketing, Wordpress development,
+      Custom Wordpress plugin development, Website Maintenance & Support, Graphics
+      Designer, Logo Design, Hosting services, and a long tail of niche vertical services
+      (Web design for construction companies, Web design & SEO for tree services company,
+      etc. — matching the contractor-SEO pillar work). Confirmed against the live listing
+      before touching anything, rather than assuming this checklist's "not started" note
+      was still accurate.
+- [x] Two genuine gaps identified and added as custom services: **Shopify development**
+      and **Social media marketing** (matching the listing's existing lowercase,
+      plain-wording style).
+- [ ] Per-service descriptions (GBP allows a one-line description per service) — not yet
+      reviewed/added; low priority given how complete the list already is.
 
 ## 3. NAP consistency (byte-identical everywhere) — ⚠️ KNOWN MISMATCH, confirmed 2026-09-22
 - [ ] **Business name mismatch, not yet resolved:** the live GBP listing currently shows

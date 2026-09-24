@@ -62,7 +62,7 @@
   <h1>Organic Lead Growth Initiative — Session Log</h1>
   <div class="meta">
     Project: <strong>GD-2013</strong> (gdprowebdesigns.com static site + <code>/gd-blog/</code> WordPress)<br>
-    Session date: <strong>2026-08-29</strong> &nbsp;·&nbsp; Updated: <strong>2026-08-30</strong> (static deployed &amp; verified; GA4 cleanup), <strong>2026-09-03</strong> (town drafts published + QA; AIOSEO Cities templates fixed; Cambridge/Quincy static&rarr;WP 301s; GSC +0 baseline; contractor-SEO pillar page built &amp; live), <strong>2026-09-11</strong> (GSC +12d check-in; residual geo-coordinate schema fix; WP entity @id unification + AIOSEO duplicate-Person fix; <strong>National/Remote Clients initiative built end-to-end</strong> — 11 pages/posts across 4 waves; CRO audit methodology) &nbsp;·&nbsp; Plan file: <code>~/.claude/plans/majestic-napping-whisper.md</code><br>
+    Session date: <strong>2026-08-29</strong> &nbsp;·&nbsp; Updated: <strong>2026-08-30</strong> (static deployed &amp; verified; GA4 cleanup), <strong>2026-09-03</strong> (town drafts published + QA; AIOSEO Cities templates fixed; Cambridge/Quincy static&rarr;WP 301s; GSC +0 baseline; contractor-SEO pillar page built &amp; live), <strong>2026-09-11</strong> (GSC +12d check-in; residual geo-coordinate schema fix; WP entity @id unification + AIOSEO duplicate-Person fix; <strong>National/Remote Clients initiative built end-to-end</strong> — 11 pages/posts across 4 waves; CRO audit methodology), <strong>2026-09-22</strong> (CRO self-audit run on GD's own site; found &amp; fixed a GA4/GTM tracking regression in the GTM UI; discovered a separate, unresolved bug where GTM fails to load at all on WordPress/<code>gd-blog</code> pages) &nbsp;·&nbsp; Plan file: <code>~/.claude/plans/majestic-napping-whisper.md</code><br>
     Goal: position the site as the premier local web design / WordPress / SEO partner for Greater Boston, the North Shore, and all of Massachusetts, and grow inbound organic leads.
     <br><em style="color:var(--muted);font-size:.88rem;">Note: this log tracks the local/Everett-MA organic-lead-growth initiative. A related but separate initiative — national/remote clients — started 2026-09-11 and is documented in section 12 below, with full detail in <code>seo/national-remote-clients-plan.md</code> and <code>seo/cro-audit-methodology.md</code>.</em>
   </div>
@@ -83,6 +83,7 @@
     <li><a href="#files">Files created / modified this session</a></li>
     <li><a href="#creds">Access &amp; credentials notes</a></li>
     <li><a href="#national">National/Remote Clients Initiative + CRO Methodology (separate initiative, 09-11)</a></li>
+    <li><a href="#gtm-fix">GA4/GTM Tracking Regression, Fix &amp; New WP Bug (09-22)</a></li>
     <li><a href="#resume">Prompt to continue this work</a></li>
   </ol>
 </div>
@@ -519,9 +520,41 @@
 <h4>CRO audit methodology <span class="tag t-done">DONE</span></h4>
 <p>Built <code>seo/cro-audit-methodology.md</code> &mdash; the actual repeatable process to deliver on what the new CRO Services page (292) promises: client onboarding/access checklist (GA4, GSC, heatmap tool, CMS admin), a data-gathering phase (GA4 via the <code>gsc-ga4</code> MCP tool + Microsoft Clarity heatmaps/recordings), a manual audit checklist (message clarity, forms, CTAs, trust signals, speed/mobile, e-commerce checkout), a report structure (evidence-backed, prioritized, tied to a measurement plan), and pricing/scoping notes matching the live page. Confirmed <strong>Microsoft Clarity is already installed sitewide</strong> on both the static site and gd-blog &mdash; free heatmaps/session recordings already collecting real data, no new tooling needed to start using this methodology on GD's own properties.</p>
 
-<div class="callout">
-  <strong>Reminder for the user:</strong> run a CRO audit on <code>gdprowebdesigns.com</code> itself using the new methodology &mdash; both as a real improvement to your own lead conversion and as a proof-of-concept/demo before pitching this service to a client. Not started yet as of this log entry.
+<div class="callout t-done">
+  <strong>Update 09-22:</strong> CRO self-audit run &mdash; <span class="tag t-done">DONE</span>. Full report: <code>seo/cro-self-audit-2026-09-22.md</code>.
 </div>
+
+<h4>CRO self-audit on GD's own site <span class="tag t-done">DONE 09-22</span></h4>
+<p>Pulled GA4 (property 362005686, last 90 days via the <code>gsc-ga4</code> MCP tool) and Search Console data per the methodology's Section 2, plus a live browser walkthrough of the homepage hero.</p>
+
+<div class="callout warn">
+  <strong>Critical finding: the documented working lead/phone tracking appears to have stopped, replaced by a bogus event.</strong> Per <code>ga4_event_tracking_status</code> memory, <code>fill_out_email_form</code> (contact form) and <code>click_to_call</code> (phone) were confirmed firing and marked as GA4 Key Events as of 2026-08-07. This audit pulled the full 90-day event list from GA4 &mdash; both are <strong>completely absent</strong>. In their place, an event named <code>contact-form_submit</code> (matching neither documented event name) fired 288 times, including on pages with no HTML contact form at all (PPC page, portfolio page, About page &mdash; confirmed via <code>grep -n "&lt;form" index.html footer.php header.php</code>, which returns nothing). Leading hypothesis: the old, pre-07-17 Custom HTML tag (<code>CH-CF &amp; Form Submit Listener</code>, documented as "no longer needed" once superseded) was never actually paused/deleted in GTM. <strong>Net effect: GA4 currently shows zero trustworthy lead data of any kind.</strong> This needs to be checked directly in the GTM admin UI (<code>GTM-N4P95M5</code>) &mdash; only the account owner has that access. Full report: <code>seo/cro-self-audit-2026-09-22.md</code>.</p>
+</div>
+
+<p>Secondary finding: 93% of all sessions (426/458) are unattributed "Direct" traffic with an 85% bounce rate and 19-second average duration &mdash; markedly worse than Organic Search's 63% engagement rate on the same site over the same window. Flagged as likely bot/non-human traffic diluting the real numbers, not confirmed. The homepage hero itself was reviewed live and passes the message-clarity/single-CTA checklist cleanly &mdash; no fix needed there. Full detail, evidence tables, and the fix/priority plan are in <code>seo/cro-self-audit-2026-09-22.md</code>.</p>
+
+<hr>
+
+<h2 id="gtm-fix">13. GA4/GTM Tracking Regression, Fix &amp; New WP Bug <span class="tag t-done">PARTIALLY DONE, 09-22</span> <span style="font-weight:400;font-size:.85rem;color:var(--muted)">— found while acting on the CRO audit's critical finding above; full detail in the <code>ga4_event_tracking_status</code> memory</span></h2>
+
+<h4>Root cause found &amp; fixed in GTM <span class="tag t-done">DONE</span></h4>
+<p>Logged into <code>tagmanager.google.com</code> (container <code>GTM-N4P95M5</code>) and inspected the actual tag/trigger configs directly, rather than guessing from memory. The <code>CH-CF7 Form Submit Listener Tag</code> (the originally-suspected old Custom HTML tag) turned out to already be correctly paused &mdash; a red herring. The real cause: two GA4 Event tags had drifted since 2026-08-07:</p>
+<ul>
+  <li><strong><code>GA4 Event - Contact Form Submit</code></strong> &mdash; its <code>Page View</code> trigger had drifted from "Some Page Views: Page Path equals <code>/gd-blog/thank-you/</code>" to <strong>"All Page Views"</strong> (no condition at all), which is why it fired on every single page load sitewide, including pages with no contact form. Its Event Name field had also drifted to <code>contact-form_submit</code>.</li>
+  <li><strong><code>GA4 Event - Phone Click</code></strong> &mdash; Event Name field had drifted to the raw trigger name <code>phone_click</code> instead of the intended <code>click_to_call</code>.</li>
+  <li><strong>Extra discovery:</strong> the GA4 Key Event for the contact-form conversion is registered as <code>Fill_out_email_form</code> (capital F) in GA4 Admin &rarr; Events &rarr; Key Events &mdash; not lowercase <code>fill_out_email_form</code> as originally documented in memory. GA4 event names are case-sensitive, so the fix had to target that exact capitalization.</li>
+</ul>
+<p>Fix applied by the user, guided step-by-step (GTM UI edits are blocked for the assistant by the platform's own "Modify Shared Resources" auto-mode classifier): the <code>Page View</code> trigger rescoped to Page Path equals <code>/gd-blog/thank-you/</code>; the contact-form tag's Event Name changed to <code>Fill_out_email_form</code>; the phone-click tag's Event Name changed to <code>click_to_call</code>. Published as <strong>GTM Version 28</strong> (2026-09-22, 3:25 PM). Verified directly by reading each tag/trigger's live field values in the published version, not just the auto-generated change summary.</p>
+
+<div class="callout warn">
+  <strong>New, separate, deeper bug found while verifying in GA4 Realtime:</strong> GTM never actually loads at all on any <code>/gd-blog/</code> (WordPress) page &mdash; not just the thank-you page. Tested live on both <code>/gd-blog/thank-you/</code> and <code>/gd-blog/contact-us/</code>: the GTM bootstrap snippet in <code>functions.php</code> executes far enough to push <code>{event:'gtm.js'}</code> to <code>dataLayer</code>, but the actual <code>gtm.js</code> script it's supposed to inject never appears in the DOM and no network request to <code>googletagmanager.com</code> ever fires. Confirmed via direct JS console inspection and captured network requests on both pages. The static site's homepage, by contrast, loads GTM and sends a real GA4 pageview correctly.
+  <br><br>
+  Ruled out: Cloudflare blocking the domain (a direct <code>fetch()</code> to <code>gtm.js</code> from the page's own console returned 200 OK), Cloudflare Rocket Loader (no telltale markers found), server-side HTML corruption (the raw fetched HTML contains the byte-correct injection code), and broken injection logic (manually re-running the exact same bootstrap code in the console after page load works fine). This narrows it to a race condition specific to how this exact inline script behaves during the browser's very first parse of a fresh WP page load. Suspected but unconfirmed trigger: the Cloudflare proxy added in front of this site sometime between 09-11 and 09-22 (see CLAUDE.md's Hosting &amp; Server section) &mdash; timing correlates, not proven.
+  <br><br>
+  <strong>Not fixed &mdash; needs the account owner's Cloudflare dashboard (Speed &rarr; Optimization &rarr; Auto Minify JS / Rocket Loader) or WP-admin (caching/JS-defer plugin settings) access to investigate further</strong>, neither of which this session has.
+</div>
+
+<p><strong>Net practical effect:</strong> today's two Event Name fixes are correct and necessary, but currently inert for anything happening on the WordPress side (the contact-form thank-you page) since GTM can't initialize there at all right now. Phone-click tracking from the <em>static</em> site's own pages should already work again post-fix, since GTM loads fine there. Full technical detail: <code>ga4_event_tracking_status.md</code> memory file (not versioned in this repo, but referenced here for continuity).</p>
 
 <hr>
 
@@ -532,9 +565,9 @@
 SESSION-ID: GD-OLG-2026-08-29
 
 CONTEXT / READ FIRST
-- This file (either copy) has the full recap through end-of-day 2026-09-11,
-  covering BOTH initiatives (local/Everett-MA in sections 1-11, national/
-  remote clients in section 12).
+- This file (either copy) has the full recap through end-of-day 2026-09-22,
+  covering THREE threads (local/Everett-MA in sections 1-11, national/
+  remote clients in section 12, GA4/GTM tracking regression in section 13).
 - Local initiative -- Plan: ~/.claude/plans/majestic-napping-whisper.md
 - Local initiative -- Keyword/intent map: seo/keyword-intent-map.md (also
   has the P4 section for the national-clients keyword clusters)
@@ -542,14 +575,20 @@ CONTEXT / READ FIRST
 - Local initiative -- GSC baseline: seo/gsc-baseline-2026-08-29.md
 - National/remote initiative -- Plan: seo/national-remote-clients-plan.md
 - National/remote initiative -- CRO methodology: seo/cro-audit-methodology.md
+- CRO self-audit results: seo/cro-self-audit-2026-09-22.md
 - Memory files: organic_lead_growth_plan.md, wp_rest_access_and_town_pages.md,
-  feedback_off_pages_not_deployed.md, national_remote_clients_plan.md
+  feedback_off_pages_not_deployed.md, national_remote_clients_plan.md,
+  ga4_event_tracking_status.md (has full GTM tag/trigger diagnostic detail)
 - WP REST creds: ~/.claude/gd-wp-cred  (user claude-seo, id 3, Editor). Send
   a browser User-Agent on writes or Bluehost ModSecurity returns 406.
   IMPORTANT: REST-created posts/pages default author to id 3 (shows
   publicly) -- always pass/patch "author": 2 before publishing anything.
+- GTM edits require the account owner to click in GTM directly -- the
+  platform's own auto-mode classifier blocks the assistant from editing
+  GTM ("Modify Shared Resources"). Give step-by-step click instructions
+  instead of attempting the edit.
 
-WHERE THINGS STAND (as of 2026-09-11, end of session)
+WHERE THINGS STAND (as of 2026-09-22, end of session)
 
 LOCAL/EVERETT-MA INITIATIVE (sections 1-11 of this doc):
 - Phases 0-2 (static site): DEPLOYED &amp; VERIFIED LIVE 2026-08-30.
@@ -589,34 +628,55 @@ the above; full detail in seo/national-remote-clients-plan.md):
   the new CRO Services page (292). Microsoft Clarity confirmed already
   installed sitewide (static + gd-blog) -- free heatmaps/recordings ready
   to use with zero new setup.
-- REMINDER FOR THE USER, NOT YET DONE: run a CRO audit on
-  gdprowebdesigns.com itself using seo/cro-audit-methodology.md -- both a
-  real improvement and a proof-of-concept before pitching the service to
-  a client.
+- CRO self-audit on gdprowebdesigns.com itself: DONE 09-22. Full report
+  seo/cro-self-audit-2026-09-22.md. Its critical finding (broken lead
+  tracking) led directly into the GTM work below.
 - Do NOT upload seo-technical.config.json, scripts/, or seo/. Do NOT
   upload any -off.html or archive/ file even if a script touched it
   locally.
 
+GA4/GTM TRACKING REGRESSION (section 13 of this doc -- found via the CRO
+audit above, then diagnosed and partly fixed live in GTM):
+- FIXED &amp; PUBLISHED (GTM Version 28, 09-22): the contact-form and
+  phone-click GA4 Event tags had drifted since 08-07 (wrong trigger scope,
+  wrong Event Name). Corrected to Fill_out_email_form (capital F -- matches
+  the GA4 Key Event's exact spelling) and click_to_call. Verified directly
+  in the published GTM version's live field values.
+- NOT YET FIXED, NEW BUG: GTM's own container script fails to load at all
+  on any /gd-blog/ (WordPress) page -- confirmed on two different pages via
+  live browser network inspection. The static site's own pages are fine.
+  Ruled out Cloudflare blocking, Rocket Loader, HTML corruption, and broken
+  injection code -- narrowed to a load-time race condition, unconfirmed
+  whether caused by the Cloudflare proxy added 09-11 to 09-22. Needs the
+  account owner's Cloudflare dashboard (Speed -> Optimization) or WP-admin
+  (caching/JS-defer plugin) access to go further -- this session has neither.
+  Full diagnostic detail: ga4_event_tracking_status.md memory.
+- Practical effect right now: static-site phone-click tracking should work
+  again. WordPress-side contact-form conversion tracking is still fully
+  blind until the GTM-load bug is fixed, regardless of the tag fix above.
+
 DO NEXT (in order)
-1. Ask me: (a) has the gdprowebdesigns.com CRO self-audit happened yet,
-   (b) is it on/after ~Sep 27 for the GSC +28d local-SEO comparison,
-   (c) requested GSC indexing yet for contractor-seo-services-boston-ma.html,
-   (d) any preference on which deferred item (either initiative) to start.
-2. If the CRO self-audit hasn't happened: that's the most concrete
-   unfinished task from the newer initiative -- offer to run it now,
-   pulling real GA4 data via the gsc-ga4 MCP tool per the methodology doc.
+1. Ask me: (a) has the WordPress GTM-load bug been looked into yet (check
+   Cloudflare Speed settings / WP-admin caching plugins), (b) is it
+   on/after ~Sep 27 for the GSC +28d local-SEO comparison, (c) requested
+   GSC indexing yet for contractor-seo-services-boston-ma.html, (d) any
+   preference on which deferred item (any of the three threads) to start.
+2. If the GTM-load bug hasn't been looked into: that's the most concrete,
+   highest-value unfinished task -- offer to check GA4 Realtime again for
+   real click_to_call/Fill_out_email_form events once the user has checked
+   Cloudflare/WP-admin settings, or help interpret what they find there.
 3. If it's on/after ~Sep 27: pull GSC (query + page) for the trailing
    period and diff against seo/gsc-baseline-2026-08-29.md -- report P1 +
    contractor cluster position/click movement and homepage impression
    consolidation.
-4. Otherwise pick up whichever deferred item (see the two lists above)
-   the user prefers.
+4. Otherwise pick up whichever deferred item (see the lists above) the
+   user prefers.
 
 Start by asking me the status questions in step 1.</code></pre>
 </div>
 
 <footer class="doc">
-  Generated 2026-08-29 · Updated 2026-08-30 (static deployed; GA4 cleanup; <code>1b2a49f</code>) · Updated 2026-09-03 (town pages published + AIOSEO templates fixed; Cambridge/Quincy 301s; GSC +0 baseline; contractor-SEO pillar live; <code>d51558d</code>, <code>c0c53de</code>) · Updated 2026-09-11 (GSC +12d check-in; residual geo-coordinate schema fix, <code>75b5477</code>; WP entity @id unification; National/Remote Clients initiative built end-to-end, 11 pages/posts; CRO audit methodology) · SESSION-ID: GD-OLG-2026-08-29 · GD-2013 organic lead growth + national/remote clients initiatives · This file is a local working record; it is not part of the published site and should not be uploaded.
+  Generated 2026-08-29 · Updated 2026-08-30 (static deployed; GA4 cleanup; <code>1b2a49f</code>) · Updated 2026-09-03 (town pages published + AIOSEO templates fixed; Cambridge/Quincy 301s; GSC +0 baseline; contractor-SEO pillar live; <code>d51558d</code>, <code>c0c53de</code>) · Updated 2026-09-11 (GSC +12d check-in; residual geo-coordinate schema fix, <code>75b5477</code>; WP entity @id unification; National/Remote Clients initiative built end-to-end, 11 pages/posts; CRO audit methodology) · Updated 2026-09-22 (CRO self-audit run; GA4/GTM tracking regression found &amp; fixed in GTM Version 28; new unresolved bug found where GTM fails to load on WordPress pages) · SESSION-ID: GD-OLG-2026-08-29 · GD-2013 organic lead growth + national/remote clients initiatives · This file is a local working record; it is not part of the published site and should not be uploaded.
 </footer>
 
 </div>

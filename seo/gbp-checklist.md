@@ -4,11 +4,14 @@
 review). §8 Ownership confirmed. §3 NAP mismatch confirmed and the user decided to file a
 DBA — exact City of Everett process/fee/requirements researched and documented below,
 ready to act on. §4 Service area checked (state-level MA + RI already set, RI confirmed
-intentional — layering in individual towns deferred to a future session). §5–7, 9 not yet
-started. **Correction:** the "not yet started" status this file originally carried for §2
-(and assumed for §4) was wrong — the live listing already had substantial prior,
-undocumented work (extensive services list, state-level service area). Always check the
-live listing before assuming a checklist item is untouched. This is the parallel,
+intentional — layering in individual towns deferred to a future session). §6 Reviews
+mostly done — replied to the one existing review, got the real review short-link, added
+the `/review` redirect (committed, not yet uploaded live), drafted a post-project email
+ask template. §5, 7, 9 not yet started. **Correction:** the "not yet started" status this
+file originally carried for §2 (and assumed for §4, §6) was wrong — the live listing
+already had substantial prior, undocumented work (extensive services list, state-level
+service area). Always check the live listing before assuming a checklist item is
+untouched. This is the parallel,
 user-run track from the Organic Lead Growth Plan
 (`~/.claude/plans/majestic-napping-whisper.md`) — it gates the "near me" query layer
 (e.g. "freelance website designer near me" 306 impr @ pos 50.5) that the site alone can't
@@ -131,14 +134,33 @@ touched yet, flagging so it's not lost.
 - [ ] Each post: photo/image, short copy, a CTA button (Call Now / Learn More →
       linking to the relevant page)
 
-## 6. Reviews
-- [ ] Set up a post-project email ask (template: short, direct link, sent within a few
-      days of project completion/launch while satisfaction is fresh)
-- [ ] Create a short redirect — `gdprowebdesigns.com/review` → the GBP review link —
-      so it's easy to say/type on a call. This is a `.htaccess` 301, one line, low risk:
-      add `Redirect 301 /review https://g.page/r/...../review` (get the real GBP review
-      short-link from the dashboard first)
-- [ ] Respond to every review (good and bad) — signals an active, monitored profile
+## 6. Reviews — mostly DONE 2026-09-24
+- [x] **Checked current state first:** only **1 review total** (5.0★, Cristian Ruiz, Jul
+      20 2016 — over 9 years old) despite 21+ years in business. Never had an owner reply
+      until now. This is the real starting point, not the "no reviews at all" the
+      checklist originally implied.
+- [x] **Replied to the existing review** (posted via Business Profile Manager, pending
+      Google review ~10 min): "Thank you so much for the kind words, Cristian — really
+      appreciate you taking the time to leave this. It means a lot, especially looking
+      back on it after all these years! If you ever need any updates or additional work
+      down the road, don't hesitate to reach out. — JA"
+- [x] **Got the real GBP review short-link** from the dashboard's Share panel:
+      `https://g.page/r/CY2l1DPJt5fMEAI/review` — verified live via `curl -I` (302
+      redirect, real Google endpoint).
+- [x] **Created the redirect** — `gdprowebdesigns.com/review` → that link, added to
+      `.htaccess` (commit `f6ecb08`) as a `RewriteRule ... [R=301,L]` matching this repo's
+      established pattern (not the plain `Redirect 301` directive originally guessed
+      here). **Not yet uploaded to the live server** — needs the usual FTP/cPanel File
+      Manager deploy + `curl -I` live verification per the standard `.htaccess` workflow
+      (see CLAUDE.md's deployment gotchas).
+- [x] **Post-project email ask template drafted and approved:**
+      Subject: "A quick favor, if you have 60 seconds" — short body thanking the client,
+      asking for a review, linking `gdprowebdesigns.com/review`, signed JA Armira / GD
+      Pro Web Designs. Not yet wired into any actual send process (no CRM/automation) —
+      it's a copy-paste template for now, living in this checklist's git history and the
+      `gbp_checklist_progress` memory.
+- [ ] **Not done:** actually using the template on a real completed project, and turning
+      "respond to every review" into an ongoing habit rather than a one-time catch-up.
 
 ## 7. Citations (external NAP consistency)
 - [ ] Audit/create listings with byte-identical NAP on:

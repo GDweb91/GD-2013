@@ -62,7 +62,7 @@
   <h1>Organic Lead Growth Initiative — Session Log</h1>
   <div class="meta">
     Project: <strong>GD-2013</strong> (gdprowebdesigns.com static site + <code>/gd-blog/</code> WordPress)<br>
-    Session date: <strong>2026-08-29</strong> &nbsp;·&nbsp; Updated: <strong>2026-08-30</strong> (static deployed &amp; verified; GA4 cleanup), <strong>2026-09-03</strong> (town drafts published + QA; AIOSEO Cities templates fixed; Cambridge/Quincy static&rarr;WP 301s; GSC +0 baseline; contractor-SEO pillar page built &amp; live), <strong>2026-09-11</strong> (GSC +12d check-in; residual geo-coordinate schema fix; WP entity @id unification + AIOSEO duplicate-Person fix; <strong>National/Remote Clients initiative built end-to-end</strong> — 11 pages/posts across 4 waves; CRO audit methodology), <strong>2026-09-22</strong> (CRO self-audit run on GD's own site; found &amp; fixed a GA4/GTM tracking regression in the GTM UI; discovered a separate, unresolved bug where GTM fails to load at all on WordPress/<code>gd-blog</code> pages) &nbsp;·&nbsp; Plan file: <code>~/.claude/plans/majestic-napping-whisper.md</code><br>
+    Session date: <strong>2026-08-29</strong> &nbsp;·&nbsp; Updated: <strong>2026-08-30</strong> (static deployed &amp; verified; GA4 cleanup), <strong>2026-09-03</strong> (town drafts published + QA; AIOSEO Cities templates fixed; Cambridge/Quincy static&rarr;WP 301s; GSC +0 baseline; contractor-SEO pillar page built &amp; live), <strong>2026-09-11</strong> (GSC +12d check-in; residual geo-coordinate schema fix; WP entity @id unification + AIOSEO duplicate-Person fix; <strong>National/Remote Clients initiative built end-to-end</strong> — 11 pages/posts across 4 waves; CRO audit methodology), <strong>2026-09-22</strong> (CRO self-audit run on GD's own site; found &amp; fixed a GA4/GTM tracking regression in the GTM UI; discovered a separate bug where GTM fails to load at all on WordPress/<code>gd-blog</code> pages), <strong>2026-09-24</strong> (root-caused &amp; fixed the WordPress GTM-load bug — a corrupted, line-wrapped <code>insertBefore</code> identifier in theme <code>functions.php</code>; verified live) &nbsp;·&nbsp; Plan file: <code>~/.claude/plans/majestic-napping-whisper.md</code><br>
     Goal: position the site as the premier local web design / WordPress / SEO partner for Greater Boston, the North Shore, and all of Massachusetts, and grow inbound organic leads.
     <br><em style="color:var(--muted);font-size:.88rem;">Note: this log tracks the local/Everett-MA organic-lead-growth initiative. A related but separate initiative — national/remote clients — started 2026-09-11 and is documented in section 12 below, with full detail in <code>seo/national-remote-clients-plan.md</code> and <code>seo/cro-audit-methodology.md</code>.</em>
   </div>
@@ -535,7 +535,7 @@
 
 <hr>
 
-<h2 id="gtm-fix">13. GA4/GTM Tracking Regression, Fix &amp; New WP Bug <span class="tag t-done">PARTIALLY DONE, 09-22</span> <span style="font-weight:400;font-size:.85rem;color:var(--muted)">— found while acting on the CRO audit's critical finding above; full detail in the <code>ga4_event_tracking_status</code> memory</span></h2>
+<h2 id="gtm-fix">13. GA4/GTM Tracking Regression, Fix &amp; WP Bug <span class="tag t-done">DONE, 09-24</span> <span style="font-weight:400;font-size:.85rem;color:var(--muted)">— found while acting on the CRO audit's critical finding above; full detail in the <code>ga4_event_tracking_status</code> memory</span></h2>
 
 <h4>Root cause found &amp; fixed in GTM <span class="tag t-done">DONE</span></h4>
 <p>Logged into <code>tagmanager.google.com</code> (container <code>GTM-N4P95M5</code>) and inspected the actual tag/trigger configs directly, rather than guessing from memory. The <code>CH-CF7 Form Submit Listener Tag</code> (the originally-suspected old Custom HTML tag) turned out to already be correctly paused &mdash; a red herring. The real cause: two GA4 Event tags had drifted since 2026-08-07:</p>
@@ -546,15 +546,17 @@
 </ul>
 <p>Fix applied by the user, guided step-by-step (GTM UI edits are blocked for the assistant by the platform's own "Modify Shared Resources" auto-mode classifier): the <code>Page View</code> trigger rescoped to Page Path equals <code>/gd-blog/thank-you/</code>; the contact-form tag's Event Name changed to <code>Fill_out_email_form</code>; the phone-click tag's Event Name changed to <code>click_to_call</code>. Published as <strong>GTM Version 28</strong> (2026-09-22, 3:25 PM). Verified directly by reading each tag/trigger's live field values in the published version, not just the auto-generated change summary.</p>
 
-<div class="callout warn">
-  <strong>New, separate, deeper bug found while verifying in GA4 Realtime:</strong> GTM never actually loads at all on any <code>/gd-blog/</code> (WordPress) page &mdash; not just the thank-you page. Tested live on both <code>/gd-blog/thank-you/</code> and <code>/gd-blog/contact-us/</code>: the GTM bootstrap snippet in <code>functions.php</code> executes far enough to push <code>{event:'gtm.js'}</code> to <code>dataLayer</code>, but the actual <code>gtm.js</code> script it's supposed to inject never appears in the DOM and no network request to <code>googletagmanager.com</code> ever fires. Confirmed via direct JS console inspection and captured network requests on both pages. The static site's homepage, by contrast, loads GTM and sends a real GA4 pageview correctly.
+<div class="callout t-done">
+  <strong>RESOLVED 09-24 — separate, deeper bug found while verifying in GA4 Realtime, now fixed:</strong> GTM never actually loaded at all on any <code>/gd-blog/</code> (WordPress) page &mdash; not just the thank-you page. Tested live on both <code>/gd-blog/thank-you/</code> and <code>/gd-blog/contact-us/</code>: the GTM bootstrap snippet in <code>functions.php</code> executed far enough to push <code>{event:'gtm.js'}</code> to <code>dataLayer</code>, but the actual <code>gtm.js</code> script it was supposed to inject never appeared in the DOM and no network request to <code>googletagmanager.com</code> ever fired. The static site's homepage, by contrast, loaded GTM and sent a real GA4 pageview correctly.
   <br><br>
-  Ruled out: Cloudflare blocking the domain (a direct <code>fetch()</code> to <code>gtm.js</code> from the page's own console returned 200 OK), Cloudflare Rocket Loader (no telltale markers found), server-side HTML corruption (the raw fetched HTML contains the byte-correct injection code), and broken injection logic (manually re-running the exact same bootstrap code in the console after page load works fine). This narrows it to a race condition specific to how this exact inline script behaves during the browser's very first parse of a fresh WP page load. Suspected but unconfirmed trigger: the Cloudflare proxy added in front of this site sometime between 09-11 and 09-22 (see CLAUDE.md's Hosting &amp; Server section) &mdash; timing correlates, not proven.
+  Ruled out first: Cloudflare blocking the domain, Cloudflare Rocket Loader, and (once actually tested 09-24) Cloudflare entirely &mdash; toggled off via Bluehost's cPanel Cloudflare panel, confirmed via <code>curl</code> headers, bug persisted identically with Cloudflare fully off. Also ruled out: WP caching plugins (none active) and the host's own Cache Level setting (already Off/Level 0).
   <br><br>
-  <strong>Not fixed &mdash; needs the account owner's Cloudflare dashboard (Speed &rarr; Optimization &rarr; Auto Minify JS / Rocket Loader) or WP-admin (caching/JS-defer plugin settings) access to investigate further</strong>, neither of which this session has.
+  <strong>Root cause found by reading the live page's raw served HTML byte-for-byte</strong> (not the post-JS DOM): the identifier <code>insertBefore</code> in <code>gd_blog_gtm_head()</code> was split across a line break &mdash; <code>f.parentNode.insertBe</code> / <code>fore(j,f);</code> on the next line &mdash; invalid JavaScript. The browser parsed <code>insertBe</code> as a harmless no-op, then threw a <code>ReferenceError</code> calling the undefined <code>fore(j,f)</code> on the next line. This is exactly why <code>dataLayer.push</code> (earlier in the same snippet) always succeeded while the script-tag injection right after it never ran &mdash; and why manually retyping a <em>correct</em> version of the snippet in the console always worked fine. Confirmed the identical corruption existed in the local WP copy too (likely an editor auto-word-wrap artifact from whenever the snippet was originally pasted in).
+  <br><br>
+  <strong>Fix:</strong> rejoined the line in the local file (<code>~/Local Sites/gd-blog/.../themes/gd-blog/functions.php</code>), verified as valid JS via <code>node --check</code>, user uploaded the corrected file to the live server. Verified live: raw HTML now serves the unbroken line; in-browser, the <code>gtm.js</code> script tag is now present, <code>window.google_tag_manager</code> is a populated object, and <code>dataLayer</code> grew past the initial stuck push. Committed separately in the gd-blog repo: <code>4dbf4d6</code>.
 </div>
 
-<p><strong>Net practical effect:</strong> today's two Event Name fixes are correct and necessary, but currently inert for anything happening on the WordPress side (the contact-form thank-you page) since GTM can't initialize there at all right now. Phone-click tracking from the <em>static</em> site's own pages should already work again post-fix, since GTM loads fine there. Full technical detail: <code>ga4_event_tracking_status.md</code> memory file (not versioned in this repo, but referenced here for continuity).</p>
+<p><strong>Net practical effect:</strong> the 09-22 Event Name fixes (<code>Fill_out_email_form</code>, <code>click_to_call</code>) should now actually take effect on the WordPress side too, since GTM can finally initialize there. Still needs a few days of real traffic to confirm actual event counts flowing into GA4 on both the static and WP sides. Full technical detail: <code>ga4_event_tracking_status.md</code> memory file (not versioned in this repo, but referenced here for continuity).</p>
 
 <hr>
 
@@ -565,9 +567,10 @@
 SESSION-ID: GD-OLG-2026-08-29
 
 CONTEXT / READ FIRST
-- This file (either copy) has the full recap through end-of-day 2026-09-22,
+- This file (either copy) has the full recap through end-of-day 2026-09-24,
   covering THREE threads (local/Everett-MA in sections 1-11, national/
-  remote clients in section 12, GA4/GTM tracking regression in section 13).
+  remote clients in section 12, GA4/GTM tracking regression -- now fully
+  resolved -- in section 13).
 - Local initiative -- Plan: ~/.claude/plans/majestic-napping-whisper.md
 - Local initiative -- Keyword/intent map: seo/keyword-intent-map.md (also
   has the P4 section for the national-clients keyword clusters)
@@ -588,7 +591,7 @@ CONTEXT / READ FIRST
   GTM ("Modify Shared Resources"). Give step-by-step click instructions
   instead of attempting the edit.
 
-WHERE THINGS STAND (as of 2026-09-22, end of session)
+WHERE THINGS STAND (as of 2026-09-24, end of session)
 
 LOCAL/EVERETT-MA INITIATIVE (sections 1-11 of this doc):
 - Phases 0-2 (static site): DEPLOYED &amp; VERIFIED LIVE 2026-08-30.
@@ -642,29 +645,33 @@ audit above, then diagnosed and partly fixed live in GTM):
   wrong Event Name). Corrected to Fill_out_email_form (capital F -- matches
   the GA4 Key Event's exact spelling) and click_to_call. Verified directly
   in the published GTM version's live field values.
-- NOT YET FIXED, NEW BUG: GTM's own container script fails to load at all
-  on any /gd-blog/ (WordPress) page -- confirmed on two different pages via
-  live browser network inspection. The static site's own pages are fine.
-  Ruled out Cloudflare blocking, Rocket Loader, HTML corruption, and broken
-  injection code -- narrowed to a load-time race condition, unconfirmed
-  whether caused by the Cloudflare proxy added 09-11 to 09-22. Needs the
-  account owner's Cloudflare dashboard (Speed -> Optimization) or WP-admin
-  (caching/JS-defer plugin) access to go further -- this session has neither.
+- RESOLVED 09-24: GTM's own container script had been failing to load on
+  any /gd-blog/ (WordPress) page. Ruled out Cloudflare (toggled off via
+  Bluehost's cPanel panel, curl-confirmed, bug persisted identically),
+  WP caching plugins (none active), and host Cache Level (already Off).
+  Root cause found by reading the live page's raw served HTML: the
+  identifier "insertBefore" in gd_blog_gtm_head() (theme functions.php)
+  was split across a line break -- invalid JS, threw a ReferenceError
+  right after dataLayer.push always succeeded, which is why the bug
+  looked like a load-order/race-condition issue. Fixed locally, verified
+  as valid JS, user uploaded to live. Verified live: gtm.js script tag
+  now injects, window.google_tag_manager populated, dataLayer growing
+  normally. Committed in the gd-blog repo: 4dbf4d6.
   Full diagnostic detail: ga4_event_tracking_status.md memory.
-- Practical effect right now: static-site phone-click tracking should work
-  again. WordPress-side contact-form conversion tracking is still fully
-  blind until the GTM-load bug is fixed, regardless of the tag fix above.
+- Practical effect: both static-site and WordPress-side conversion
+  tracking (click_to_call, Fill_out_email_form) should now be fully
+  working end-to-end. Not yet confirmed with real multi-day traffic data.
 
 DO NEXT (in order)
-1. Ask me: (a) has the WordPress GTM-load bug been looked into yet (check
-   Cloudflare Speed settings / WP-admin caching plugins), (b) is it
-   on/after ~Sep 27 for the GSC +28d local-SEO comparison, (c) requested
-   GSC indexing yet for contractor-seo-services-boston-ma.html, (d) any
-   preference on which deferred item (any of the three threads) to start.
-2. If the GTM-load bug hasn't been looked into: that's the most concrete,
-   highest-value unfinished task -- offer to check GA4 Realtime again for
-   real click_to_call/Fill_out_email_form events once the user has checked
-   Cloudflare/WP-admin settings, or help interpret what they find there.
+1. Ask me: (a) has real GA4 traffic confirmed click_to_call/
+   Fill_out_email_form events flowing correctly post-fix (check a few
+   days out), (b) is it on/after ~Sep 27 for the GSC +28d local-SEO
+   comparison, (c) requested GSC indexing yet for
+   contractor-seo-services-boston-ma.html, (d) any preference on which
+   deferred item (any of the three threads) to start.
+2. If GA4 hasn't been re-checked yet: pull Realtime/Events for
+   click_to_call and Fill_out_email_form to confirm the full fix chain
+   (Version 28 + the functions.php fix) is working end-to-end.
 3. If it's on/after ~Sep 27: pull GSC (query + page) for the trailing
    period and diff against seo/gsc-baseline-2026-08-29.md -- report P1 +
    contractor cluster position/click movement and homepage impression
@@ -676,7 +683,7 @@ Start by asking me the status questions in step 1.</code></pre>
 </div>
 
 <footer class="doc">
-  Generated 2026-08-29 · Updated 2026-08-30 (static deployed; GA4 cleanup; <code>1b2a49f</code>) · Updated 2026-09-03 (town pages published + AIOSEO templates fixed; Cambridge/Quincy 301s; GSC +0 baseline; contractor-SEO pillar live; <code>d51558d</code>, <code>c0c53de</code>) · Updated 2026-09-11 (GSC +12d check-in; residual geo-coordinate schema fix, <code>75b5477</code>; WP entity @id unification; National/Remote Clients initiative built end-to-end, 11 pages/posts; CRO audit methodology) · Updated 2026-09-22 (CRO self-audit run; GA4/GTM tracking regression found &amp; fixed in GTM Version 28; new unresolved bug found where GTM fails to load on WordPress pages) · SESSION-ID: GD-OLG-2026-08-29 · GD-2013 organic lead growth + national/remote clients initiatives · This file is a local working record; it is not part of the published site and should not be uploaded.
+  Generated 2026-08-29 · Updated 2026-08-30 (static deployed; GA4 cleanup; <code>1b2a49f</code>) · Updated 2026-09-03 (town pages published + AIOSEO templates fixed; Cambridge/Quincy 301s; GSC +0 baseline; contractor-SEO pillar live; <code>d51558d</code>, <code>c0c53de</code>) · Updated 2026-09-11 (GSC +12d check-in; residual geo-coordinate schema fix, <code>75b5477</code>; WP entity @id unification; National/Remote Clients initiative built end-to-end, 11 pages/posts; CRO audit methodology) · Updated 2026-09-22 (CRO self-audit run; GA4/GTM tracking regression found &amp; fixed in GTM Version 28; new bug found where GTM fails to load on WordPress pages) · Updated 2026-09-24 (WordPress GTM-load bug root-caused &amp; fixed — corrupted <code>insertBefore</code> line wrap in theme <code>functions.php</code>; verified live; <code>4dbf4d6</code> in the gd-blog repo) · SESSION-ID: GD-OLG-2026-08-29 · GD-2013 organic lead growth + national/remote clients initiatives · This file is a local working record; it is not part of the published site and should not be uploaded.
 </footer>
 
 </div>

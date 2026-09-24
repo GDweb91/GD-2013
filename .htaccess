@@ -209,6 +209,11 @@ RewriteRule ^website-designer-near-cambridge-ma\.html$ https://gdprowebdesigns.c
 RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
 RewriteRule ^quincy-ma-web-design-and-development\.html$ https://gdprowebdesigns.com/gd-blog/service-area/quincy-ma/ [R=301,L]
 
+# --- 2026-09-24: /review short-link → live Google review page (GBP checklist §6) ---
+# Easy to say/type on a call. Real GBP review link, verified live via curl -I.
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^review/?$ https://g.page/r/CY2l1DPJt5fMEAI/review [R=301,L]
+
 # BEGIN WordPress
 # The directives (lines) between "BEGIN WordPress" and "END WordPress" are
 # dynamically generated, and should only be modified via WordPress filters.

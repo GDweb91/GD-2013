@@ -175,6 +175,23 @@ touched yet, flagging so it's not lost.
 - [ ] Flag and fix any citation with an old address, old phone format, or a business
       name variant (e.g. "GDWebPros" vs "GD Pro Web Designs" — pick one and standardize,
       note both forms appear in CLAUDE.md's Business Info table)
+- **Blocked on §3 (DBA):** don't create new citations until the business name is settled
+  and the GBP listing is renamed — otherwise every listing has to be edited again.
+
+## 7b. Link building (legitimate only) — added 2026-10-04
+Prompted by a cold link-selling pitch ("add one owned support asset… links you buy,
+exchange or place") — i.e. a PBN/tier-2 satellite site. **Rejected:** buying/exchanging
+links violates Google's link spam policies and risks a manual action. Do the legitimate
+versions instead. Not blocked by §3 — can start any time.
+- [ ] Backlink audit via Ahrefs: current referring domains, anchors, toxic/spammy links,
+      broken backlinks pointing at old URLs (redirect them)
+- [ ] "Website by GD Pro Web Designs" credits on client sites — branded anchor, modest
+      placement, `rel="nofollow"` is the safest form
+- [ ] Client case studies (with client permission and a link back from their site)
+- [ ] Local sponsorships / business associations (Everett & Greater Boston chambers)
+- [ ] Journalist-query platforms (Featured, Qwoted) for expert quotes
+- [ ] Topical "support" content stays on our own domain (town pages, pillars), never a
+      separate satellite site
 
 ## 8. Ownership / access — confirmed 2026-09-22
 - [x] Confirmed: GBP **Primary Owner is `jorgelemus080@gmail.com`** — same account as

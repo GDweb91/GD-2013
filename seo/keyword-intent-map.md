@@ -142,3 +142,18 @@ Supersedes the 2026-08-29 session-log decision to leave the homepage title/H1 as
 - **Deliberately excludes:** "WordPress" (→ `wordpress-developer-boston-ma.html`) and "SEO" (→ the SEO pages; consistent with the "affordable seo boston" row above). An interim draft titled "Boston Web Designer & SEO Services" was dropped for that reason. The meta description may still list SEO / Google Ads as services; descriptions don't compete for rankings.
 - **Why the Aug 29 caution was overridden:** over 90 days the homepage earned only 5 non-brand clicks (avg pos 40–50 across all clusters; WordPress queries = 24% of its impressions, 2 clicks, pos 49). Brand queries are unaffected since the brand stays in the title. The Aug 29 diagnosis (broad ranking = domain-authority symptom) still holds: this change stops the homepage competing; it isn't expected to lift the homepage itself.
 - **Measure at +4 and +8 weeks from the live upload date (**uploaded 2026-10-09** — check +4 wks ≈ 2026-11-06, +8 wks ≈ 2026-12-04):** success = `wordpress-developer-boston-ma.html` keeps gaining WordPress-cluster impressions/position and the homepage holds "web design boston" visibility. **Revert trigger:** branded clicks drop, or homepage total clicks fall noticeably.
+
+## WordPress support vs. repair split (2026-10-09)
+
+GSC (Jul–Oct 2026): "wordpress support boston" (237 impr) split across maintenance (pos 15), `wordpress-developer-boston-ma.html` (pos 42) and `fix-wordpress-issues-boston-ma.html` (pos 10, only 14 impr). The real problem wasn't three pages competing: the fix page was nearly orphaned (1 real inbound link, last crawled 2026-07-17, 14 impressions in 90 days), so the maintenance page was absorbing repair intent too ("wordpress repair service" @58, "wordpress troubleshooting service" @21).
+
+| Page | Owns | Intent |
+|------|------|--------|
+| `wordpress-maintenance-boston-ma.html` | wordpress maintenance / support / support plans / care | Ongoing monthly plans |
+| `fix-wordpress-issues-boston-ma.html` | fix / repair / troubleshooting / broken / hacked / errors / white screen | One-off repair of a site that's already broken |
+| `wordpress-developer-boston-ma.html` | building (themes, plugins, WooCommerce) | Links out to both, doesn't target either |
+
+Changes 2026-10-09: fix page retitled `Fix WordPress Issues Boston, MA | Repair & Troubleshooting | GD Web Pros` with a new description/OG tags; new links to the fix page from the maintenance page ("Issues We Prevent" intro), `wordpress-developer-boston-ma.html` (intro sentence, "WordPress troubleshooting & repair") and the homepage maintenance card; fix page's step 4 now links to the maintenance plans. Inbound links to the fix page: 1 → 3 pages (maintenance, WordPress, homepage).
+
+Open: the fix page's hero shows "From $450/mo" (the maintenance plan price), which blurs it into a monthly plan. It needs the owner's real repair pricing or wording.
+

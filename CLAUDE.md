@@ -528,6 +528,7 @@ A separate WordPress installation lives at `/gd-blog/`. The static site links to
 - `/gd-blog/gd-news/` — news/blog
 - `/gd-blog/service-area/` — service area directory
 - `/gd-blog/web-developer-ma/` — web developer page
+- `/gd-blog/` (bare WP front page) — **301s to `/`** since 2026-10-09 (`mu-plugins/gd-redirects.php` in the gd-blog repo). It was a thin duplicate of the old homepage hero. Never link to bare `/gd-blog/`; "Blog" links go to `/gd-blog/gd-news/`.
 
 The static HTML `.htaccess` includes the WordPress mod_rewrite block so WP can function at its subpath.
 

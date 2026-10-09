@@ -29,7 +29,7 @@ Intent key: **TL** = transactional-local · **C** = commercial-investigation · 
 |---------|-----------------------------------|--------|-------------|-------|
 | **Boston web designer / web design** | boston web designer 555@41.7 · boston web design company 478@53.6 · boston web design 465@49.9 · boston website designers 265@43.1 · boston web design services 153@49.8 · boston website design 119@46.5 | TL | `web-design-company-boston-ma.html` | ~2,500 combined impr, all page 4–6. Homepage currently splits this. Consolidate to one page, narrow homepage. Authority (links, freshness) is the constraint, not markup. |
 | **Boston SEO / local SEO / SEM** | boston search engine optimization 232@53.8 · boston local seo services 214@48.5 · boston local seo company 73@51.0 · boston search engine marketing 84@59.2 · boston seo expert 28@49.5 | TL | `organic-search-engine-optimization-boston.html` (+ `local-seo-services-boston-ma.html` for "local seo" sub-intent) | Decide: fold `local-seo-services-boston-ma.html` in or keep as the "local SEO" target. It has 1 impr now — likely fold + 301. |
-| **Boston web developer** | boston web developer 212@46.7 · boston web developers 100@47.3 | TL | `wordpress-developer-boston-ma.html` or WP `/gd-blog/web-developer-ma/` | WP dev page already the nav target for "Web Development". Align anchors. |
+| **Boston web developer** | boston web developer 212@46.7 · boston web developers 100@47.3 | TL | WP `/gd-blog/web-developer-ma/` (general/custom web development, MA) | **Decided 2026-10-09** — see "Web development vs. WordPress split" below. |
 | **Boston WordPress** | boston wordpress developers 266@31.2 · boston wordpress 93@44.3 · boston wordpress design 64@58.3 | TL | `wordpress-developer-boston-ma.html` | Same as P1 #6 at larger scope. |
 | **Boston PPC / Google Ads** | boston ppc agency 109@78.8 · boston ppc company 98@64.8 · adwords manager boston 101@34.6 · boston ppc services 79@60.4 · boston ppc 44@55.9 | TL | `PPC-adwords-advertising-boston.html` | Page ranks poorly (pos 57.8). Needs a real rebuild: services detail, pricing, town coverage, North Shore. |
 | **Boston web design pricing/cost** | boston web design pricing 124@35.7 · boston web design cost 47@37.4 | I→C | `web-design-company-boston-ma.html` (pricing section) | Strong GEO target — a clear flat-rate pricing table + "how much does a website cost in Boston" answer block. |
@@ -81,10 +81,10 @@ Intent key: **TL** = transactional-local · **C** = commercial-investigation · 
 | Query cluster | Pulled by (wrong) | Should be | Fix |
 |---------------|-------------------|-----------|-----|
 | affordable seo boston | `index.html` (pos ~15 via 24k-impr homepage spread) | `organic-search-engine-optimization-boston.html` | Remove "affordable SEO" copy/links from homepage; point internal anchors to the SEO page |
-| boston web design / web designer | `index.html` | `web-design-company-boston-ma.html` | Homepage title/H1 → "Freelance Web Designer Boston & Everett, MA"; teaser + link out |
+| boston web design / web designer | `index.html` | **`index.html`** (reassigned 2026-10-09) | **Changed 2026-10-09** — homepage keeps the head term; `web-design-company-boston-ma.html` moved to the small-business + pricing angle. See "Homepage target (decided 2026-10-09)" below. |
 | local seo boston | `local-seo-services-boston-ma.html` (1 impr) + `organic-search-engine-optimization-boston.html` | one of them | Fold `local-seo-services-boston-ma.html` into the Boston SEO page + 301, OR make it the dedicated "local SEO" target and link accordingly |
 | everett seo | `seo-services-everett-ma.html` (redirect stub, 145 impr @ 12.1!) + `organic-SEO-everett-ma.html` | `organic-SEO-everett-ma.html` | The **redirect stub still has 145 impr @ pos 12** — confirm the 301 is actually live (CLAUDE.md flagged this exact redirect as historically broken) |
-| wordpress developer boston | `index.html` + `wordpress-developer-boston-ma.html` + WP `/gd-blog/web-developer-ma/` | pick static OR WP as canonical | Decide canonical target; align nav + internal anchors + canonical tags |
+| wordpress developer boston | `index.html` + `wordpress-developer-boston-ma.html` + WP `/gd-blog/web-developer-ma/` | `wordpress-developer-boston-ma.html` | **Decided 2026-10-09** — static page owns all WordPress queries; see "Web development vs. WordPress split" below. Homepage title/H1 de-WordPressed in commit `49e2841`, refined 2026-10-09. |
 
 ---
 
@@ -115,3 +115,30 @@ Source: `long-tail-keywords-for-web-design-dev.pdf` keyword research (not GSC-de
 - Homepage: 24,052 impr · 40 clicks · CTR 0.17% · pos 43.7
 - Site total (P1 target pages combined): ~40k impr · ~10 clicks
 - Re-pull the same query+page report at Phase 1 +14d and +28d; success = P1 clusters moving into pos 5–12 with first non-zero clicks, and homepage impression count consolidating downward.
+
+---
+
+## Web development vs. WordPress split (decided 2026-10-09)
+
+Resolves the open "pick static OR WP" item above. Previously each project deferred to the other (gd-blog `HANDOFF.md` called it "a root-site decision"; this map left it undecided), so no decision existed.
+
+| Page | Owns | Does NOT target |
+|------|------|-----------------|
+| `wordpress-developer-boston-ma.html` (static) | All **WordPress** queries — wordpress developer/development/designer/agency/expert + Boston/MA/near me | — |
+| `/gd-blog/web-developer-ma/` (WP, template `page-web-developer-massachusetts.php`) | **General/custom web development, statewide** — massachusetts web developer, web development massachusetts, ma web dev, web application / ecommerce development MA | WordPress-specific or "WordPress + Boston" phrasing |
+
+- **Nav "Web Development" / "Desarrollo Web" stays pointed at `/gd-blog/web-developer-ma/`.** Its content (H1 "Custom Web Development for Small Businesses in Massachusetts"; front-end / back-end / full-stack sections) matches the general-web-development intent, and it is the site's best page for those queries (pos ~21–26, GSC Jul–Oct 2026). Its WordPress-Boston impressions sit at pos 77–93 and are incidental.
+- **Why not repoint the nav to the static WordPress page:** that would strip nav link equity from the only page ranking for statewide web-development queries, plus require re-running `fix_navs.py` on every page.
+- **Why not 301 it:** it holds positions no other page does, and two legacy redirects (`web-designer-developer-for-small-business-…`, `web-dsigner-…`) already consolidate into it.
+- **Follow-ups (open):** (1) add a contextual link from `/gd-blog/web-developer-ma/` to `wordpress-developer-boston-ma.html` for WordPress work — the template mentions WordPress 16× with no link to it; (2) check its AIOSEO title in wp-admin and remove any "WordPress Developer Boston" phrasing.
+
+## Homepage target (decided 2026-10-09)
+
+Supersedes the 2026-08-29 session-log decision to leave the homepage title/H1 as-is.
+
+- **Title:** `Boston Web Designer & Developer | GD Pro Web Designs` (was `Web Designer & WordPress Developer Boston MA | SEO Services | GD Pro Web Designs`)
+- **H1:** `Freelance Web Designer & Developer Near Boston, MA` (was `Web Designer & WordPress Developer Near Boston, MA`)
+- **Owns:** the generic head terms — boston web designer / web design boston / boston web developer. GSC (Jul–Oct 2026) shows Google already prefers the homepage here (e.g. "web design boston" 413 impr on `/`, none on `web-design-company-boston-ma.html`), which is normal for a solo freelancer.
+- **Deliberately excludes:** "WordPress" (→ `wordpress-developer-boston-ma.html`) and "SEO" (→ the SEO pages; consistent with the "affordable seo boston" row above). An interim draft titled "Boston Web Designer & SEO Services" was dropped for that reason. The meta description may still list SEO / Google Ads as services; descriptions don't compete for rankings.
+- **Why the Aug 29 caution was overridden:** over 90 days the homepage earned only 5 non-brand clicks (avg pos 40–50 across all clusters; WordPress queries = 24% of its impressions, 2 clicks, pos 49). Brand queries are unaffected since the brand stays in the title. The Aug 29 diagnosis (broad ranking = domain-authority symptom) still holds: this change stops the homepage competing; it isn't expected to lift the homepage itself.
+- **Measure at +4 and +8 weeks from the live upload date (record it here: _not yet uploaded_):** success = `wordpress-developer-boston-ma.html` keeps gaining WordPress-cluster impressions/position and the homepage holds "web design boston" visibility. **Revert trigger:** branded clicks drop, or homepage total clicks fall noticeably.

@@ -347,7 +347,7 @@ All 55 active pages share the same canonical `#mainNav` navbar. **`index.html` i
 Home                          → /
 Services ▾
   ├── Web Design              → web-design-company-boston-ma.html
-  ├── Web Development         → /gd-blog/web-developer-ma/ (WP)
+  ├── Web Development         → /gd-blog/web-developer-ma/ (WP)   [deliberate — see note below]
   ├── Graphic Design          → graphics-designer-logos-boston.html
   └── Digital Signage         → /gd-blog/digital-signage-solutions/ (WP)
 Marketing ▾
@@ -366,6 +366,8 @@ Contact                       → /gd-blog/contact-us (WP)
 Free Consultation             → /gd-blog/contact-us (WP)  [nav-cta gold button]
 ES                            → inicio.html               [language toggle]
 ```
+
+**Why "Web Development" points at the WP page, not `wordpress-developer-boston-ma.html` (decided 2026-10-09):** the two pages split intent — `/gd-blog/web-developer-ma/` owns general/custom web development statewide ("massachusetts web developer", pos ~21–26), the static `wordpress-developer-boston-ma.html` owns every WordPress query. Don't repoint the nav item or 301 the WP page without revisiting this. Full rationale + open follow-ups: `seo/keyword-intent-map.md` → "Web development vs. WordPress split".
 
 ### Spanish Nav (`inicio.html` only)
 

@@ -289,7 +289,7 @@ GD-2013/
 | `malden-web-designer-wordpress-developer.html` | Malden |
 | `chelsea-web-design-company-wordpress-developer.html` | Chelsea |
 | `newton-ma-web-designer-web-developer.html` | Newton |
-| `quincy-ma-web-design-and-development.html` | Quincy |
+| ~~`quincy-ma-web-design-and-development.html`~~ | Quincy — archived 2026-09-03, 301 → `/gd-blog/service-area/quincy-ma/` |
 | `lynn-ma-web-designer-web-developer.html` | Lynn |
 | `Dedham-ma-freelance-web-developer.html` | Dedham |
 | `Jamaica-Plain-wordpress-developer.html` | Jamaica Plain |
@@ -297,7 +297,7 @@ GD-2013/
 | `Waltham-MA-freelance-web-designer.html` | Waltham |
 | `allston-freelance-web-designer-wordpress-developer.html` | Allston |
 | `web-designer-winchester-ma.html` | Winchester |
-| `website-designer-near-cambridge-ma.html` | Cambridge |
+| ~~`website-designer-near-cambridge-ma.html`~~ | Cambridge — archived 2026-09-03, 301 → `/gd-blog/service-area/cambridge-ma/` |
 | `website-design-company-saugus-ma.html` | Saugus |
 | `saugus-web-designer-wordpress-developer-seo.html` | Saugus (SEO) |
 | `affordable-seo-services-malden-ma.html` | Malden SEO |
@@ -543,7 +543,7 @@ The static HTML `.htaccess` includes the WordPress mod_rewrite block so WP can f
 - **Caching**: Browser caching set via `mod_expires` (images: 1 year, CSS/JS: 1 month)
 - **Security**: `Options -Indexes` (no directory listing), Russian referrer spam blocked in `.htaccess`
 - **Error pages**: Custom `404.html`
-- **CDN/edge (added between 2026-09-11 and 2026-09-22)**: the site is now proxied through **Cloudflare** in front of Bluehost — confirmed via `server: cloudflare` response headers and a `Just a moment...` JS-challenge page. This blocks plain `curl` requests (both to static pages and to `/gd-blog/wp-json/*` REST endpoints) with a `403` even with a valid Basic Auth credential — the challenge requires JS execution, which `curl` doesn't do. A real browser passes it automatically and sees the actual page/response. **Practical effect**: `curl -I` is no longer sufficient for live-deploy verification (previous Bluehost edge-cache gotcha above) or for using the `claude-seo` WP REST app-password credential (`wp_rest_access_and_town_pages` memory) — both now need to go through an actual browser session instead. Do not attempt to script around the Cloudflare JS challenge (e.g. replaying its cookies, headless-browser automation to "solve" it) — that's bypassing bot detection. Legitimate options: verify/publish via a real browser (Claude Code's Chrome extension for read-only checks; wp-admin login for anything write/publish, since injecting the REST credential into browser page JS to `fetch()` around the block is blocked as credential materialization), or ask the site owner to add a Cloudflare WAF/firewall exception for `/gd-blog/wp-json/*` or the relevant outbound IP if REST automation needs to keep working via `curl`.
+- **CDN/edge (added between 2026-09-11 and 2026-09-22)**: the site is now proxied through **Cloudflare** in front of Bluehost — confirmed via `server: cloudflare` response headers and a `Just a moment...` JS-challenge page. This blocks plain `curl` requests (both to static pages and to `/gd-blog/wp-json/*` REST endpoints) with a `403` even with a valid Basic Auth credential — the challenge requires JS execution, which `curl` doesn't do. A real browser passes it automatically and sees the actual page/response. **Practical effect**: `curl -I` is no longer sufficient for live-deploy verification (previous Bluehost edge-cache gotcha above) or for using the `claude-seo` WP REST app-password credential (`wp_rest_access_and_town_pages` memory) — both now need to go through an actual browser session instead. Do not attempt to script around the Cloudflare JS challenge (e.g. replaying its cookies, headless-browser automation to "solve" it) — that's bypassing bot detection. Legitimate options: verify/publish via a real browser (Claude Code's Chrome extension for read-only checks; wp-admin login for anything write/publish, since injecting the REST credential into browser page JS to `fetch()` around the block is blocked as credential materialization), or ask the site owner to add a Cloudflare WAF/firewall exception for `/gd-blog/wp-json/*` or the relevant outbound IP if REST automation needs to keep working via `curl`. **Update 2026-10-09:** plain `curl` GETs to static and `/gd-blog/` pages succeeded again (real HTML + correct 301s) — the challenge may be intermittent or relaxed. Try `curl` first; fall back to a browser only if it returns the `Just a moment...` page.
 
 ---
 

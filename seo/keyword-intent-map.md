@@ -155,5 +155,5 @@ GSC (Jul–Oct 2026): "wordpress support boston" (237 impr) split across mainten
 
 Changes 2026-10-09: fix page retitled `Fix WordPress Issues Boston, MA | Repair & Troubleshooting | GD Web Pros` with a new description/OG tags; new links to the fix page from the maintenance page ("Issues We Prevent" intro), `wordpress-developer-boston-ma.html` (intro sentence, "WordPress troubleshooting & repair") and the homepage maintenance card; fix page's step 4 now links to the maintenance plans. Inbound links to the fix page: 1 → 3 pages (maintenance, WordPress, homepage).
 
-Open: the fix page's hero shows "From $450/mo" (the maintenance plan price), which blurs it into a monthly plan. It needs the owner's real repair pricing or wording.
+Repair pricing (decided 2026-10-10): the fix page's hero tag was "From $450/mo" (the maintenance plan price), which blurred it into a monthly plan. Now **"Repairs from $150"**, a $150 minimum that covers quick fixes. Bigger jobs get diagnosed first and quoted at a fixed price before any work starts, stated in a line under the hero CTAs; the Service schema offer got `priceSpecification.minPrice: 150`. One-off repairs are offered outside plans, so the homepage maintenance card's "one-off repairs" line stays. Each repair is also a lead-in to a maintenance plan (step 4 links to the plans).
 

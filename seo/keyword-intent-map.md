@@ -157,3 +157,5 @@ Changes 2026-10-09: fix page retitled `Fix WordPress Issues Boston, MA | Repair 
 
 Repair pricing (decided 2026-10-10): the fix page's hero tag was "From $450/mo" (the maintenance plan price), which blurred it into a monthly plan. Now **"Repairs from $150"**, a $150 minimum that covers quick fixes. Bigger jobs get diagnosed first and quoted at a fixed price before any work starts, stated in a line under the hero CTAs; the Service schema offer got `priceSpecification.minPrice: 150`. One-off repairs are offered outside plans, so the homepage maintenance card's "one-off repairs" line stays. Each repair is also a lead-in to a maintenance plan (step 4 links to the plans).
 
+
+**Upload verified live 2026-10-10:** all 50 static pages from 64dc593 + 964c954 + b11c0b3 (Blog links → `/gd-blog/gd-news/`, fix page title + "Repairs from $150"); `/gd-blog/` still 301s to `/`. Six pages needed a re-upload (first pass silently didn't overwrite them). **Pending:** GSC "Request indexing" for the fix page (priority), maintenance page, `wordpress-developer-boston-ma.html` and the homepage. The daily quota was exceeded on 10-10, so this still needs doing.

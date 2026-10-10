@@ -532,6 +532,14 @@ A separate WordPress installation lives at `/gd-blog/`. The static site links to
 
 The static HTML `.htaccess` includes the WordPress mod_rewrite block so WP can function at its subpath.
 
+**Git repos — two separate repos, one per system (settled 2026-10-10):**
+| What | Local path | GitHub |
+|---|---|---|
+| Static site (this repo): `.html` pages, `.htaccess`, `css/`, `js/`, `scripts/`, `seo/` docs | `~/Library/Mobile Documents/com~apple~CloudDocs/Sites/GD-2013` | `GDweb91/GD-2013` (`master`) |
+| WordPress `gd-blog`: theme (`app/public/wp-content/themes/gd-blog/`), `mu-plugins/gd-seo-core.php` + `gd-redirects.php`, `HANDOFF.md` | `~/Local Sites/gd-blog` | `GDweb91/gd-blog` (`main`) |
+
+A change spanning both (e.g. a WP redirect + static-page link updates) gets one commit in each repo. They are intentionally not merged: Local by Flywheel needs the WP site under `~/Local Sites/`, iCloud sync is unsafe for a running WP dev site, and the two deploy to different server paths anyway. Ignore `~/.git` (an accidental `git init` at `$HOME`, retired 2026-10-10; backup at `~/git-backups/accidental-home-repo-2026-10-10.bundle`) and the stale duplicate copies at `~/Sites/GD-2013` and `~/Desktop/GD-2013` — never commit to any of them.
+
 ---
 
 ## Hosting & Server

@@ -19,7 +19,7 @@ This is NOT a WordPress theme — it is a standalone static HTML site. A separat
 | Geo coordinates  | 42.40843, -71.053662 |
 | Domain           | https://gdprowebdesigns.com |
 | Founded          | 2005 |
-| Hours            | Mon–Fri 9:00–18:00 |
+| Hours            | Mon–Fri 9:00–18:30 (confirmed by owner 2026-10-27; closed Sat/Sun — GBP must match) |
 | Price range      | $$ |
 
 ### Services Offered

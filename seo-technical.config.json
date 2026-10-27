@@ -1,9 +1,47 @@
 {
   "domain": "https://gdprowebdesigns.com",
-  "skip_suffixes": ["-off.html"],
-  "cms_prefixes": ["gd-blog"],
+  "skip_suffixes": [
+    "-off.html"
+  ],
+  "cms_prefixes": [
+    "gd-blog"
+  ],
   "strip_selectors": [
     "<div\\s+class=[\"']sticky-call-bar[\"'][^>]*>.*?</div>",
     "<div\\s+class=[\"']position-fixed[^\"']*[\"'][^>]*>.*?</div>"
+  ],
+  "place_names": [
+    "everett",
+    "malden",
+    "medford",
+    "revere",
+    "saugus",
+    "chelsea",
+    "somerville",
+    "melrose",
+    "cambridge",
+    "quincy",
+    "lynn",
+    "dedham",
+    "waltham",
+    "newton",
+    "winchester",
+    "allston",
+    "lawrence",
+    "jamaica plain",
+    "brookline",
+    "arlington",
+    "woburn",
+    "stoneham",
+    "wakefield",
+    "lexington",
+    "boston"
+  ],
+  "home_base": [
+    "everett",
+    "boston"
+  ],
+  "onpage_skip": [
+    "404.html"
   ]
 }

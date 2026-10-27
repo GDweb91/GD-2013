@@ -1428,3 +1428,57 @@ section { scroll-margin-top: 76px; }
     border-color: rgba(4,65,67,.3);
     transform: translateY(-3px);
 }
+/* ── Comparison table (agency vs. freelance — wordpress-developer-boston-ma.html) ── */
+.compare-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid rgba(4,65,67,.15);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+    font-size: .95rem;
+}
+.compare-table > :not(caption) > * > * {
+    padding: .9rem 1rem;
+    border-bottom: 1px solid var(--border);
+}
+.compare-table thead th {
+    background: var(--primary);
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border-bottom: 3px solid var(--accent);
+}
+.compare-table thead th:last-child {
+    background: var(--accent);
+    color: var(--primary);
+}
+.compare-table tbody th {
+    color: var(--primary);
+    font-weight: 600;
+    background: var(--bg-light);
+    white-space: nowrap;
+}
+.compare-table tbody td:last-child {
+    background: rgba(255,186,0,.10);
+    color: var(--primary);
+    font-weight: 500;
+}
+.compare-table tbody tr:last-child > * {
+    border-bottom: 0;
+}
+@media (max-width: 575.98px) {
+    .compare-table { font-size: .82rem; }
+    .compare-table > :not(caption) > * > * { padding: .6rem .5rem; }
+    .compare-table tbody th { white-space: normal; }
+}
+
+/* ── Phone gutter fix: Bootstrap .g-5 / .gx-5 set a 3rem column gutter, so the row's
+   negative side margins (-1.5rem) overhang the container's .75rem padding and
+   cause ~12px of horizontal page scroll below 576px. Narrow only the horizontal
+   gutter on phones; vertical spacing between stacked columns stays at g-5. ── */
+@media (max-width: 575.98px) {
+    .row.g-5,
+    .row.gx-5 { --bs-gutter-x: 1.5rem; }
+}

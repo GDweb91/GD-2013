@@ -209,6 +209,14 @@ RewriteRule ^website-designer-near-cambridge-ma\.html$ https://gdprowebdesigns.c
 RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
 RewriteRule ^quincy-ma-web-design-and-development\.html$ https://gdprowebdesigns.com/gd-blog/service-area/quincy-ma/ [R=301,L]
 
+# --- 2026-10-27: internet-marketing-services.html retired (seo-technical audit) ---
+# Legacy unredesigned layout, zero inbound internal links (orphaned), 0 clicks / 18
+# impressions over trailing 12mo. Its own canonical already pointed at
+# organic-SEO-everett-ma.html, and its only query ("internet marketing services
+# everett") was split with that page, which ranks better for it (pos ~63 vs ~90).
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^internet-marketing-services\.html$ https://gdprowebdesigns.com/organic-SEO-everett-ma.html [R=301,L]
+
 # --- 2026-09-24: /review short-link → live Google review page (GBP checklist §6) ---
 # Easy to say/type on a call. Real GBP review link, verified live via curl -I.
 RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$

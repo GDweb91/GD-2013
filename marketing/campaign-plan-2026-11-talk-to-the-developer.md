@@ -86,7 +86,8 @@ Any owner whose site is hacked, down or erroring. They search with high intent a
 
 | Week | Dates | Content piece | Channel | Notes / dependencies | Status |
 |---|---|---|---|---|---|
-| 0 | Oct 28 – Nov 2 | Upload the 49 pending static pages (CSS versioning + hours 9:00–6:30 structured data) | Website | `gdprowebdesigns.com/review` redirect **confirmed live 10-27** — use it in review asks | ☐ |
+| 0 | Oct 28 – Nov 2 | Upload the 49 pending static pages (CSS versioning + hours 9:00–6:30 structured data) | Website | **DONE 10-27**: all 49 verified on origin; last Cloudflare copies refresh by ~2:45 PM. `/review` redirect confirmed live | ☑ |
+| 0 | | Stray duplicate found 10-27: `/shopify-developer-boston-ma-ecommerce.html` (root, Oct 10, not in repo) duplicates `shopify/…`. Delete from server or 301 to `shopify/` version | Website | Low priority, SEO hygiene | ☐ |
 | 0 | | Set GBP hours to **Mon–Fri 9:00 AM – 6:30 PM, closed Sat/Sun** (remove Saturday 9–1, fix Wednesday). Site structured data already updated 10-27 | GBP | | ☐ |
 | 0 | | Test the contact form end to end; check DebugView for `Fill_out_email_form`; look into 45 submits vs 9 completions | GA4 | Tracking has broken 3× before; check before spending | ☐ |
 | 0 | | Create or verify Google Ads account, link GA4, import conversions | Ads | **Must finish before ads launch** | ☐ |

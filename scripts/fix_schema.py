@@ -22,6 +22,7 @@ JSON-LD still hard-codes a non-Everett addressLocality (a NAP-consistency smell
 to clean up separately — this script does not touch those blocks).
 """
 
+import html as htmllib
 import json
 import os
 import re
@@ -109,7 +110,7 @@ ORG = {
     "openingHoursSpecification": [{
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00", "closes": "18:00",
+        "opens": "09:00", "closes": "18:30",
     }],
     "areaServed": AREA_SERVED,
     "knowsLanguage": ["en", "es"],
@@ -148,7 +149,8 @@ def web_page_node(name, html):
     cm = CANONICAL_RE.search(html)
     url = cm.group(1).strip() if cm else BASE_URL + name
     tm = TITLE_RE.search(html)
-    title = re.sub(r"\s+", " ", tm.group(1)).strip() if tm else name
+    # Decode entities: JSON-LD is not HTML, so "&amp;" would be taken literally.
+    title = htmllib.unescape(re.sub(r"\s+", " ", tm.group(1)).strip()) if tm else name
     lm = LANG_RE.search(html)
     lang = lm.group(1).strip() if lm else "en-US"
     node = {

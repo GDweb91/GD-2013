@@ -75,6 +75,7 @@ Everett web design page. Include a real address/map, Everett clients, and the GB
 
 1. ✅ 2026-10-29 Everett web-design page — built as static `everett-ma-web-designer-wordpress-developer.html` (the WP service_city template only holds a short ACF intro, too thin for a definitive page). Open: decide whether `/gd-blog/service-area/everett/` 301s here or stays and links here
 2. ✅ 2026-10-29 Church & nonprofit page — static `church-nonprofit-web-design-boston-ma.html` + 301 from the old non-profit URLs
+   - Both pages uploaded and verified live on 2026-10-29 (commit `b8b9c14`). Also shipped: the GBP-name bridge (schema `alternateName`/`hasMap`, plus a footer note via `scripts/fix_gbp_name_note.py`). Next: Request Indexing for both pages in GSC.
 3. Website redesign service page — WP
 4. GBP optimization service page (or section) — WP
 5. "How much does a website cost in Boston" post → links to flagship — WP

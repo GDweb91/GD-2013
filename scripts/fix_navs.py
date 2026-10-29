@@ -43,6 +43,8 @@ ACTIVE = {
     'medford-website-design-company-wordpress-developer.html': 'services',
     'malden-web-designer-wordpress-developer.html': 'services',
     'chelsea-web-design-company-wordpress-developer.html': 'services',
+    'everett-ma-web-designer-wordpress-developer.html': 'services',
+    'church-nonprofit-web-design-boston-ma.html': 'services',
     'newton-ma-web-designer-web-developer.html': 'services',
     'quincy-ma-web-design-and-development.html': 'services',
     'lynn-ma-web-designer-web-developer.html': 'services',

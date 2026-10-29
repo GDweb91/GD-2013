@@ -72,6 +72,13 @@ SAME_AS = [
     "https://www.linkedin.com/company/gd-pro-web-designs",
     "https://www.youtube.com/user/silfovientoful",
 ]
+# Google Business Profile. The listing is named "J.A. Armira (Freelance Web Designer)"
+# until the "GD Pro Web Designs" DBA is filed and Google renames it back
+# (seo/gbp-checklist.md §3). Linking it here tells Google both names are one entity.
+# After the rename, drop GBP_NAME from alternateName (keep the map link).
+GBP_URL = "https://maps.google.com/?cid=14742453980006491533"
+GBP_NAME = "J.A. Armira (Freelance Web Designer)"
+
 AREA_SERVED = (
     [{"@type": "State", "name": "Massachusetts"}]
     + [{"@type": "AdministrativeArea", "name": f"{c} County, MA"} for c in
@@ -86,7 +93,7 @@ ORG = {
     "@type": ["Organization", "ProfessionalService"],
     "@id": "https://gdprowebdesigns.com/#organization",
     "name": "GD Pro Web Designs",
-    "alternateName": "GDWebPros",
+    "alternateName": ["GDWebPros", GBP_NAME],
     "description": ("Freelance web designer, WordPress developer, and SEO consultant "
                     "based in Everett, MA. Affordable web design, WordPress development, "
                     "SEO and digital marketing for small businesses in Boston and Greater "
@@ -114,7 +121,8 @@ ORG = {
     }],
     "areaServed": AREA_SERVED,
     "knowsLanguage": ["en", "es"],
-    "sameAs": SAME_AS,
+    "hasMap": GBP_URL,
+    "sameAs": SAME_AS + [GBP_URL],
     "hasCredential": CERTS,
     "founder": {"@id": "https://gdprowebdesigns.com/#person"},
 }

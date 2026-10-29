@@ -217,6 +217,12 @@ RewriteRule ^quincy-ma-web-design-and-development\.html$ https://gdprowebdesigns
 RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
 RewriteRule ^internet-marketing-services\.html$ https://gdprowebdesigns.com/organic-SEO-everett-ma.html [R=301,L]
 
+# --- 2026-10-29: old non-profit page → new church & nonprofit page (competitor gap #1) ---
+# boston-webdesign-for-non-profits.html was deactivated (renamed -off) with no redirect,
+# so it 404'd. Content rebuilt as church-nonprofit-web-design-boston-ma.html.
+RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$
+RewriteRule ^boston-webdesign-for-non-profits(-off)?\.html$ https://gdprowebdesigns.com/church-nonprofit-web-design-boston-ma.html [R=301,L]
+
 # --- 2026-09-24: /review short-link → live Google review page (GBP checklist §6) ---
 # Easy to say/type on a call. Real GBP review link, verified live via curl -I.
 RewriteCond %{HTTP_HOST} ^(www\.)?gdprowebdesigns\.com$

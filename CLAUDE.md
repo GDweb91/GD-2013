@@ -228,6 +228,7 @@ GD-2013/
 │   ├── fix_navs.py               # Standardizes #mainNav across all 55 pages — run after any nav change
 │   ├── fix_inline_styles.py      # Replaces inline style="" attributes with CSS utility classes — run after any new inline style discovery
 │   ├── fix_phone_protection.py   # Obfuscates tel: links + injects sticky Call Now bar — run after any new page or if a raw tel:6177710645 link reappears
+│   ├── fix_gbp_name_note.py      # Footer line "On Google Maps as J.A. Armira (Freelance Web Designer)" on every page (GBP name ≠ site name until the DBA is filed) — run `--remove` once Google renames the listing to GD Pro Web Designs, and drop GBP_NAME from alternateName in fix_schema.py
 │   └── fix_css_version.py        # Sets css/custom.css?v=VERSION on every live page — run after ANY custom.css change, then upload the CSS + listed pages (no Cloudflare purge exists for static pages)
 ├── node_modules/                 # npm packages (Font Awesome, etc.)
 │
@@ -279,12 +280,14 @@ GD-2013/
 | `freelance-web-designer-developer-boston-ma.html` | Freelance designer |
 | `local-website-developer-near-me.html` | Near me targeting |
 | `web-design-for-restaurants-boston-ma.html` | Restaurant design |
+| `church-nonprofit-web-design-boston-ma.html` | Church & nonprofit web design (added 2026-10-29, competitor-gap #1; replaces the deactivated non-profit page) |
 | `portfolio-website-design-development-boston-ma.html` | Web portfolio |
 | `portfolio-graphics-design-boston-everett-ma.html` | Graphic design portfolio |
 
 ### Location / Service Area Pages (EN)
 | File | City |
 |------|------|
+| `everett-ma-web-designer-wordpress-developer.html` | Everett — home-turf web design page (added 2026-10-29; no page owned "everett web design" before, pos ~64). Everett *SEO* intent stays on `organic-SEO-everett-ma.html` |
 | `somerville-ma-web-designer.html` | Somerville |
 | `medford-website-design-company-wordpress-developer.html` | Medford |
 | `malden-web-designer-wordpress-developer.html` | Malden |
@@ -335,7 +338,7 @@ GD-2013/
 - `contact-thanks.html` → `/gd-blog/contact-us/` (2026-07-20: same false-claim correction — no local file, live `200`. Notably its canonical said `/gd-blog/contact-us/` but a later, conflicting `<meta name="robots" content="index, follow, noydir">` tag left it actually indexable despite that intent — a real 301 was needed rather than relying on the page's own contradictory meta tags.)
 
 ### Deactivated Pages (orphaned, no live links, kept as `-off.html`)
-- `boston-webdesign-for-non-profits-off.html` — formerly `boston-webdesign-for-non-profits.html` (Non-profit web design). The live filename was deleted with no `.htaccess` 301 added yet, so the old URL currently 404s instead of redirecting — add a redirect rule (matching the `disenador-paginas-web-freelancer-boston-off.html` pattern) if the old URL still has inbound links/backlinks.
+- `boston-webdesign-for-non-profits-off.html` — formerly `boston-webdesign-for-non-profits.html` (Non-profit web design). 2026-10-29: both the old URL and the `-off` URL now 301 → `church-nonprofit-web-design-boston-ma.html` (rebuilt content).
 
 ---
 

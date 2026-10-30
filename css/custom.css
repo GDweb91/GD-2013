@@ -1222,6 +1222,17 @@ section { scroll-margin-top: 76px; }
 /* Green checkmark ✓ spans in feature lists */
 .check-green { color: #28a745; margin-right: .5rem; }
 
+/* "Ready to talk?" call box beside an FAQ */
+.call-box {
+  background: var(--bg-light);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+}
+.call-box-title { font-weight: 700; font-size: .9rem; color: var(--primary); margin-bottom: .5rem; }
+.call-box-num   { color: var(--accent-dark); font-weight: 700; font-size: 1.1rem; }
+.call-box-note  { font-size: .78rem; color: var(--text-muted); margin-top: .25rem; }
+
 /* Icon coloring utilities */
 .text-accent      { color: var(--accent)      !important; }
 .text-accent-dark { color: var(--accent-dark) !important; }

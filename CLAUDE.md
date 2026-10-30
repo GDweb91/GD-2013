@@ -30,7 +30,7 @@ This is NOT a WordPress theme — it is a standalone static HTML site. A separat
 - Local internet marketing & digital marketing
 - Social media integration
 - Graphic design & branding
-- WordPress maintenance & issue fixing
+- WordPress maintenance plans: $99 / $199 / $349 per month (Foundational / Growth / Advanced; set 2026-10-30 to match Boston competitors, was "from $450/mo") · repairs from $150
 - SEO-safe WordPress migrations
 
 ### Credentials

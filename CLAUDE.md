@@ -316,6 +316,7 @@ GD-2013/
 | `chelsea-ma-disenador-web-wordpress.html` | ES Chelsea |
 | `lynn-ma-disenador-sitios-web-wordpress.html` | ES Lynn |
 | `revere-ma-servicios-de-diseno-web-wordpress.html` | ES Revere |
+| `posicionamiento-seo-everett-ma.html` | ES Everett SEO — hreflang pair of `organic-SEO-everett-ma.html` (added 2026-11-14). The EN page's "Hablamos Español" hero tag, checklist line and footer link point here; `inicio.html`'s ES nav "SEO Everett, MA" item points here too (`nav_es()` in `fix_navs.py`) |
 
 ### Redirect Stub Pages (301 targets in .htaccess, kept for legacy links)
 - `boston-web-design-development-company.html` → `web-design-company-boston-ma.html`
@@ -477,7 +478,7 @@ Any label text in the same anchor (e.g. `Llámenos al `, `Tel: `) is preserved o
 ### Bilingual SEO
 - English primary site at root (`/`)
 - Spanish pages at root level with ES slugs (`inicio.html`, `disenador-*`, etc.)
-- No hreflang tags — Spanish pages are standalone geo+language targeted pages
+- hreflang pairs (each page carries the same `en` / `es` / `x-default`→EN trio): `index.html`↔`inicio.html`, `about-…`↔`acerca-de-…`, `freelance-web-designer-developer-boston-ma.html`↔`disenador-paginas-web-freelancer-boston.html`, `chelsea-web-design-…`↔`chelsea-ma-disenador-…`, `organic-SEO-everett-ma.html`↔`posicionamiento-seo-everett-ma.html`. Other Spanish pages are standalone. **Known gap (2026-11-14):** `lynn-ma-disenador-sitios-web-wordpress.html` carries the trio but `lynn-ma-web-designer-web-developer.html` does not, so Google ignores that pair until the EN side gets it too. When adding a pair, put the trio on BOTH pages (a one-sided hreflang is ignored by Google) and set `<html lang="es">` — `fix_schema.py` reads it for `inLanguage`
 
 ### Canonical URLs
 - Every page has `<link rel="canonical" href="https://gdprowebdesigns.com/[page]">`

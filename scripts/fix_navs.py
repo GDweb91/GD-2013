@@ -65,6 +65,7 @@ ACTIVE = {
     # marketing
     'organic-search-engine-optimization-boston.html': 'marketing',
     'organic-SEO-everett-ma.html': 'marketing',
+    'posicionamiento-seo-everett-ma.html': 'marketing',
     'organic-seo-services-somerville.html': 'marketing',
     'local-seo-services-boston-ma.html': 'marketing',
     'affordable-seo-services-malden-ma.html': 'marketing',
@@ -203,7 +204,7 @@ def nav_es():
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="ddMarketing" role="button" data-bs-toggle="dropdown" aria-expanded="false">Marketing</a>
           <ul class="dropdown-menu" aria-labelledby="ddMarketing">
-            <li><a class="dropdown-item" href="organic-SEO-everett-ma.html">SEO Everett, MA</a></li>
+            <li><a class="dropdown-item" href="posicionamiento-seo-everett-ma.html">SEO Everett, MA</a></li>
             <li><a class="dropdown-item" href="organic-search-engine-optimization-boston.html">Optimización SEO</a></li>
             <li><a class="dropdown-item" href="PPC-adwords-advertising-boston.html">Google Ads</a></li>
             <li><a class="dropdown-item" href="local-marketing-company-everett-malden-medford-revere-saugus-ma.html">Marketing Local</a></li>

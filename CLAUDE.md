@@ -229,7 +229,8 @@ GD-2013/
 │   ├── fix_inline_styles.py      # Replaces inline style="" attributes with CSS utility classes — run after any new inline style discovery
 │   ├── fix_phone_protection.py   # Obfuscates tel: links + injects sticky Call Now bar — run after any new page or if a raw tel:6177710645 link reappears
 │   ├── fix_gbp_name_note.py      # Footer line "On Google Maps as J.A. Armira (Freelance Web Designer)" on every page (GBP name ≠ site name until the DBA is filed) — run `--remove` once Google renames the listing to GD Pro Web Designs, and drop GBP_NAME from alternateName in fix_schema.py
-│   └── fix_css_version.py        # Sets css/custom.css?v=VERSION on every live page — run after ANY custom.css change, then upload the CSS + listed pages (no Cloudflare purge exists for static pages)
+│   ├── fix_css_version.py        # Sets css/custom.css?v=VERSION on every live page — run after ANY custom.css change, then upload the CSS + listed pages (no Cloudflare purge exists for static pages)
+│   └── fix_sri.py                # Adds integrity="sha384-…" + crossorigin="anonymous" (Subresource Integrity) to the CDN Bootstrap / Font Awesome / Bootstrap Icons tags on every live page (added 2026-11-18). Holds the hash table — run after adding a page or changing ANY CDN version
 ├── node_modules/                 # npm packages (Font Awesome, etc.)
 │
 ├── .htaccess                     # Apache: redirects, caching, HTTPS, security
@@ -576,6 +577,7 @@ A change spanning both (e.g. a WP redirect + static-page link updates) gets one 
 11. **No inline styles**: Use the utility classes in `css/custom.css` instead of `style=""` attributes. If a new repeated style pattern is needed, add it as a class to `custom.css` and run `scripts/fix_inline_styles.py` to apply it site-wide.
 12. **301 redirects**: Any URL change must be accompanied by a `.htaccess` 301 redirect entry from old slug to new slug.
 13. **Phone number**: Never write a raw `<a href="tel:6177710645">(617) 771-0645</a>`. Use the obfuscated pattern from the Phone Number Protection section above, or just run `scripts/fix_phone_protection.py` after pasting in a new page — it will fix any raw tel: links automatically.
+14. **CDN links need SRI**: every CDN `<script>`/stylesheet carries `integrity` + `crossorigin="anonymous"`, applied by `scripts/fix_sri.py`. Never hand-edit a CDN version without updating its hash in that script — a stale hash makes the browser block the file (page loses all Bootstrap styling or the nav dropdowns stop working). Only exact-version URLs can use SRI; Google Fonts CSS and the GTM/GA4/Clarity snippets are deliberately excluded (their content changes by design).
 
 ---
 
